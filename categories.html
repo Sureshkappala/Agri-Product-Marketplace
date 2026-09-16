@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agricultural Categories - AgriMarket</title>
+  <meta name="description" content="Explore all agricultural sectors: seeds, fertilizers, pesticides, tools, irrigation, machinery, and fresh organic farm produce.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Announcement Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <span>🌱 Direct From 150+ Verified Local Farmers</span>
+        <span>🚚 Free Farm Delivery On Orders Over $75</span>
+      </div>
+      <div class="topbar-right">
+        <span>Farmer Support: +1 (800) 555-AGRI</span>
+        <a href="seller-dashboard.html">Become a Seller</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img">
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="categories.html" class="nav-link active">Categories</a>
+          <a href="farmers.html" class="nav-link">Farmers</a>
+          <a href="product-details.html" class="nav-link">Products</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="shop.html" class="action-icon-btn" aria-label="Search Marketplace">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </a>
+          <a href="wishlist.html" class="action-icon-btn" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+            <span class="action-badge wishlist-count-badge">2</span>
+          </a>
+          <a href="cart.html" class="action-icon-btn" aria-label="Shopping Cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg>
+            <span class="action-badge cart-count-badge">3</span>
+          </a>
+          <a href="login.html" class="btn btn-sm btn-primary">Login</a>
+          <button class="hamburger-btn" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img">
+      </div>
+      <button class="mobile-drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+
+    <!-- Search in Drawer -->
+    <div class="mobile-drawer-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search catalog..." onkeydown="if(event.key==='Enter') window.location.href='shop.html?search='+encodeURIComponent(this.value)">
+    </div>
+
+    <nav class="mobile-drawer-links">
+      <a href="index.html">Home <span>→</span></a>
+      <a href="about.html">About Us <span>→</span></a>
+      <a href="shop.html">Shop Catalog <span>→</span></a>
+      <a href="categories.html" class="active">All Categories <span>—</span></a>
+      <a href="farmers.html">Meet Farmers <span>→</span></a>
+      <a href="product-details.html">Product Spotlight <span>→</span></a>
+      <a href="contact.html">Customer Contact <span>→</span></a>
+    </nav>
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn btn-primary">Login</a>
+      <a href="user-dashboard.html" class="btn btn-outline">My Account</a>
+      <div class="mobile-drawer-info">
+        <div class="drawer-info-label">Direct Farm Concierge</div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Call:</span>
+          <span class="drawer-info-val">+1 (800) 555-AGRI</span>
+        </div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Email:</span>
+          <span class="drawer-info-val">concierge@stackly.com</span>
+        </div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Hubs:</span>
+          <span class="drawer-info-val">California • Oregon • Midwest • Texas</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Page Header / Breadcrumb Banner -->
+  <section class="page-header" style="background: var(--cream-surface); border-bottom: 1.5px solid var(--border); padding: 2.5rem 0; margin-bottom: 2.5rem;">
+    <div class="container">
+      <div class="breadcrumbs" style="font-size:0.875rem; color:var(--text-muted); margin-bottom:0.4rem;">
+        <a href="index.html" style="color:var(--text-muted);">Home</a> &nbsp;/&nbsp; <span style="color:var(--primary); font-weight:600;">Agricultural Categories</span>
+      </div>
+      <h1 style="font-size:2.25rem; color:var(--primary-dark); margin-bottom:0.35rem;">Explore All Agricultural Categories</h1>
+      <p style="color:var(--text-muted); margin:0;">Browse curated departments covering certified heirloom seeds, biological fertilizers, eco pesticides, specialized tools, and farm-fresh seasonal harvests.</p>
+    </div>
+  </section>
+
+  <main style="margin-bottom: 4rem;">
+    <div class="container">
+      <div class="category-grid" style="grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2rem;">
+        
+        <!-- 1. Seeds -->
+        <div class="category-card" style="border-radius:16px;">
+          <div class="cat-thumb" style="height:200px;">
+            <img src="assets/images/cat-seeds.webp" alt="Seeds Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+              <h3>Seeds</h3>
+              <span class="badge-leaf">140+ Products</span>
+            </div>
+            <p>Non-GMO heirloom varieties, certified winter and spring grains, drought-tolerant forage grasses, and pollinator-friendly flower seeds.</p>
+            <div style="margin-bottom:1.25rem; font-size:0.85rem; color:var(--gray-600);">
+              <strong>Key Subcategories:</strong> Vegetables • Cereal Grains • Cover Crops • Hybrid Corn
+            </div>
+            <a href="shop.html?cat=seeds" class="btn btn-sm btn-outline">Explore Seeds →</a>
+          </div>
+        </div>
+
+        <!-- 2. Fertilizers -->
+        <div class="category-card" style="border-radius:16px;">
+          <div class="cat-thumb" style="height:200px;">
+            <img src="assets/images/cat-fertilizers.webp" alt="Fertilizers Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+              <h3>Fertilizers</h3>
+              <span class="badge-leaf">85+ Products</span>
+            </div>
+            <p>Bio-enriched composts, humic acid concentrates, mycorrhizal soil inoculants, and organic slow-release NPK granular formulations.</p>
+            <div style="margin-bottom:1.25rem; font-size:0.85rem; color:var(--gray-600);">
+              <strong>Key Subcategories:</strong> Bio-Compost • Liquid Kelp • Bone Meal • Microbe Inoculants
+            </div>
+            <a href="shop.html?cat=fertilizers" class="btn btn-sm btn-outline">Explore Fertilizers →</a>
+          </div>
+        </div>
+
+        <!-- 3. Pesticides -->
+        <div class="category-card" style="border-radius:16px;">
+          <div class="cat-thumb" style="height:200px;">
+            <img src="assets/images/cat-pesticides.webp" alt="Pesticides Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+              <h3>Pesticides</h3>
+              <span class="badge-leaf">60+ Products</span>
+            </div>
+            <p>Cold-pressed botanical neem oils, organic bio-fungicides, copper soaps, and beneficial insect-safe natural repellent sprays.</p>
+            <div style="margin-bottom:1.25rem; font-size:0.85rem; color:var(--gray-600);">
+              <strong>Key Subcategories:</strong> Botanical Oils • Bio-Fungicides • Insecticidal Soaps
+            </div>
+            <a href="shop.html?cat=pesticides" class="btn btn-sm btn-outline">Explore Pesticides →</a>
+          </div>
+        </div>
+
+        <!-- 4. Farming Tools -->
+        <div class="category-card" style="border-radius:16px;">
+          <div class="cat-thumb" style="height:200px;">
+            <img src="assets/images/cat-tools.webp" alt="Farming Tools Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+              <h3>Farming Tools</h3>
+              <span class="badge-leaf">110+ Products</span>
+            </div>
+            <p>Carbon steel hand trowels, titanium bypass pruning shears, ergonomic weed extractors, heavy-duty hoes, and nursery spades.</p>
+            <div style="margin-bottom:1.25rem; font-size:0.85rem; color:var(--gray-600);">
+              <strong>Key Subcategories:</strong> Hand Trowels • Pruning Shears • Soil Weeders • Garden Spades
+            </div>
+            <a href="shop.html?cat=tools" class="btn btn-sm btn-outline">Explore Tools →</a>
+          </div>
+        </div>
+
+        <!-- 5. Equipment -->
+        <div class="category-card" style="border-radius:16px;">
+          <div class="cat-thumb" style="height:200px;">
+            <img src="assets/images/cat-equipment.webp" alt="Equipment Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+              <h3>Equipment</h3>
+              <span class="badge-leaf">45+ Products</span>
+            </div>
+            <p>16L pressure backpack sprayers, dual-chamber tumbling composter drums, mechanical seed broadcasters, and garden aerators.</p>
+            <div style="margin-bottom:1.25rem; font-size:0.85rem; color:var(--gray-600);">
+              <strong>Key Subcategories:</strong> Backpack Sprayers • Composter Drums • Broadcast Seeders
+            </div>
+            <a href="shop.html?cat=equipment" class="btn btn-sm btn-outline">Explore Equipment →</a>
+          </div>
+        </div>
+
+        <!-- 6. Organic Products -->
+        <div class="category-card" style="border-radius:16px;">
+          <div class="cat-thumb" style="height:200px;">
+            <img src="assets/images/cat-organic.webp" alt="Organic Products Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+              <h3>Organic Products</h3>
+              <span class="badge-leaf">90+ Products</span>
+            </div>
+            <p>Certified organic soil amendments, premium worm castings, compost starter teas, and vertical indoor NFT hydroponic systems.</p>
+            <div style="margin-bottom:1.25rem; font-size:0.85rem; color:var(--gray-600);">
+              <strong>Key Subcategories:</strong> Worm Castings • Bio-Amendments • Hydroponic Kits
+            </div>
+            <a href="shop.html?cat=organic" class="btn btn-sm btn-outline">Explore Organic →</a>
+          </div>
+        </div>
+
+        <!-- 7. Fresh Produce -->
+        <div class="category-card" style="border-radius:16px;">
+          <div class="cat-thumb" style="height:200px;">
+            <img src="assets/images/cat-produce.webp" alt="Fresh Produce Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+              <h3>Fresh Produce</h3>
+              <span class="badge-leaf">150+ Products</span>
+            </div>
+            <p>Direct farm-harvested seasonal produce boxes, heirloom beefsteak tomatoes, crisp bell peppers, and fresh organic field greens.</p>
+            <div style="margin-bottom:1.25rem; font-size:0.85rem; color:var(--gray-600);">
+              <strong>Key Subcategories:</strong> Seasonal Boxes • Tomatoes • Field Greens • Root Vegetables
+            </div>
+            <a href="shop.html?cat=produce" class="btn btn-sm btn-outline">Explore Produce →</a>
+          </div>
+        </div>
+
+        <!-- 8. Irrigation -->
+        <div class="category-card" style="border-radius:16px;">
+          <div class="cat-thumb" style="height:200px;">
+            <img src="assets/images/cat-irrigation.webp" alt="Irrigation Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+              <h3>Irrigation</h3>
+              <span class="badge-leaf">38+ Products</span>
+            </div>
+            <p>Solar-automated micro-drip kits, pressure-compensating drippers, soil moisture sensors, and heavy-duty drip lines.</p>
+            <div style="margin-bottom:1.25rem; font-size:0.85rem; color:var(--gray-600);">
+              <strong>Key Subcategories:</strong> Drip Kits • Solar Timers • Moisture Sensors • Emitter Pipes
+            </div>
+            <a href="shop.html?cat=irrigation" class="btn btn-sm btn-outline">Explore Irrigation →</a>
+          </div>
+        </div>
+
+        <!-- 9. Animal Feed -->
+        <div class="category-card" style="border-radius:16px;">
+          <div class="cat-thumb" style="height:200px;">
+            <img src="assets/images/cat-feed.webp" alt="Animal Feed Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+              <h3>Animal Feed</h3>
+              <span class="badge-leaf">55+ Products</span>
+            </div>
+            <p>Non-GMO pasture forage seed blends, organic poultry mash, essential mineral salt blocks, and high-protein alfalfa pellets.</p>
+            <div style="margin-bottom:1.25rem; font-size:0.85rem; color:var(--gray-600);">
+              <strong>Key Subcategories:</strong> Pasture Seeds • Poultry Feed • Mineral Licks • Alfalfa
+            </div>
+            <a href="shop.html?cat=feed" class="btn btn-sm btn-outline">Explore Feed →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- COMMERCIAL B2B & BULK WHOLESALE PROCUREMENT -->
+  <section class="section-padding" style="background-color: var(--cream-surface); border-top: 1.5px solid var(--border); border-bottom: 1.5px solid var(--border);">
+    <div class="container">
+      <div class="section-header text-center" style="max-width: 700px; margin: 0 auto 3rem;">
+        <span class="badge-leaf">Enterprise & Wholesale</span>
+        <h2 style="font-size: 2rem; color: var(--primary-dark); margin-top: 0.5rem;">Commercial Agricultural Bulk Supply</h2>
+        <p style="color: var(--text-muted);">Serving commercial farms, organic cooperatives, landscaping firms, and agricultural institutions nationwide.</p>
+      </div>
+
+      <div class="grid grid-4" style="gap: 1.5rem;">
+        <div class="card p-4" style="background:var(--white);">
+          <div style="font-size:1.8rem; color:var(--primary); margin-bottom:0.75rem;"><i class="fa-solid fa-boxes-stacked"></i></div>
+          <h3 style="font-size:1.1rem; color:var(--primary-dark); margin-bottom:0.4rem;">Pallet & Container Volume</h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin:0;">Direct factory and farmgate pricing with progressive volume tier discounts on bulk seed and bio-fertilizers.</p>
+        </div>
+
+        <div class="card p-4" style="background:var(--white);">
+          <div style="font-size:1.8rem; color:var(--accent); margin-bottom:0.75rem;"><i class="fa-solid fa-user-tie"></i></div>
+          <h3 style="font-size:1.1rem; color:var(--primary-dark); margin-bottom:0.4rem;">Dedicated Agronomist</h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin:0;">Direct phone and on-site access to certified agronomists for customized soil amendment and fertilization plans.</p>
+        </div>
+
+        <div class="card p-4" style="background:var(--white);">
+          <div style="font-size:1.8rem; color:var(--primary); margin-bottom:0.75rem;"><i class="fa-solid fa-truck-moving"></i></div>
+          <h3 style="font-size:1.1rem; color:var(--primary-dark); margin-bottom:0.4rem;">Dedicated Freight Fleet</h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin:0;">Coordinated flatbed and climate-regulated LTL/FTL logistics direct to your farm gate or storage silos.</p>
+        </div>
+
+        <div class="card p-4" style="background:var(--white);">
+          <div style="font-size:1.8rem; color:var(--accent); margin-bottom:0.75rem;"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+          <h3 style="font-size:1.1rem; color:var(--primary-dark); margin-bottom:0.4rem;">Net-30 Financing Terms</h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin:0;">Flexible credit lines and harvest-aligned billing cycles designed around your seasonal cash flow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY STANDARDS MATRIX -->
+  <section class="section-padding" style="background-color: var(--white);">
+    <div class="container" style="max-width: 960px;">
+      <div class="section-header text-center" style="margin-bottom: 2.5rem;">
+        <span class="badge-leaf">Compliance Overview</span>
+        <h2 style="font-size: 2rem; color: var(--primary-dark); margin-top: 0.5rem;">Quality & Regulatory Standards by Sector</h2>
+        <p style="color: var(--text-muted);">How we classify and verify each agricultural department on our exchange.</p>
+      </div>
+
+      <div class="card p-0" style="overflow-x:auto; border-radius:14px;">
+        <table class="cart-table" style="width:100%; font-size:0.88rem;">
+          <thead>
+            <tr style="background:var(--cream-surface);">
+              <th style="padding:1rem;">Sector</th>
+              <th>Primary Certification</th>
+              <th>Lab Assays Required</th>
+              <th>Dispatch Protocol</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:1rem; font-weight:700; color:var(--primary-dark);">Heirloom Seeds</td>
+              <td>Non-GMO Project • USDA Organic</td>
+              <td>Germination % (min 90%) • DNA Purity</td>
+              <td>Moisture-proof foil pouch</td>
+            </tr>
+            <tr>
+              <td style="padding:1rem; font-weight:700; color:var(--primary-dark);">Bio-Fertilizers</td>
+              <td>OMRI Listed • Oregon Tilth</td>
+              <td>Heavy Metal Screen • Active Microbial CFU</td>
+              <td>Sealed woven sack / IBC Tote</td>
+            </tr>
+            <tr>
+              <td style="padding:1rem; font-weight:700; color:var(--primary-dark);">Fresh Harvest Produce</td>
+              <td>Demeter Biodynamic • Local Farmgate</td>
+              <td>Zero synthetic pesticide residue screen</td>
+              <td>Insulated cold-chain container</td>
+            </tr>
+            <tr>
+              <td style="padding:1rem; font-weight:700; color:var(--primary-dark);">Irrigation & Tools</td>
+              <td>ISO 9001 • Commercial Agronomy Grade</td>
+              <td>Burst Pressure PSI • Carbon Hardness HRC</td>
+              <td>Protective crate freight</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <a href="index.html">
+              <img src="assets/images/logo-light.webp" alt="Stackly" class="footer-logo">
+            </a>
+          </div>
+          <p class="footer-desc">Mobilizing intelligent agricultural curation, bespoke organic supplies, sustainable farming equipment, and direct farm-to-door delivery for modern life.</p>
+          <div class="footer-social-icons">
+            <a href="404.html" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Stackly</a>
+            <a href="shop.html">Shop Catalog</a>
+            <a href="categories.html">Categories</a>
+            <a href="farmers.html">Farmers Directory</a>
+            <a href="farmer-store.html">Featured Harvests</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Support</h4>
+          <div class="footer-links">
+            <a href="contact.html">Contact Coordinates</a>
+            <a href="404.html">Terms & Agreements</a>
+            <a href="404.html">Security Audits</a>
+            <a href="404.html">Size & Fit Guide</a>
+            <a href="user-dashboard.html">Order Status</a>
+            <a href="user-dashboard.html">User Dashboard</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Newsletter</h4>
+          <p class="footer-newsletter-text">Get quarterly updates, smart style alerts, and platform feature reports.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Stackly updates!'); this.reset();">
+            <input type="email" placeholder="Your Email" required class="footer-newsletter-input" aria-label="Your Email">
+            <button type="submit" class="footer-newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-copy">© 2026 Stackly. All rights reserved. Designed for financial clarity and wealth tracking.</div>
+        <div class="footer-bottom-nav">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+

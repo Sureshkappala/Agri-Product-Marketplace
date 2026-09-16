@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Field Not Found (404) - AgriDirect Marketplace</title>
+  <meta name="description" content="The agricultural page you were searching for cannot be found. Return to the marketplace home or browse fresh seasonal harvests.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:var(--cream); min-height:100vh; display:flex; flex-direction:column;">
+
+
+  <!-- 404 Main Content -->
+  <main style="flex:1; display:flex; align-items:center; justify-content:center; padding:4rem 1.5rem; text-align:center;">
+    <div class="container" style="max-width:680px;">
+      
+      <div style="position:relative; width:200px; height:200px; margin:0 auto 2rem; border-radius:50%; overflow:hidden; border:6px solid var(--white); box-shadow:var(--shadow-xl);">
+        <img src="assets/images/error-404.webp" alt="Empty fertile field" style="width:100%; height:100%; object-fit:cover;">
+        <div style="position:absolute; inset:0; background:rgba(27,67,50,0.35); display:flex; align-items:center; justify-content:center;">
+          <span style="font-size:3.2rem; font-weight:800; color:var(--white); font-family:var(--font-heading); text-shadow:0 2px 8px rgba(0,0,0,0.5);">404</span>
+        </div>
+      </div>
+
+      <span class="badge badge-warning mb-2" style="font-size:0.9rem;">UNCULTIVATED GROUND</span>
+      <h1 style="font-size:2.4rem; color:var(--primary-dark); margin-bottom:1rem;">This Field Hasn't Been Planted Yet</h1>
+      <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.7; margin-bottom:2rem;">
+        The harvest page, product SKU, or farm route you are searching for might have moved with the seasons or does not exist.
+      </p>
+
+      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
+        <a href="index.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-house"></i> Return to Homepage</a>
+        <button type="button" class="btn btn-outline btn-lg" onclick="if(window.history.length > 1){ window.history.back(); } else { window.location.href='index.html'; }"><i class="fa-solid fa-arrow-left"></i> Go Back</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Minimal Copyright Bar -->
+  <footer style="padding: 1.25rem 0; text-align: center; font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid var(--border); background: var(--white);">
+    <div class="container">
+      © 2026 AgriDirect Marketplace • All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+

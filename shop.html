@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Agricultural Archive · Curated Shop - AgriMarket</title>
+  <meta name="description" content="Explore certified organic seeds, bio-regenerative fertilizers, handcrafted agronomy tools, precision solar irrigation, and fresh harvests directly from verified family farms.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Announcement Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <span>🌱 100% Traceable Biological Agriculture</span>
+        <span>🚚 Complimentary Regional Freight On Orders Over $75</span>
+      </div>
+      <div class="topbar-right">
+        <span>Agronomy Desk: +1 (800) 555-AGRI</span>
+        <a href="seller-dashboard.html">Farmer Producer Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img">
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="shop.html" class="nav-link active">Shop</a>
+          <a href="categories.html" class="nav-link">Categories</a>
+          <a href="farmers.html" class="nav-link">Farmers</a>
+          <a href="product-details.html" class="nav-link">Products</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="shop.html" class="action-icon-btn" aria-label="Search Marketplace">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </a>
+          <a href="wishlist.html" class="action-icon-btn" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+            <span class="action-badge wishlist-count-badge">0</span>
+          </a>
+          <a href="cart.html" class="action-icon-btn" aria-label="Shopping Cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg>
+            <span class="action-badge cart-count-badge">0</span>
+          </a>
+          <a href="login.html" class="btn btn-sm btn-primary">Sign In</a>
+          <button class="hamburger-btn" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img">
+      </div>
+      <button class="mobile-drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+
+    <!-- Search in Drawer -->
+    <div class="mobile-drawer-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search catalog..." onkeydown="if(event.key==='Enter') window.location.href='shop.html?search='+encodeURIComponent(this.value)">
+    </div>
+
+    <nav class="mobile-drawer-links">
+      <a href="index.html">Home <span>→</span></a>
+      <a href="about.html">About Us <span>→</span></a>
+      <a href="shop.html" class="active">Shop Catalog <span>—</span></a>
+      <a href="categories.html">All Categories <span>→</span></a>
+      <a href="farmers.html">Meet Farmers <span>→</span></a>
+      <a href="product-details.html">Product Spotlight <span>→</span></a>
+      <a href="contact.html">Customer Contact <span>→</span></a>
+    </nav>
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn btn-primary">Login</a>
+      <a href="user-dashboard.html" class="btn btn-outline">My Account</a>
+      <div class="mobile-drawer-info">
+        <div class="drawer-info-label">Direct Farm Concierge</div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Call:</span>
+          <span class="drawer-info-val">+1 (800) 555-AGRI</span>
+        </div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Email:</span>
+          <span class="drawer-info-val">concierge@stackly.com</span>
+        </div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Hubs:</span>
+          <span class="drawer-info-val">California • Oregon • Midwest • Texas</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 1. EDITORIAL LUXURY HERO BANNER -->
+  <section class="shop-hero-luxury">
+    <div class="container">
+      <div class="shop-hero-tag">
+        <i class="fa-solid fa-seedling"></i> The Harvest Archive · Autumn / Winter 2026
+      </div>
+      <h1 class="shop-hero-title">Curated Biological Agriculture</h1>
+      <p class="shop-hero-desc">
+        Direct-from-grower certified organic inputs, heirloom seed vaults, bio-active microbial amendments, handcrafted farm tools, and smart solar irrigation systems.
+      </p>
+      <div class="shop-hero-badges">
+        <div class="hero-chip"><i class="fa-solid fa-check"></i> 150+ Verified Growers</div>
+        <div class="hero-chip"><i class="fa-solid fa-shield-halved"></i> 100% Non-GMO & Chemical Free</div>
+        <div class="hero-chip"><i class="fa-solid fa-truck-fast"></i> Fresh Dew Dispatch</div>
+        <div class="hero-chip"><i class="fa-solid fa-microscope"></i> Lab Germination Assayed</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. STICKY LUXURY TOOLBAR (HORIZONTAL PILL NAV + CONTROLS) -->
+  <div class="shop-toolbar-sticky">
+    <div class="container">
+      
+      <!-- Horizontal Category Filter Pills -->
+      <div class="category-pills-scroll" id="categoryPillBar">
+        <button class="pill-btn active" data-category="all">
+          <i class="fa-solid fa-border-all"></i> All Collections <span class="pill-count" id="countAll">12</span>
+        </button>
+        <button class="pill-btn" data-category="seeds">
+          🌱 Seeds & Grains <span class="pill-count">3</span>
+        </button>
+        <button class="pill-btn" data-category="fertilizers">
+          🧪 Bio Fertilizers <span class="pill-count">2</span>
+        </button>
+        <button class="pill-btn" data-category="tools">
+          ⚒️ Farm Tools <span class="pill-count">3</span>
+        </button>
+        <button class="pill-btn" data-category="produce">
+          🥕 Fresh Produce <span class="pill-count">1</span>
+        </button>
+        <button class="pill-btn" data-category="equipment">
+          🚜 Equipment <span class="pill-count">2</span>
+        </button>
+        <button class="pill-btn" data-category="pesticides">
+          🍃 Bio Pesticides <span class="pill-count">1</span>
+        </button>
+        <button class="pill-btn" data-category="irrigation">
+          💧 Smart Irrigation <span class="pill-count">1</span>
+        </button>
+      </div>
+
+      <!-- Utility Search, Filter Drawer Trigger, View Switcher & Sort -->
+      <div class="shop-utility-bar">
+        
+        <!-- Live Search Box -->
+        <div class="search-box-luxury">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="shopSearchInput" placeholder="Search crops, seeds, fertilizers, or farmer name..." aria-label="Search catalog">
+          <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear search"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <!-- Filter Trigger & Controls Right -->
+        <div class="utility-actions-right">
+          
+          <!-- Filter Drawer Trigger Button -->
+          <button class="filter-drawer-trigger" id="openFilterDrawerBtn">
+            <i class="fa-solid fa-sliders"></i>
+            <span>Filter & Refine</span>
+            <span class="filter-badge-active" id="activeFilterBadge" style="display:none;">0</span>
+          </button>
+
+          <!-- Grid Density Switcher -->
+          <div class="view-switcher">
+            <button class="view-btn active" id="viewGrid4" title="4 Columns"><i class="fa-solid fa-table-cells"></i></button>
+            <button class="view-btn" id="viewGrid3" title="3 Columns Editorial"><i class="fa-solid fa-table-cells-large"></i></button>
+          </div>
+
+          <!-- Product Counter -->
+          <span id="productCounter" style="font-size:0.85rem; color:var(--text-muted); font-weight:600; white-space:nowrap;">Showing 12 Items</span>
+
+          <!-- Sort Select -->
+          <select id="sortSelect" class="luxury-sort-select" aria-label="Sort products">
+            <option value="featured">Featured Curations</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Highest Rated (★)</option>
+            <option value="newest">Newest Harvests</option>
+          </select>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. OFF-CANVAS FILTER DRAWER -->
+  <div class="shop-drawer-backdrop" id="filterDrawerBackdrop"></div>
+  <aside class="shop-filter-drawer" id="filterDrawer">
+    
+    <div class="drawer-header">
+      <h3 class="drawer-title"><i class="fa-solid fa-sliders" style="color:var(--primary);"></i> Refine Harvests</h3>
+      <button class="drawer-close-btn" id="closeFilterDrawerBtn" aria-label="Close filter drawer">&times;</button>
+    </div>
+
+    <div class="drawer-body">
+      
+      <!-- Max Price Slider -->
+      <div>
+        <div class="drawer-section-title">
+          <span>Max Price Threshold</span>
+          <span id="drawerPriceDisplay" style="color:var(--primary); font-size:1rem;">$300</span>
+        </div>
+        <input type="range" id="priceRange" class="price-range-slider" min="15" max="300" value="300" step="5" style="width:100%;">
+        <div class="price-values" style="display:flex; justify-content:space-between; font-size:0.78rem; color:var(--text-muted); margin-top:0.35rem;">
+          <span>$15</span>
+          <span>$150</span>
+          <span>$300</span>
+        </div>
+      </div>
+
+      <!-- Categories Filter Chips -->
+      <div>
+        <div class="drawer-section-title">Categories</div>
+        <div class="drawer-chips-grid">
+          <label class="drawer-chip-checkbox"><input type="checkbox" name="catFilter" value="seeds"> <span>Seeds (3)</span></label>
+          <label class="drawer-chip-checkbox"><input type="checkbox" name="catFilter" value="fertilizers"> <span>Fertilizers (2)</span></label>
+          <label class="drawer-chip-checkbox"><input type="checkbox" name="catFilter" value="tools"> <span>Tools (3)</span></label>
+          <label class="drawer-chip-checkbox"><input type="checkbox" name="catFilter" value="produce"> <span>Produce (1)</span></label>
+          <label class="drawer-chip-checkbox"><input type="checkbox" name="catFilter" value="equipment"> <span>Equipment (2)</span></label>
+          <label class="drawer-chip-checkbox"><input type="checkbox" name="catFilter" value="pesticides"> <span>Pesticides (1)</span></label>
+          <label class="drawer-chip-checkbox"><input type="checkbox" name="catFilter" value="irrigation"> <span>Irrigation (1)</span></label>
+        </div>
+      </div>
+
+      <!-- Certifications / Badges -->
+      <div>
+        <div class="drawer-section-title">Certifications & Badges</div>
+        <div class="drawer-chips-grid">
+          <label class="drawer-chip-checkbox"><input type="checkbox" name="badgeFilter" value="organic"> <span>🌿 100% Organic</span></label>
+          <label class="drawer-chip-checkbox"><input type="checkbox" name="badgeFilter" value="sale"> <span>🏷️ On Sale</span></label>
+          <label class="drawer-chip-checkbox"><input type="checkbox" name="badgeFilter" value="certified"> <span>⭐ Certified Pure</span></label>
+          <label class="drawer-chip-checkbox"><input type="checkbox" name="badgeFilter" value="top"> <span>🏆 Top Rated</span></label>
+        </div>
+      </div>
+
+      <!-- Minimum Rating -->
+      <div>
+        <div class="drawer-section-title">Minimum Rating</div>
+        <div class="drawer-chips-grid">
+          <label class="drawer-chip-checkbox"><input type="radio" name="ratingFilter" value="0" checked> <span>All Ratings</span></label>
+          <label class="drawer-chip-checkbox"><input type="radio" name="ratingFilter" value="4.8"> <span>★ 4.8 & Above</span></label>
+          <label class="drawer-chip-checkbox"><input type="radio" name="ratingFilter" value="4.5"> <span>★ 4.5 & Above</span></label>
+          <label class="drawer-chip-checkbox"><input type="radio" name="ratingFilter" value="4.0"> <span>★ 4.0 & Above</span></label>
+        </div>
+      </div>
+
+      <!-- In Stock Toggle -->
+      <div style="background:var(--cream-surface); padding:1rem; border-radius:12px; border:1px solid var(--border);">
+        <label style="display:flex; align-items:center; justify-content:space-between; cursor:pointer; font-weight:600; font-size:0.9rem; color:var(--text-dark);">
+          <span>Ready for Dispatch Only</span>
+          <input type="checkbox" id="inStockOnly" checked style="width:18px; height:18px; accent-color:var(--primary);">
+        </label>
+      </div>
+
+    </div>
+
+    <div class="drawer-footer">
+      <button class="btn btn-outline btn-full" id="resetFiltersBtn" style="font-size:0.85rem;">Clear All</button>
+      <button class="btn btn-primary btn-full" id="applyFiltersBtn" style="font-size:0.85rem;">Apply Filters</button>
+    </div>
+
+  </aside>
+
+  <!-- 4. PRODUCT CATALOG GRID -->
+  <main class="container" style="margin-bottom: 5rem;">
+    
+    <!-- Dynamic Product Grid -->
+    <div class="product-grid grid-cols-4" id="shopProductGrid">
+      <!-- Injected dynamically via JS -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="noProductsFound" style="display:none; text-align:center; padding: 5rem 2rem; background:var(--white); border-radius:20px; border:1.5px solid var(--border); box-shadow:0 4px 20px rgba(0,0,0,0.03);">
+      <div style="width:72px; height:72px; border-radius:50%; background:var(--cream-surface); color:var(--text-muted); display:flex; align-items:center; justify-content:center; font-size:2rem; margin:0 auto 1.5rem;">
+        <i class="fa-solid fa-wheat-awn-circle-exclamation"></i>
+      </div>
+      <h3 style="font-size:1.6rem; color:var(--primary-dark); margin-bottom:0.5rem;">No Harvests Matching Selected Attributes</h3>
+      <p style="color:var(--text-muted); max-width:480px; margin:0 auto 1.75rem; font-size:0.95rem; line-height:1.6;">
+        Try resetting your search query, clearing filter chips, or increasing the max price threshold.
+      </p>
+      <button class="btn btn-primary" onclick="window.resetAllFilters()">
+        <i class="fa-solid fa-rotate-left"></i> Reset All Filters
+      </button>
+    </div>
+
+  </main>
+
+  <!-- 5. EDITORIAL CURATED BUNDLES SPOTLIGHT -->
+  <section class="section-padding" style="background-color: var(--cream-surface); border-top: 1.5px solid var(--border); border-bottom: 1.5px solid var(--border);">
+    <div class="container">
+      
+      <div class="section-header text-center" style="max-width: 720px; margin: 0 auto 3rem;">
+        <span class="badge-leaf">Agronomy Pairings</span>
+        <h2 style="font-size: 2.25rem; color: var(--primary-dark); margin-top: 0.5rem;">Curated Seasonal Farm Kits</h2>
+        <p style="color: var(--text-muted); font-size: 1rem;">Complete bio-regenerative agriculture kits bundled by agronomists with 20% package savings.</p>
+      </div>
+
+      <div class="grid grid-3" style="gap: 2rem;">
+        
+        <!-- Bundle 1 -->
+        <div class="bundle-card-luxury">
+          <div class="bundle-thumb-wrap">
+            <img src="assets/images/prod-veg-seeds.webp" alt="Spring Heirloom Seedling Bundle" loading="lazy">
+            <div class="product-badges"><span class="product-badge badge-sale">Save 22%</span></div>
+          </div>
+          <div class="bundle-body-luxury">
+            <div class="product-category">Complete Seed Vault</div>
+            <h3 style="font-size:1.25rem; color:var(--primary-dark); margin-bottom:0.6rem; font-weight:700;">Spring Heirloom Planting Kit</h3>
+            <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem; flex:1;">
+              15 non-hybrid heirloom vegetable seed varieties, 5kg worm castings biological booster, and titanium pruning shears in a reinforced canvas field pouch.
+            </p>
+            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-light); padding-top:1rem; margin-top:auto;">
+              <div>
+                <span style="font-size:1.4rem; font-weight:800; color:var(--primary-dark);">$59.99</span>
+                <span style="font-size:0.85rem; color:var(--text-muted); text-decoration:line-through; margin-left:0.35rem;">$74.99</span>
+              </div>
+              <button class="btn btn-sm btn-primary" onclick="AgriCart.addItem(1); AgriCart.addItem(3); AgriToast.show('Spring Planting Bundle added to cart!', 'success');">
+                <i class="fa-solid fa-basket-shopping"></i> Add Bundle
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bundle 2 -->
+        <div class="bundle-card-luxury">
+          <div class="bundle-thumb-wrap">
+            <img src="assets/images/prod-organic-fertilizer.webp" alt="Bio-Active Soil Vitality Pack" loading="lazy">
+            <div class="product-badges"><span class="product-badge badge-organic">Regenerative</span></div>
+          </div>
+          <div class="bundle-body-luxury">
+            <div class="product-category">Soil Nutrition & Immunity</div>
+            <h3 style="font-size:1.25rem; color:var(--primary-dark); margin-bottom:0.6rem; font-weight:700;">Soil Vitality & Bio-NPK Pack</h3>
+            <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem; flex:1;">
+              25kg microbial compost enriched with humic minerals, 1L botanical neem concentrate, and a 4-in-1 digital soil probe for complete rootzone optimization.
+            </p>
+            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-light); padding-top:1rem; margin-top:auto;">
+              <div>
+                <span style="font-size:1.4rem; font-weight:800; color:var(--primary-dark);">$89.50</span>
+                <span style="font-size:0.85rem; color:var(--text-muted); text-decoration:line-through; margin-left:0.35rem;">$110.00</span>
+              </div>
+              <button class="btn btn-sm btn-primary" onclick="AgriCart.addItem(2); AgriCart.addItem(6); AgriToast.show('Soil Vitality Pack added to cart!', 'success');">
+                <i class="fa-solid fa-basket-shopping"></i> Add Bundle
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bundle 3 -->
+        <div class="bundle-card-luxury">
+          <div class="bundle-thumb-wrap">
+            <img src="assets/images/prod-drip-kit.webp" alt="Solar Micro-Irrigation Bundle" loading="lazy">
+            <div class="product-badges"><span class="product-badge badge-leaf">Smart Tech</span></div>
+          </div>
+          <div class="bundle-body-luxury">
+            <div class="product-category">Precision Water Automation</div>
+            <h3 style="font-size:1.25rem; color:var(--primary-dark); margin-bottom:0.6rem; font-weight:700;">Solar Irrigation & Sensor Kit</h3>
+            <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem; flex:1;">
+              50m micro-drip line with 40 adjustable root emitters, solar timer controller, and multiparameter soil moisture sensor for 70% water savings.
+            </p>
+            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-light); padding-top:1rem; margin-top:auto;">
+              <div>
+                <span style="font-size:1.4rem; font-weight:800; color:var(--primary-dark);">$149.00</span>
+                <span style="font-size:0.85rem; color:var(--text-muted); text-decoration:line-through; margin-left:0.35rem;">$185.00</span>
+              </div>
+              <button class="btn btn-sm btn-primary" onclick="AgriCart.addItem(4); AgriCart.addItem(8); AgriToast.show('Solar Irrigation Kit added to cart!', 'success');">
+                <i class="fa-solid fa-basket-shopping"></i> Add Bundle
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. QUALITY & INTEGRITY PILLARS -->
+  <section class="section-padding" style="background-color: var(--white);">
+    <div class="container">
+      
+      <div class="section-header text-center" style="max-width: 680px; margin: 0 auto 3.5rem;">
+        <span class="badge-leaf">Quality Standards</span>
+        <h2 style="font-size: 2.25rem; color: var(--primary-dark); margin-top: 0.5rem;">The Biological Integrity Standard</h2>
+        <p style="color: var(--text-muted); font-size: 1rem;">Every agricultural batch on AgriMarket adheres to rigorous purity and traceability standards.</p>
+      </div>
+
+      <div class="grid grid-3" style="gap: 2rem;">
+        
+        <div class="quality-pillar-card">
+          <div style="width:56px; height:56px; border-radius:50%; background:var(--cream-surface); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin:0 auto 1.25rem; border:1px solid var(--border);">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h3 style="font-size:1.2rem; color:var(--primary-dark); margin-bottom:0.6rem; font-weight:700;">95%+ Germination Certified</h3>
+          <p style="color:var(--text-muted); font-size:0.88rem; line-height:1.65; margin:0;">
+            Seed lots undergo climate-chamber germination trials and non-GMO purity verification before listing in the catalog.
+          </p>
+        </div>
+
+        <div class="quality-pillar-card">
+          <div style="width:56px; height:56px; border-radius:50%; background:var(--cream-surface); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin:0 auto 1.25rem; border:1px solid var(--border);">
+            <i class="fa-solid fa-flask-vial"></i>
+          </div>
+          <h3 style="font-size:1.2rem; color:var(--primary-dark); margin-bottom:0.6rem; font-weight:700;">Zero Synthetic Chemical Residue</h3>
+          <p style="color:var(--text-muted); font-size:0.88rem; line-height:1.65; margin:0;">
+            Bio-fertilizers and composts are screened for weedicides, synthetic fungicides, and heavy metals to ensure living soil micro-ecology.
+          </p>
+        </div>
+
+        <div class="quality-pillar-card">
+          <div style="width:56px; height:56px; border-radius:50%; background:var(--cream-surface); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin:0 auto 1.25rem; border:1px solid var(--border);">
+            <i class="fa-solid fa-box-open"></i>
+          </div>
+          <h3 style="font-size:1.2rem; color:var(--primary-dark); margin-bottom:0.6rem; font-weight:700;">Thermal Protective Packaging</h3>
+          <p style="color:var(--text-muted); font-size:0.88rem; line-height:1.65; margin:0;">
+            Fresh produce and living biological cultures are shipped in insulated biodegradable liners to avoid ambient heat degradation.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <a href="index.html">
+              <img src="assets/images/logo-light.webp" alt="Stackly" class="footer-logo">
+            </a>
+          </div>
+          <p class="footer-desc">Direct agricultural curation, certified organic inputs, living fertilizers, and precision farm equipment dispatched directly from verified regional growers.</p>
+          <div class="footer-social-icons">
+            <a href="404.html" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Marketplace</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About AgriMarket</a>
+            <a href="shop.html">Shop Catalog</a>
+            <a href="categories.html">All Categories</a>
+            <a href="farmers.html">Farmers Directory</a>
+            <a href="farmer-store.html">Featured Storefront</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Customer Care</h4>
+          <div class="footer-links">
+            <a href="contact.html">Agronomy Consultation</a>
+            <a href="user-dashboard.html">Order Status</a>
+            <a href="user-dashboard.html">Buyer Dashboard</a>
+            <a href="seller-dashboard.html">Farmer Storefront</a>
+            <a href="404.html">Shipping Guidelines</a>
+            <a href="404.html">Germination Guarantee</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Agronomy Newsletter</h4>
+          <p class="footer-newsletter-text">Receive monthly harvest alerts, seasonal planting calendars, and regional agronomy reports.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); window.AgriToast.show('Subscribed to AgriMarket dispatch alerts!', 'success'); this.reset();">
+            <input type="email" placeholder="Enter your email" required class="footer-newsletter-input" aria-label="Your Email">
+            <button type="submit" class="footer-newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-copy">© 2026 AgriMarket. All rights reserved. Cultivating biological clarity and direct-farm traceability.</div>
+        <div class="footer-bottom-nav">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Sale</a>
+          <a href="404.html">Soil Quality Charter</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="js/script.js"></script>
+  <script>
+    // LUXURY SHOP INTERACTION ENGINE
+    document.addEventListener('DOMContentLoaded', () => {
+      const productList = (window.AgriData && window.AgriData.products) ? window.AgriData.products : [];
+      
+      const grid = document.getElementById('shopProductGrid');
+      const emptyState = document.getElementById('noProductsFound');
+      const searchInput = document.getElementById('shopSearchInput');
+      const searchClearBtn = document.getElementById('searchClearBtn');
+      const sortSelect = document.getElementById('sortSelect');
+      const productCounter = document.getElementById('productCounter');
+      const countAll = document.getElementById('countAll');
+      const categoryPills = document.querySelectorAll('#categoryPillBar .pill-btn');
+      
+      // Drawer elements
+      const filterDrawer = document.getElementById('filterDrawer');
+      const filterDrawerBackdrop = document.getElementById('filterDrawerBackdrop');
+      const openDrawerBtn = document.getElementById('openFilterDrawerBtn');
+      const closeDrawerBtn = document.getElementById('closeFilterDrawerBtn');
+      const applyFiltersBtn = document.getElementById('applyFiltersBtn');
+      const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+      const activeFilterBadge = document.getElementById('activeFilterBadge');
+      
+      const priceSlider = document.getElementById('priceRange');
+      const drawerPriceDisplay = document.getElementById('drawerPriceDisplay');
+      const inStockCheck = document.getElementById('inStockOnly');
+      const categoryChecks = document.querySelectorAll('input[name="catFilter"]');
+      const badgeChecks = document.querySelectorAll('input[name="badgeFilter"]');
+      const ratingRadios = document.querySelectorAll('input[name="ratingFilter"]');
+
+      // View density buttons
+      const viewGrid4 = document.getElementById('viewGrid4');
+      const viewGrid3 = document.getElementById('viewGrid3');
+
+      let currentCategory = 'all';
+
+      if (countAll) countAll.textContent = productList.length;
+
+      // URL parameters check
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialCat = urlParams.get('cat');
+      const initialSearch = urlParams.get('search');
+
+      if (initialCat) {
+        currentCategory = initialCat.toLowerCase();
+        categoryPills.forEach(pill => {
+          if (pill.getAttribute('data-category').toLowerCase() === currentCategory) {
+            categoryPills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+          }
+        });
+        categoryChecks.forEach(cb => {
+          if (cb.value.toLowerCase() === currentCategory) cb.checked = true;
+        });
+      }
+
+      if (initialSearch && searchInput) {
+        searchInput.value = initialSearch;
+        if (searchClearBtn) searchClearBtn.style.display = 'block';
+      }
+
+      // Drawer Open / Close Handlers
+      function openDrawer() {
+        if (filterDrawer) filterDrawer.classList.add('active');
+        if (filterDrawerBackdrop) filterDrawerBackdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDrawer() {
+        if (filterDrawer) filterDrawer.classList.remove('active');
+        if (filterDrawerBackdrop) filterDrawerBackdrop.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (openDrawerBtn) openDrawerBtn.addEventListener('click', openDrawer);
+      if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+      if (filterDrawerBackdrop) filterDrawerBackdrop.addEventListener('click', closeDrawer);
+      if (applyFiltersBtn) applyFiltersBtn.addEventListener('click', () => {
+        closeDrawer();
+        renderProducts();
+      });
+
+      // View Switcher Handlers
+      if (viewGrid4 && viewGrid3 && grid) {
+        viewGrid4.addEventListener('click', () => {
+          grid.className = 'product-grid grid-cols-4';
+          viewGrid4.classList.add('active');
+          viewGrid3.classList.remove('active');
+        });
+        viewGrid3.addEventListener('click', () => {
+          grid.className = 'product-grid grid-cols-3';
+          viewGrid3.classList.add('active');
+          viewGrid4.classList.remove('active');
+        });
+      }
+
+      // Category Pills Click
+      categoryPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          categoryPills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          currentCategory = pill.getAttribute('data-category');
+          
+          // Sync drawer checkboxes
+          categoryChecks.forEach(cb => {
+            if (currentCategory === 'all') {
+              cb.checked = false;
+            } else {
+              cb.checked = (cb.value === currentCategory);
+            }
+          });
+
+          renderProducts();
+        });
+      });
+
+      // Price slider display
+      if (priceSlider && drawerPriceDisplay) {
+        priceSlider.addEventListener('input', () => {
+          drawerPriceDisplay.textContent = `$${priceSlider.value}`;
+          renderProducts();
+        });
+      }
+
+      // Search input clear button
+      if (searchInput && searchClearBtn) {
+        searchInput.addEventListener('input', () => {
+          searchClearBtn.style.display = searchInput.value ? 'block' : 'none';
+          renderProducts();
+        });
+        searchClearBtn.addEventListener('click', () => {
+          searchInput.value = '';
+          searchClearBtn.style.display = 'none';
+          renderProducts();
+        });
+      }
+
+      // Core Render Function
+      function renderProducts() {
+        const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+        const maxPrice = priceSlider ? Number(priceSlider.value) : 1000;
+        
+        // Active drawer category checks
+        const drawerCats = Array.from(categoryChecks || []).filter(c => c.checked).map(c => c.value);
+        const drawerBadges = Array.from(badgeChecks || []).filter(b => b.checked).map(b => b.value.toLowerCase());
+        
+        let minRating = 0;
+        if (ratingRadios) {
+          ratingRadios.forEach(r => {
+            if (r.checked) minRating = parseFloat(r.value) || 0;
+          });
+        }
+        
+        const inStockOnly = inStockCheck ? inStockCheck.checked : false;
+
+        // Calculate active filter count for badge
+        let activeFiltersCount = 0;
+        if (drawerCats.length > 0) activeFiltersCount += drawerCats.length;
+        if (drawerBadges.length > 0) activeFiltersCount += drawerBadges.length;
+        if (maxPrice < 300) activeFiltersCount += 1;
+        if (minRating > 0) activeFiltersCount += 1;
+        if (currentCategory !== 'all') activeFiltersCount += 1;
+
+        if (activeFilterBadge) {
+          if (activeFiltersCount > 0) {
+            activeFilterBadge.textContent = activeFiltersCount;
+            activeFilterBadge.style.display = 'inline-flex';
+          } else {
+            activeFilterBadge.style.display = 'none';
+          }
+        }
+
+        // Filtering
+        let filtered = productList.filter(p => {
+          // Category matching
+          if (drawerCats.length > 0) {
+            if (!drawerCats.includes(p.category)) return false;
+          } else if (currentCategory !== 'all') {
+            if (p.category !== currentCategory) return false;
+          }
+
+          // Search matching
+          if (query) {
+            const matchName = (p.name || '').toLowerCase().includes(query);
+            const matchCat = (p.categoryName || p.category || '').toLowerCase().includes(query);
+            const matchSeller = (p.seller || '').toLowerCase().includes(query);
+            const matchCrops = (p.suitableCrops || '').toLowerCase().includes(query);
+            if (!matchName && !matchCat && !matchSeller && !matchCrops) return false;
+          }
+
+          // Price matching
+          if (p.price > maxPrice) return false;
+
+          // Rating matching
+          if (minRating > 0 && p.rating < minRating) return false;
+
+          // In-Stock matching
+          if (inStockOnly && p.inStock === false) return false;
+
+          // Badge matching
+          if (drawerBadges.length > 0) {
+            const pBadge = (p.badge || '').toLowerCase();
+            const matchesBadge = drawerBadges.some(b => pBadge.includes(b));
+            if (!matchesBadge) return false;
+          }
+
+          return true;
+        });
+
+        // Sorting
+        const sortVal = sortSelect ? sortSelect.value : 'featured';
+        if (sortVal === 'price-low') {
+          filtered.sort((a, b) => a.price - b.price);
+        } else if (sortVal === 'price-high') {
+          filtered.sort((a, b) => b.price - a.price);
+        } else if (sortVal === 'rating') {
+          filtered.sort((a, b) => b.rating - a.rating);
+        } else if (sortVal === 'newest') {
+          filtered.sort((a, b) => b.id - a.id);
+        }
+
+        if (productCounter) {
+          productCounter.textContent = `Showing ${filtered.length} of ${productList.length} Items`;
+        }
+
+        if (!grid) return;
+        grid.innerHTML = '';
+
+        if (filtered.length === 0) {
+          if (emptyState) emptyState.style.display = 'block';
+        } else {
+          if (emptyState) emptyState.style.display = 'none';
+
+          filtered.forEach(p => {
+            const isWish = (window.AgriWishlist && window.AgriWishlist.has) ? window.AgriWishlist.has(p.id) : false;
+            
+            let badgeClass = 'badge-leaf';
+            if (p.badge) {
+              const bLower = p.badge.toLowerCase();
+              if (bLower.includes('sale')) badgeClass = 'badge-sale';
+              else if (bLower.includes('organic') || bLower.includes('eco')) badgeClass = 'badge-organic';
+              else if (bLower.includes('top') || bLower.includes('popular')) badgeClass = 'badge-category';
+            }
+
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+              <div class="product-thumb">
+                <img src="${p.image}" alt="${p.name}" loading="lazy">
+                <div class="product-badges">
+                  ${p.badge ? `<span class="product-badge ${badgeClass}">${p.badge}</span>` : ''}
+                </div>
+                <div class="product-actions">
+                  <button class="product-action-btn ${isWish ? 'active' : ''}" data-id="${p.id}" aria-label="Add to Wishlist">
+                    <i class="fa-${isWish ? 'solid' : 'regular'} fa-heart"></i>
+                  </button>
+                </div>
+                <div class="product-hover-add">
+                  <button class="btn-quick-add" data-id="${p.id}">
+                    <i class="fa-solid fa-cart-plus"></i> Quick Add
+                  </button>
+                </div>
+              </div>
+              <div class="product-body">
+                <div class="product-category">${p.categoryName || p.category} · ${p.origin || 'USA'}</div>
+                <h3 class="product-title"><a href="product-details.html?id=${p.id}">${p.name}</a></h3>
+                <div class="product-seller">By <a href="farmer-store.html?id=${p.sellerId || 1}">${p.seller}</a></div>
+                <div class="product-rating">
+                  <span class="rating-stars" style="color: var(--accent-orange); font-size: 0.85rem;">★★★★★</span>
+                  <strong>${p.rating}</strong>
+                  <span class="rating-count">(${p.reviews})</span>
+                </div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    <span class="price-current">$${p.price.toFixed(2)}</span>
+                    ${p.oldPrice ? `<span class="price-original">$${p.oldPrice.toFixed(2)}</span>` : ''}
+                    <span class="product-unit">/ ${p.unit}</span>
+                  </div>
+                  <button class="btn btn-sm btn-primary add-to-cart-btn" data-id="${p.id}">
+                    <i class="fa-solid fa-basket-shopping"></i> Add
+                  </button>
+                </div>
+              </div>
+            `;
+
+            // Bind click events on card
+            const wishBtn = card.querySelector('.product-action-btn');
+            if (wishBtn) {
+              wishBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (window.AgriWishlist) {
+                  const active = window.AgriWishlist.toggleItem(p.id);
+                  wishBtn.classList.toggle('active', active);
+                  const icon = wishBtn.querySelector('i');
+                  if (icon) {
+                    icon.className = active ? 'fa-solid fa-heart' : 'fa-regular fa-heart';
+                  }
+                }
+              });
+            }
+
+            const quickAddBtn = card.querySelector('.btn-quick-add');
+            if (quickAddBtn) {
+              quickAddBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (window.AgriCart) window.AgriCart.addItem(p.id, 1);
+              });
+            }
+
+            const footerAddBtn = card.querySelector('.add-to-cart-btn');
+            if (footerAddBtn) {
+              footerAddBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (window.AgriCart) window.AgriCart.addItem(p.id, 1);
+              });
+            }
+
+            grid.appendChild(card);
+          });
+        }
+      }
+
+      window.resetAllFilters = function() {
+        if (searchInput) searchInput.value = '';
+        if (searchClearBtn) searchClearBtn.style.display = 'none';
+        if (priceSlider) priceSlider.value = 300;
+        if (drawerPriceDisplay) drawerPriceDisplay.textContent = '$300';
+        if (categoryChecks) categoryChecks.forEach(c => c.checked = false);
+        if (badgeChecks) badgeChecks.forEach(b => b.checked = false);
+        if (ratingRadios && ratingRadios[0]) ratingRadios[0].checked = true;
+        if (inStockCheck) inStockCheck.checked = true;
+        if (sortSelect) sortSelect.value = 'featured';
+
+        currentCategory = 'all';
+        categoryPills.forEach(p => {
+          if (p.getAttribute('data-category') === 'all') p.classList.add('active');
+          else p.classList.remove('active');
+        });
+
+        closeDrawer();
+        renderProducts();
+      };
+
+      if (sortSelect) sortSelect.addEventListener('change', renderProducts);
+      if (categoryChecks) categoryChecks.forEach(c => c.addEventListener('change', renderProducts));
+      if (badgeChecks) badgeChecks.forEach(b => b.addEventListener('change', renderProducts));
+      if (ratingRadios) ratingRadios.forEach(r => r.addEventListener('change', renderProducts));
+      if (inStockCheck) inStockCheck.addEventListener('change', renderProducts);
+      if (resetFiltersBtn) resetFiltersBtn.addEventListener('click', window.resetAllFilters);
+
+      // Initial Render
+      renderProducts();
+    });
+  </script>
+</body>
+</html>

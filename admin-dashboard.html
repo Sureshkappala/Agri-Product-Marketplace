@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agronomy Admin Portal - AgriDirect Marketplace</title>
+  <meta name="description" content="Platform administration, farmer accreditation approvals, transaction monitoring, and category analytics for AgriDirect.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:#f4f7f6; margin:0; padding:0;">
+
+  <!-- APP DASHBOARD LAYOUT -->
+  <div class="app-dashboard-layout">
+    
+    <!-- BACKDROP FOR MOBILE SIDEBAR -->
+    <div class="dash-sidebar-backdrop" id="dashBackdrop" onclick="toggleDashSidebar(false);"></div>
+
+    <!-- LEFT DARK APP SIDEBAR -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <!-- Logo & Mobile Close -->
+      <div class="dash-sidebar-header">
+        <a href="admin-dashboard.html" class="dash-logo-wrap" style="text-decoration:none;" title="Central Agronomy Dashboard">
+          <img src="assets/images/logo-light.webp" alt="Stackly" style="height:42px; max-width:190px; object-fit:contain;">
+        </a>
+        <button class="dash-sidebar-close" onclick="toggleDashSidebar(false);" aria-label="Close Navigation">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Section -->
+      <div class="dash-nav-label">AGRONOMY OPS CONSOLE</div>
+      <nav class="dash-nav-list">
+        <a href="javascript:void(0)" class="dash-nav-item active" data-tab="overview" onclick="switchDashboardTab('overview', this);">
+          <span style="display:inline-flex; align-items:center; gap:0.75rem;">
+            <i class="fa-solid fa-chart-line"></i> Platform KPIs
+          </span>
+        </a>
+        <a href="javascript:void(0)" class="dash-nav-item" data-tab="approvals" onclick="switchDashboardTab('approvals', this);">
+          <span style="display:inline-flex; align-items:center; gap:0.75rem;">
+            <i class="fa-solid fa-user-check"></i> Verifications
+          </span>
+          <span class="badge badge-warning" style="font-size:0.72rem; padding:0.18rem 0.5rem; border-radius:999px;">3 Pending</span>
+        </a>
+        <a href="javascript:void(0)" class="dash-nav-item" data-tab="transactions" onclick="switchDashboardTab('transactions', this);">
+          <span style="display:inline-flex; align-items:center; gap:0.75rem;">
+            <i class="fa-solid fa-money-check-dollar"></i> Live Transactions
+          </span>
+        </a>
+        <a href="javascript:void(0)" class="dash-nav-item" data-tab="quality" onclick="switchDashboardTab('quality', this);">
+          <span style="display:inline-flex; align-items:center; gap:0.75rem;">
+            <i class="fa-solid fa-microscope"></i> Lab Assays & Audits
+          </span>
+        </a>
+        <a href="javascript:void(0)" class="dash-nav-item" data-tab="analytics" onclick="switchDashboardTab('analytics', this);">
+          <span style="display:inline-flex; align-items:center; gap:0.75rem;">
+            <i class="fa-solid fa-layer-group"></i> Sector Analytics
+          </span>
+        </a>
+        <a href="javascript:void(0)" class="dash-nav-item" data-tab="settings" onclick="switchDashboardTab('settings', this);">
+          <span style="display:inline-flex; align-items:center; gap:0.75rem;">
+            <i class="fa-solid fa-gear"></i> Platform Config
+          </span>
+        </a>
+      </nav>
+
+      <!-- Sidebar Bottom Profile -->
+      <div class="dash-sidebar-bottom">
+        <div class="dash-user-card">
+          <div style="width:38px; height:38px; border-radius:50%; background:#0ea5e9; color:#ffffff; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0;">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div style="overflow:hidden;">
+            <div class="dash-user-name" id="adminSidebarName" style="white-space:nowrap; text-overflow:ellipsis; overflow:hidden;">Central Ops</div>
+            <div class="dash-user-role" id="adminSidebarRole">Platform Supervisor</div>
+          </div>
+        </div>
+
+        <a href="login.html" class="dash-logout-link" onclick="localStorage.removeItem('agri_logged_in'); localStorage.removeItem('agri_user_email'); localStorage.removeItem('agri_user_name');">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN DASHBOARD BODY -->
+    <main class="dash-main-area" id="dash-main-container">
+      
+      <!-- TOPBAR -->
+      <div class="dash-topbar">
+        <div class="dash-topbar-left" style="display:flex; align-items:center; gap:0.75rem;">
+          <button class="dash-mobile-toggle" id="dashMobileToggle" onclick="toggleDashSidebar();" aria-label="Open Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div>
+            <h1 class="dash-page-title">Marketplace Integrity & Ops Desk 🛡️</h1>
+            <div class="dash-page-subtitle">September 2026 • Monitoring 2,540 verified producers across 18 logistics corridors</div>
+          </div>
+        </div>
+        <div class="dash-topbar-actions">
+          <a href="index.html" class="btn-hero-outline" style="color:#0f172a; border-color:#cbd5e1; background:#ffffff; display:inline-flex; align-items:center; gap:0.4rem; padding:0.5rem 0.9rem; font-size:0.84rem;">
+            <i class="fa-solid fa-arrow-left" style="color:var(--primary);"></i> Marketplace
+          </a>
+          <button class="btn-quick-expense" onclick="window.AgriToast.show('Full 2026 Platform Agronomy Audit PDF exported successfully!', 'success');">
+            <i class="fa-solid fa-download"></i> Export Audit
+          </button>
+          <div class="dash-icon-btn" title="Ops Alerts">
+            <i class="fa-solid fa-bell"></i>
+            <span style="position:absolute; top:6px; right:6px; width:8px; height:8px; background:#ef4444; border-radius:50%;"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WELCOME HERO BANNER -->
+      <div class="dash-hero-banner">
+        <div>
+          <h2 class="dash-hero-title">Platform Supervisor Desk 👋</h2>
+          <div class="dash-hero-meta" style="display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; margin-top:0.4rem;">
+            <span style="background:rgba(255,255,255,0.08); padding:0.22rem 0.6rem; border-radius:6px; border:1px solid rgba(255,255,255,0.12); font-size:0.78rem;">
+              <i class="fa-solid fa-user-shield" style="color:#38bdf8; margin-right:0.35rem;"></i> Operator: <strong id="adminHeroFullName">Central Ops</strong>
+            </span>
+            <span style="background:rgba(255,255,255,0.08); padding:0.22rem 0.6rem; border-radius:6px; border:1px solid rgba(255,255,255,0.12); font-size:0.78rem;">
+              <i class="fa-solid fa-envelope" style="color:#38bdf8; margin-right:0.35rem;"></i> Email: <strong id="adminHeroEmail">admin@agridirect.com</strong>
+            </span>
+            <span style="background:rgba(255,255,255,0.08); padding:0.22rem 0.6rem; border-radius:6px; border:1px solid rgba(255,255,255,0.12); font-size:0.78rem;">
+              <i class="fa-solid fa-shield-halved" style="color:#10b981; margin-right:0.35rem;"></i> Role: <span class="role-highlight" id="adminHeroRole">Platform Supervisor</span>
+            </span>
+            <span class="dash-session-badge"><i class="fa-solid fa-circle-check"></i> SYSTEM HEALTHY</span>
+          </div>
+        </div>
+        <div class="dash-hero-actions">
+          <button class="btn-hero-outline" onclick="switchDashboardTab('quality');"><i class="fa-solid fa-microscope"></i> Lab Assays</button>
+          <button class="btn-hero-primary" onclick="switchDashboardTab('approvals');"><i class="fa-solid fa-user-check"></i> Review 3 Applicants</button>
+        </div>
+      </div>
+
+      <!-- TAB 1: OVERVIEW & KPIS -->
+      <div class="dashboard-tab-content active" id="tab-overview">
+        
+        <!-- 4 KPI METRIC CARDS -->
+        <div class="dash-kpi-grid">
+          <!-- Card 1 -->
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-title">PLATFORM GROSS VOLUME</span>
+              <span style="background:#e0f2fe; color:#0ea5e9; border-radius:6px; padding:0.3rem 0.55rem; font-size:0.85rem;"><i class="fa-solid fa-chart-line"></i></span>
+            </div>
+            <div class="dash-kpi-value">$1.24M</div>
+            <div class="dash-kpi-footer green">
+              <i class="fa-solid fa-arrow-trend-up"></i> +28.5% YoY <span class="dash-kpi-footer-sub">• on target</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-title">VERIFIED PRODUCERS</span>
+              <span style="background:#dcfce7; color:#10b981; border-radius:6px; padding:0.3rem 0.55rem; font-size:0.85rem;"><i class="fa-solid fa-tractor"></i></span>
+            </div>
+            <div class="dash-kpi-value" style="color:#10b981;">2,540</div>
+            <div class="dash-kpi-footer green">
+              <i class="fa-solid fa-check"></i> 98.8% Compliance <span class="dash-kpi-footer-sub">(verified)</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-title">ACTIVE BUYERS</span>
+              <span style="background:#fef3c7; color:#f59e0b; border-radius:6px; padding:0.3rem 0.55rem; font-size:0.85rem;"><i class="fa-solid fa-users"></i></span>
+            </div>
+            <div class="dash-kpi-value" style="color:#d97706;">85,200</div>
+            <div class="dash-kpi-footer green">
+              <i class="fa-solid fa-basket-shopping"></i> Wholesale & Retail <span class="dash-kpi-footer-sub">• 4.2k daily</span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-title">COLD-CHAIN SPOILAGE</span>
+              <span style="background:#e0e7ff; color:#6366f1; border-radius:6px; padding:0.3rem 0.55rem; font-size:0.85rem;"><i class="fa-solid fa-snowflake"></i></span>
+            </div>
+            <div class="dash-kpi-value">0.12%</div>
+            <div class="dash-kpi-footer green">
+              <i class="fa-solid fa-shield-halved"></i> Record Low Loss <span class="dash-kpi-footer-sub">• 4.0°C telemetry</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-COLUMN CONTENT ROW -->
+        <div class="dash-content-row">
+          
+          <!-- LEFT COLUMN (Approvals & Transactions) -->
+          <div class="dash-col-left">
+            
+            <!-- Card 1: Farmer Onboarding Queue -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <div>
+                  <h3 class="dash-card-title">Farmer Onboarding & Accreditation Queue (3)</h3>
+                  <div style="font-size:0.8rem; color:#64748b;">Pending soil assays and organic documentation review</div>
+                </div>
+                <span class="badge badge-warning" style="font-size:0.75rem; padding:0.3rem 0.6rem;">Requires Lab Review</span>
+              </div>
+              <div class="dash-card-body" style="padding:0; overflow-x:auto;">
+                <table class="dash-table">
+                  <thead>
+                    <tr>
+                      <th>Producer / Agribusiness</th>
+                      <th>Region</th>
+                      <th>Submitted Credentials</th>
+                      <th>Soil Residue Lab</th>
+                      <th>Decisions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <strong style="color:#0f172a;">Blue Ridge Botanical Gardens</strong><br>
+                        <span style="font-size:0.75rem; color:#64748b;">Applicant: Lucas Sterling</span>
+                      </td>
+                      <td>Asheville, NC</td>
+                      <td><span class="badge badge-success">USDA NOP #4910</span></td>
+                      <td><span style="color:#16a34a; font-weight:700; font-size:0.82rem;"><i class="fa-solid fa-circle-check"></i> 0.00% Residue</span></td>
+                      <td>
+                        <div style="display:flex; gap:0.4rem;">
+                          <button class="btn btn-primary btn-sm" onclick="this.parentElement.innerHTML='<span class=\"badge badge-success\"><i class=\"fa-solid fa-check\"></i> Approved</span>'; window.AgriToast.show('Producer approved and live on marketplace!', 'success');">Approve</button>
+                          <button class="btn btn-outline btn-sm" onclick="this.parentElement.innerHTML='<span class=\"badge badge-warning\">Lab Requested</span>'; window.AgriToast.show('Secondary soil assay requested.', 'info');">Audit</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong style="color:#0f172a;">Sunburst Bio-Nutrients LLC</strong><br>
+                        <span style="font-size:0.75rem; color:#64748b;">Applicant: Dr. Warren Hastings</span>
+                      </td>
+                      <td>Fresno, CA</td>
+                      <td><span class="badge badge-success">OMRI Listed Bio-Input</span></td>
+                      <td><span style="color:#16a34a; font-weight:700; font-size:0.82rem;"><i class="fa-solid fa-circle-check"></i> Biological Clean</span></td>
+                      <td>
+                        <div style="display:flex; gap:0.4rem;">
+                          <button class="btn btn-primary btn-sm" onclick="this.parentElement.innerHTML='<span class=\"badge badge-success\"><i class=\"fa-solid fa-check\"></i> Approved</span>'; window.AgriToast.show('Producer approved and live on marketplace!', 'success');">Approve</button>
+                          <button class="btn btn-outline btn-sm" onclick="this.parentElement.innerHTML='<span class=\"badge badge-warning\">Lab Requested</span>'; window.AgriToast.show('Secondary soil assay requested.', 'info');">Audit</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong style="color:#0f172a;">Highland Heritage Grains</strong><br>
+                        <span style="font-size:0.75rem; color:#64748b;">Applicant: Angus MacLeod</span>
+                      </td>
+                      <td>Bozeman, MT</td>
+                      <td><span class="badge badge-warning">Non-GMO Pending</span></td>
+                      <td><span style="color:#d97706; font-weight:700; font-size:0.82rem;"><i class="fa-solid fa-clock"></i> Testing in Progress</span></td>
+                      <td>
+                        <div style="display:flex; gap:0.4rem;">
+                          <button class="btn btn-primary btn-sm" onclick="this.parentElement.innerHTML='<span class=\"badge badge-success\"><i class=\"fa-solid fa-check\"></i> Approved</span>'; window.AgriToast.show('Producer approved and live on marketplace!', 'success');">Approve</button>
+                          <button class="btn btn-outline btn-sm" onclick="this.parentElement.innerHTML='<span class=\"badge badge-warning\">Lab Requested</span>'; window.AgriToast.show('Secondary soil assay requested.', 'info');">Audit</button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Card 2: Live Transactions Stream -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <div>
+                  <h3 class="dash-card-title">Real-Time Marketplace Settlements</h3>
+                  <div style="font-size:0.8rem; color:#64748b;">Live transaction ledger and escrow allocations</div>
+                </div>
+                <span class="badge badge-success" style="font-size:0.75rem;"><i class="fa-solid fa-circle-dot"></i> Live Stream</span>
+              </div>
+              <div class="dash-card-body" style="padding:0; overflow-x:auto;">
+                <table class="dash-table">
+                  <thead>
+                    <tr>
+                      <th>Tx ID</th>
+                      <th>Buyer</th>
+                      <th>Producer</th>
+                      <th>Crop Lot</th>
+                      <th>Value</th>
+                      <th>Farmer Payout (95.5%)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>#TX-94821</code></td>
+                      <td>Eleanor Vance</td>
+                      <td>GreenValley Organics</td>
+                      <td>Golden Wheat (50 lbs)</td>
+                      <td><strong>$49.50</strong></td>
+                      <td><span style="color:#10b981; font-weight:700;">$47.27</span></td>
+                    </tr>
+                    <tr>
+                      <td><code>#TX-94820</code></td>
+                      <td>Cascade Bio Kitchen</td>
+                      <td>Highland Orchard</td>
+                      <td>Honeycrisp Apples (100 lbs)</td>
+                      <td><strong>$240.00</strong></td>
+                      <td><span style="color:#10b981; font-weight:700;">$229.20</span></td>
+                    </tr>
+                    <tr>
+                      <td><code>#TX-94819</code></td>
+                      <td>Evergreen Cooperatives</td>
+                      <td>Valle Verde Ag</td>
+                      <td>Cold-Pressed Neem Oil (5 Gal)</td>
+                      <td><strong>$185.00</strong></td>
+                      <td><span style="color:#10b981; font-weight:700;">$176.68</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN (Donut Chart & Health) -->
+          <div class="dash-col-right">
+            
+            <!-- Card 1: Volume Breakdown Donut Chart -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <div>
+                  <h3 class="dash-card-title">Volume by Crop Sector</h3>
+                  <div style="font-size:0.8rem; color:#64748b;">Annual gross GMV distribution</div>
+                </div>
+                <i class="fa-solid fa-chart-pie" style="color:#0ea5e9;"></i>
+              </div>
+              <div class="dash-card-body">
+                <div class="donut-chart-container">
+                  <svg class="donut-chart-svg" viewBox="0 0 42 42">
+                    <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#10b981" stroke-width="5" stroke-dasharray="38 62" stroke-dashoffset="25"></circle>
+                    <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#0ea5e9" stroke-width="5" stroke-dasharray="30 70" stroke-dashoffset="87"></circle>
+                    <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#f59e0b" stroke-width="5" stroke-dasharray="18 82" stroke-dashoffset="57"></circle>
+                    <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#8b5cf6" stroke-width="5" stroke-dasharray="14 86" stroke-dashoffset="39"></circle>
+                  </svg>
+                  <div class="donut-center-text">
+                    <div class="donut-center-value">$1.24M</div>
+                    <div class="donut-center-label">Platform GMV</div>
+                  </div>
+                </div>
+
+                <!-- Legend Items -->
+                <div class="donut-legend-grid">
+                  <div class="donut-legend-item">
+                    <span class="donut-dot" style="background:#10b981;"></span>
+                    <span class="donut-cat-name">Grains & Cereals</span>
+                    <span class="donut-cat-amount">$471.2K (38%)</span>
+                  </div>
+                  <div class="donut-legend-item">
+                    <span class="donut-dot" style="background:#0ea5e9;"></span>
+                    <span class="donut-cat-name">Fresh Produce & Fruits</span>
+                    <span class="donut-cat-amount">$372.0K (30%)</span>
+                  </div>
+                  <div class="donut-legend-item">
+                    <span class="donut-dot" style="background:#f59e0b;"></span>
+                    <span class="donut-cat-name">Bio-Fertilizers & Soil</span>
+                    <span class="donut-cat-amount">$223.2K (18%)</span>
+                  </div>
+                  <div class="donut-legend-item">
+                    <span class="donut-dot" style="background:#8b5cf6;"></span>
+                    <span class="donut-cat-name">Farm Equipment & Seeds</span>
+                    <span class="donut-cat-amount">$173.6K (14%)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: IoT Telemetry & Cold-Chain Health -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <div>
+                  <h3 class="dash-card-title">Corridor Telemetry Status</h3>
+                  <div style="font-size:0.8rem; color:#64748b;">18 active transit corridors</div>
+                </div>
+                <span class="badge badge-success" style="font-size:0.75rem;">All Nominal</span>
+              </div>
+              <div class="dash-card-body" style="display:flex; flex-direction:column; gap:0.75rem;">
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:0.5rem; background:#f0fdf4; border-radius:6px; border:1px solid #bbf7d0;">
+                  <span style="font-size:0.85rem; font-weight:700; color:#14532d;">Pacific Northwest Corridor</span>
+                  <strong style="color:#16a34a; font-size:0.85rem;">3.8°C • Optimal</strong>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:0.5rem; background:#f0fdf4; border-radius:6px; border:1px solid #bbf7d0;">
+                  <span style="font-size:0.85rem; font-weight:700; color:#14532d;">California Central Hub</span>
+                  <strong style="color:#16a34a; font-size:0.85rem;">4.1°C • Optimal</strong>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:0.5rem; background:#f0fdf4; border-radius:6px; border:1px solid #bbf7d0;">
+                  <span style="font-size:0.85rem; font-weight:700; color:#14532d;">Midwest Grains Corridor</span>
+                  <strong style="color:#16a34a; font-size:0.85rem;">4.2°C • Optimal</strong>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 2: VERIFICATIONS -->
+      <div class="dashboard-tab-content" id="tab-approvals">
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div>
+              <h3 class="dash-card-title">Pending Farmer Verification & Accreditations</h3>
+              <div style="font-size:0.8rem; color:#64748b;">Complete third-party audit checklist and USDA certificate validation</div>
+            </div>
+            <button class="btn btn-sm btn-primary" onclick="window.AgriToast.show('Syncing with USDA NOP federal database...', 'info');"><i class="fa-solid fa-arrows-rotate"></i> Sync USDA Registry</button>
+          </div>
+          <div class="dash-card-body" style="padding:0; overflow-x:auto;">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Producer Agribusiness</th>
+                  <th>Region Hub</th>
+                  <th>Certificates</th>
+                  <th>Lab Assays</th>
+                  <th>Status</th>
+                  <th>Decision Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Blue Ridge Botanical Gardens</strong><br><small style="color:#64748b;">Lucas Sterling</small></td>
+                  <td>Asheville, NC</td>
+                  <td><span class="badge badge-success">USDA NOP #4910</span></td>
+                  <td><span style="color:#16a34a; font-weight:700;">0.00% Pesticides</span></td>
+                  <td><span class="badge badge-warning">Pending Review</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-primary" onclick="window.AgriToast.show('Blue Ridge Botanical Gardens approved!', 'success');">Approve</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Sunburst Bio-Nutrients LLC</strong><br><small style="color:#64748b;">Dr. Warren Hastings</small></td>
+                  <td>Fresno, CA</td>
+                  <td><span class="badge badge-success">OMRI Certified</span></td>
+                  <td><span style="color:#16a34a; font-weight:700;">Clean Soil Assay</span></td>
+                  <td><span class="badge badge-warning">Pending Review</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-primary" onclick="window.AgriToast.show('Sunburst Bio-Nutrients approved!', 'success');">Approve</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Highland Heritage Grains</strong><br><small style="color:#64748b;">Angus MacLeod</small></td>
+                  <td>Bozeman, MT</td>
+                  <td><span class="badge badge-warning">Non-GMO Pending</span></td>
+                  <td><span style="color:#d97706; font-weight:700;">Lab In-Progress</span></td>
+                  <td><span class="badge badge-warning">Awaiting Lab</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-outline" onclick="window.AgriToast.show('Secondary audit requested.', 'info');">Request Data</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: TRANSACTIONS -->
+      <div class="dashboard-tab-content" id="tab-transactions">
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div>
+              <h3 class="dash-card-title">Global Marketplace Settlement Ledger</h3>
+              <div style="font-size:0.8rem; color:#64748b;">Live stream of direct farm-to-door purchases & escrow payouts</div>
+            </div>
+            <button class="btn btn-sm btn-outline" onclick="window.AgriToast.show('Transactions exported to CSV.', 'success');"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
+          </div>
+          <div class="dash-card-body" style="padding:0; overflow-x:auto;">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Transaction ID</th>
+                  <th>Timestamp</th>
+                  <th>Buyer</th>
+                  <th>Producer</th>
+                  <th>Gross Value</th>
+                  <th>Platform Fee</th>
+                  <th>Payout Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>#TX-94821</code></td>
+                  <td>Sep 16, 2026 • 14:22</td>
+                  <td>Eleanor Vance</td>
+                  <td>GreenValley Organics</td>
+                  <td><strong>$49.50</strong></td>
+                  <td>$2.23 (4.5%)</td>
+                  <td><span class="badge badge-success">Escrow Released</span></td>
+                </tr>
+                <tr>
+                  <td><code>#TX-94820</code></td>
+                  <td>Sep 16, 2026 • 13:58</td>
+                  <td>Cascade Bio Kitchen</td>
+                  <td>Highland Orchard</td>
+                  <td><strong>$240.00</strong></td>
+                  <td>$10.80 (4.5%)</td>
+                  <td><span class="badge badge-success">Escrow Released</span></td>
+                </tr>
+                <tr>
+                  <td><code>#TX-94819</code></td>
+                  <td>Sep 16, 2026 • 13:10</td>
+                  <td>Evergreen Cooperatives</td>
+                  <td>Valle Verde Ag</td>
+                  <td><strong>$185.00</strong></td>
+                  <td>$8.32 (4.5%)</td>
+                  <td><span class="badge badge-success">Escrow Released</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: QUALITY -->
+      <div class="dashboard-tab-content" id="tab-quality">
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div>
+              <h3 class="dash-card-title">Laboratory Assays & Microbiome Quality Control</h3>
+              <div style="font-size:0.8rem; color:#64748b;">Third-party certified laboratory soil core reports and cold-chain compliance</div>
+            </div>
+            <button class="btn btn-sm btn-primary" onclick="window.AgriToast.show('Commissioning regional lab audit batch...', 'info');"><i class="fa-solid fa-flask"></i> Commission Lab Assay</button>
+          </div>
+          <div class="dash-card-body">
+            <div class="grid grid-2" style="gap:1.5rem;">
+              <div style="border:1px solid #e2e8f0; border-radius:8px; padding:1.25rem; background:#ffffff;">
+                <h4 style="margin:0 0 0.5rem 0; color:#0f172a;"><i class="fa-solid fa-microscope" style="color:#0ea5e9;"></i> Soil Chemistry & Heavy Metals</h4>
+                <p style="font-size:0.85rem; color:#475569; margin:0 0 1rem 0;">100% of tested producer lots in September have zero detectable synthetic organophosphates, lead, or glyphosate residues.</p>
+                <span class="badge badge-success">99.94% Clean Rate</span>
+              </div>
+              <div style="border:1px solid #e2e8f0; border-radius:8px; padding:1.25rem; background:#ffffff;">
+                <h4 style="margin:0 0 0.5rem 0; color:#0f172a;"><i class="fa-solid fa-snowflake" style="color:#10b981;"></i> Thermal Telemetry Cold-Chain</h4>
+                <p style="font-size:0.85rem; color:#475569; margin:0 0 1rem 0;">All 18 logistics corridors maintained average payload temperatures between 3.6°C and 4.2°C across all transshipment hubs.</p>
+                <span class="badge badge-success">Grade A+ Compliance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5: ANALYTICS -->
+      <div class="dashboard-tab-content" id="tab-analytics">
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Agricultural Sector Growth & GMV Trajectory</h3>
+            <span style="font-size:0.85rem; color:#64748b;">Q3 2026 Fiscal Analysis</span>
+          </div>
+          <div class="dash-card-body">
+            <p style="font-size:0.9rem; color:#475569; margin-bottom:1.5rem;">Direct farm sales grew by 28.5% year-over-year, driven by heirloom grains (+42%) and regenerative bio-fertilizers (+31%).</p>
+            <div class="grid grid-3" style="gap:1rem;">
+              <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; text-align:center;">
+                <div style="font-size:0.75rem; color:#64748b; font-weight:700;">TOTAL HARVEST ORDERS</div>
+                <div style="font-size:1.6rem; font-weight:800; color:#0f172a; margin:0.25rem 0;">14,920</div>
+                <span style="font-size:0.8rem; color:#10b981;">+18.2% vs Q2</span>
+              </div>
+              <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; text-align:center;">
+                <div style="font-size:0.75rem; color:#64748b; font-weight:700;">AVERAGE ORDER VALUE</div>
+                <div style="font-size:1.6rem; font-weight:800; color:#0f172a; margin:0.25rem 0;">$83.40</div>
+                <span style="font-size:0.8rem; color:#10b981;">+$6.20 vs Q2</span>
+              </div>
+              <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; text-align:center;">
+                <div style="font-size:0.75rem; color:#64748b; font-weight:700;">PRODUCER RETENTION</div>
+                <div style="font-size:1.6rem; font-weight:800; color:#0f172a; margin:0.25rem 0;">97.4%</div>
+                <span style="font-size:0.8rem; color:#10b981;">Industry Leading</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 6: SETTINGS -->
+      <div class="dashboard-tab-content" id="tab-settings">
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Platform Integrity & Security Configuration</h3>
+            <button class="btn btn-sm btn-primary" onclick="window.AgriToast.show('Admin configurations saved.', 'success');"><i class="fa-solid fa-check"></i> Save Parameters</button>
+          </div>
+          <div class="dash-card-body">
+            <form onsubmit="event.preventDefault(); window.AgriToast.show('Parameters updated successfully!', 'success');">
+              <div class="grid grid-2" style="gap:1rem; margin-bottom:1rem;">
+                <div class="form-group">
+                  <label class="form-label">Platform Commission Take Rate (%)</label>
+                  <input type="number" class="form-control" value="4.5" step="0.1" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Thermal Alert Threshold (°C)</label>
+                  <input type="number" class="form-control" value="6.0" step="0.1" required>
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label class="form-label">Central Supervisor Security Email</label>
+                <input type="email" class="form-control" value="admin@agridirect.com" required>
+              </div>
+              <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Update Security Parameters</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>
+    function switchDashboardTab(tabId, el) {
+      document.querySelectorAll('.dash-nav-item').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.dashboard-tab-content').forEach(tab => tab.classList.remove('active'));
+
+      if (el) {
+        el.classList.add('active');
+      } else {
+        const matchingNav = document.querySelector(`.dash-nav-item[data-tab="${tabId}"]`);
+        if (matchingNav) matchingNav.classList.add('active');
+      }
+
+      const targetTab = document.getElementById('tab-' + tabId);
+      if (targetTab) {
+        targetTab.classList.add('active');
+      }
+
+      const mainContainer = document.getElementById('dash-main-container');
+      if (mainContainer) {
+        mainContainer.scrollTop = 0;
+      }
+      window.scrollTo(0, 0);
+
+      // Close mobile drawer on navigation
+      if (window.innerWidth <= 992) {
+        toggleDashSidebar(false);
+      }
+    }
+
+    // Toggle Mobile Sidebar Drawer
+    function toggleDashSidebar(force) {
+      const sidebar = document.getElementById('dashSidebar');
+      const backdrop = document.getElementById('dashBackdrop');
+      if (!sidebar) return;
+      const isOpen = sidebar.classList.contains('open');
+      const shouldOpen = force !== undefined ? force : !isOpen;
+      if (shouldOpen) {
+        sidebar.classList.add('open');
+        if (backdrop) backdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        sidebar.classList.remove('open');
+        if (backdrop) backdrop.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Load active admin credentials dynamically
+    function loadUserCredentials() {
+      const email = localStorage.getItem('agri_user_email') || 'admin@agridirect.com';
+      const name = localStorage.getItem('agri_user_name') || 'Central Agronomy Ops';
+      const role = localStorage.getItem('agri_user_role') || 'Platform Supervisor';
+
+      const heroFullName = document.getElementById('adminHeroFullName');
+      if (heroFullName) heroFullName.textContent = name;
+
+      const heroEmail = document.getElementById('adminHeroEmail');
+      if (heroEmail) heroEmail.textContent = email;
+
+      const heroRole = document.getElementById('adminHeroRole');
+      if (heroRole) heroRole.textContent = role;
+
+      const sidebarName = document.getElementById('adminSidebarName');
+      if (sidebarName) sidebarName.textContent = name;
+
+      const sidebarRole = document.getElementById('adminSidebarRole');
+      if (sidebarRole) sidebarRole.textContent = role;
+    }
+
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      loadUserCredentials();
+      const mainContainer = document.getElementById('dash-main-container');
+      if (mainContainer) mainContainer.scrollTop = 0;
+
+      const currentName = localStorage.getItem('agri_user_name') || 'Central Agronomy Ops';
+      const currentEmail = localStorage.getItem('agri_user_email') || 'admin@agridirect.com';
+      const currentRole = localStorage.getItem('agri_user_role') || 'Platform Supervisor';
+      window.AgriToast.show(`Welcome, ${currentName}! Logged in as: ${currentEmail} (${currentRole})`, 'info');
+    });
+  </script>
+</body>
+</html>
+
+

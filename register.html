@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create an Account - AgriDirect Marketplace</title>
+  <meta name="description" content="Register as a customer or open your verified agricultural farmer storefront on AgriDirect.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:var(--cream); min-height:100vh; display:flex; flex-direction:column;">
+
+  <!-- Minimal Auth Header -->
+  <header style="background: var(--white); border-bottom: 1.5px solid var(--border); padding: 0.85rem 0; box-shadow: var(--shadow-sm);">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+      <a href="index.html" class="brand-logo" style="display: inline-flex; align-items: center; text-decoration: none;">
+        <img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img" style="height: 32px; width: auto;">
+      </a>
+      <div style="display: flex; align-items: center; gap: 1.25rem;">
+        <a href="index.html" style="display: inline-flex; align-items: center; gap: 0.45rem; font-weight: 600; font-size: 0.88rem; color: var(--primary); text-decoration: none;">
+          <i class="fa-solid fa-arrow-left"></i> Return to Store
+        </a>
+        <span style="font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.35rem; border-left: 1px solid var(--border); padding-left: 1rem;">
+          <i class="fa-solid fa-shield-halved" style="color:var(--primary);"></i> Encrypted 256-Bit Registration
+        </span>
+      </div>
+    </div>
+  </header>
+
+<section style="flex:1; display:flex; align-items:center; justify-content:center; padding:3rem 1rem;">
+    <div class="card p-4" style="width:100%; max-width:540px; background:var(--white); box-shadow:var(--shadow-xl); border-radius:var(--radius-xl); border: 1.5px solid var(--border); border-top: 4px solid var(--primary);">
+      
+      <div class="text-center mb-3">
+        <div class="logo-icon" style="margin:0 auto 0.75rem; width:48px; height:48px; font-size:1.5rem;"><i class="fa-solid fa-seedling"></i></div>
+        <h1 style="font-size:1.8rem; color:var(--primary-dark); margin-bottom:0.25rem;">Create Your Account</h1>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Join thousands of direct farm customers and producers</p>
+      </div>
+
+      <!-- Role Selector Tabs -->
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.5rem; background:var(--cream); padding:0.4rem; border-radius:var(--radius-md); margin-bottom:1.25rem;">
+        <button type="button" class="btn btn-primary role-tab active" id="roleCustomerBtn" style="justify-content:center; font-size:0.9rem;">
+          <i class="fa-solid fa-basket-shopping"></i> Customer / Buyer
+        </button>
+        <button type="button" class="btn btn-outline role-tab" id="roleFarmerBtn" style="justify-content:center; font-size:0.9rem; border:none;">
+          <i class="fa-solid fa-tractor"></i> Farmer / Producer
+        </button>
+      </div>
+
+      <!-- Register Form -->
+      <form id="registerForm" novalidate>
+        <!-- Select Role Dropdown -->
+        <div class="form-group">
+          <label class="form-label" for="regRole">Select Role *</label>
+          <div style="position:relative;">
+            <select id="regRole" class="form-control" required style="cursor:pointer; font-weight:600;">
+              <option value="customer">Customer / Buyer</option>
+              <option value="farmer">Farmer / Producer (Seller)</option>
+            </select>
+          </div>
+          <span class="form-error">Please select your role.</span>
+        </div>
+
+        <div class="grid grid-2" style="gap:1rem;">
+          <div class="form-group">
+            <label class="form-label" for="regFullName">Full Name *</label>
+            <input type="text" id="regFullName" class="form-control" placeholder="e.g. Samuel Green" autocomplete="name" required>
+            <span class="form-error">Please enter letters and spaces only (no numbers).</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="regPhone">Mobile Phone (10 Digits) *</label>
+            <input type="tel" id="regPhone" class="form-control" placeholder="e.g. 5415550199" maxlength="10" inputmode="numeric" pattern="[0-9]*" autocomplete="tel" required>
+            <span class="form-error">Must be exactly 10 digits (no alphabets).</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="regEmail">Email Address *</label>
+          <input type="email" id="regEmail" class="form-control" placeholder="samuel@farmco.org" required>
+          <span class="form-error">Valid email address required.</span>
+        </div>
+
+        <!-- Conditional Farm Info for Sellers -->
+        <div id="sellerExtraFields" style="display:none;">
+          <div class="form-group">
+            <label class="form-label" for="regFarmName">Farm or Agribusiness Name *</label>
+            <input type="text" id="regFarmName" class="form-control" placeholder="e.g. Cascade Ridge Organic Orchards">
+            <span class="form-error">Please provide your farm name.</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="regFarmRegion">Primary Harvest Region *</label>
+            <select id="regFarmRegion" class="form-control">
+              <option value="">Select Region</option>
+              <option value="Oregon">Willamette Valley, Oregon</option>
+              <option value="Washington">Yakima Valley, Washington</option>
+              <option value="California">Central Coast, California</option>
+              <option value="Idaho">Snake River Basin, Idaho</option>
+              <option value="Vermont">Champlain Valley, Vermont</option>
+              <option value="Texas">Hill Country, Texas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="gap:1rem;">
+          <div class="form-group">
+            <label class="form-label" for="regPassword">Password (6+ chars) *</label>
+            <input type="password" id="regPassword" class="form-control" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required>
+            <span class="form-error">Min 6 characters.</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="regConfirmPassword">Confirm Password *</label>
+            <input type="password" id="regConfirmPassword" class="form-control" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required>
+            <span class="form-error">Passwords must match.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label style="display:flex; align-items:flex-start; gap:0.5rem; font-size:0.85rem; color:var(--text-muted); cursor:pointer;">
+            <input type="checkbox" id="regAgree" required style="margin-top:0.2rem; accent-color:var(--primary);">
+            <span>I agree to the <a href="404.html" style="color:var(--primary); font-weight:600;">Terms of Trade</a>, <a href="404.html" style="color:var(--primary); font-weight:600;">Organic Standards Protocol</a>, and <a href="404.html" style="color:var(--primary); font-weight:600;">Privacy Policy</a>.</span>
+          </label>
+          <span class="form-error" id="regAgreeError" style="display:none; color:var(--danger); font-size:0.8rem; margin-top:0.25rem;">You must accept the terms.</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%; justify-content:center; margin-top:0.5rem;">
+          <i class="fa-solid fa-user-check"></i> Complete Registration
+        </button>
+      </form>
+
+      <div style="text-align:center; margin-top:1.5rem; font-size:0.9rem; color:var(--text-muted);">
+        Already have an account? <a href="login.html" style="color:var(--primary); font-weight:700;">Sign In</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <a href="index.html">
+              <img src="assets/images/logo-light.webp" alt="Stackly" class="footer-logo">
+            </a>
+          </div>
+          <p class="footer-desc">Mobilizing intelligent agricultural curation, bespoke organic supplies, sustainable farming equipment, and direct farm-to-door delivery for modern life.</p>
+          <div class="footer-social-icons">
+            <a href="404.html" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Stackly</a>
+            <a href="shop.html">Shop Catalog</a>
+            <a href="categories.html">Categories</a>
+            <a href="farmers.html">Farmers Directory</a>
+            <a href="farmer-store.html">Featured Harvests</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Support</h4>
+          <div class="footer-links">
+            <a href="contact.html">Contact Coordinates</a>
+            <a href="404.html">Terms & Agreements</a>
+            <a href="404.html">Security Audits</a>
+            <a href="404.html">Size & Fit Guide</a>
+            <a href="user-dashboard.html">Order Status</a>
+            <a href="user-dashboard.html">User Dashboard</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Newsletter</h4>
+          <p class="footer-newsletter-text">Get quarterly updates, smart style alerts, and platform feature reports.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Stackly updates!'); this.reset();">
+            <input type="email" placeholder="Your Email" required class="footer-newsletter-input" aria-label="Your Email">
+            <button type="submit" class="footer-newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-copy">© 2026 Stackly. All rights reserved. Designed for financial clarity and wealth tracking.</div>
+        <div class="footer-bottom-nav">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Role switcher & dropdown synchronization
+    let currentRole = 'customer';
+    const roleSelect = document.getElementById('regRole');
+    const customerBtn = document.getElementById('roleCustomerBtn');
+    const farmerBtn = document.getElementById('roleFarmerBtn');
+    const sellerFields = document.getElementById('sellerExtraFields');
+
+    function setRole(role) {
+      currentRole = role;
+      if (roleSelect) roleSelect.value = role;
+
+      if (role === 'farmer') {
+        if (farmerBtn) {
+          farmerBtn.classList.remove('btn-outline');
+          farmerBtn.classList.add('btn-primary');
+        }
+        if (customerBtn) {
+          customerBtn.classList.remove('btn-primary');
+          customerBtn.classList.add('btn-outline');
+        }
+        if (sellerFields) sellerFields.style.display = 'block';
+      } else {
+        if (customerBtn) {
+          customerBtn.classList.remove('btn-outline');
+          customerBtn.classList.add('btn-primary');
+        }
+        if (farmerBtn) {
+          farmerBtn.classList.remove('btn-primary');
+          farmerBtn.classList.add('btn-outline');
+        }
+        if (sellerFields) sellerFields.style.display = 'none';
+      }
+    }
+
+    if (roleSelect) {
+      roleSelect.addEventListener('change', (e) => {
+        setRole(e.target.value);
+      });
+    }
+
+    if (customerBtn) customerBtn.addEventListener('click', () => setRole('customer'));
+    if (farmerBtn) farmerBtn.addEventListener('click', () => setRole('farmer'));
+
+    // Check URL params for role
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('role') === 'seller' || urlParams.get('role') === 'farmer') {
+      setRole('farmer');
+    }
+
+    // Real-time input validation & sanitization
+    const nameInput = document.getElementById('regFullName');
+    const phoneInput = document.getElementById('regPhone');
+    const emailInput = document.getElementById('regEmail');
+    const passInput = document.getElementById('regPassword');
+    const confirmInput = document.getElementById('regConfirmPassword');
+    const agreeInput = document.getElementById('regAgree');
+    const agreeError = document.getElementById('regAgreeError');
+
+    if (nameInput) {
+      nameInput.addEventListener('input', () => {
+        nameInput.value = nameInput.value.replace(/[^A-Za-z\s'-]/g, '');
+        if (nameInput.value.trim().length >= 2 && window.AgriValidator.isName(nameInput.value)) {
+          window.AgriValidator.hideError(nameInput);
+        }
+      });
+    }
+
+    if (phoneInput) {
+      phoneInput.addEventListener('input', () => {
+        phoneInput.value = phoneInput.value.replace(/\D/g, '').slice(0, 10);
+        if (window.AgriValidator.isPhone10(phoneInput.value)) {
+          window.AgriValidator.hideError(phoneInput);
+        }
+      });
+    }
+
+    if (emailInput) {
+      emailInput.addEventListener('input', () => {
+        if (window.AgriValidator.isEmail(emailInput.value)) {
+          window.AgriValidator.hideError(emailInput);
+        }
+      });
+    }
+
+    if (passInput) {
+      passInput.addEventListener('input', () => {
+        if (passInput.value.length >= 6) {
+          window.AgriValidator.hideError(passInput);
+        }
+      });
+    }
+
+    if (confirmInput) {
+      confirmInput.addEventListener('input', () => {
+        if (confirmInput.value === passInput.value && confirmInput.value.length >= 6) {
+          window.AgriValidator.hideError(confirmInput);
+        }
+      });
+    }
+
+    // Strict Registration form validation
+    const regForm = document.getElementById('registerForm');
+    if (regForm) {
+      regForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let isValid = true;
+
+        if (nameInput && !window.AgriValidator.isName(nameInput.value)) {
+          window.AgriValidator.showError(nameInput);
+          isValid = false;
+        } else if (nameInput) {
+          window.AgriValidator.hideError(nameInput);
+        }
+
+        if (phoneInput && !window.AgriValidator.isPhone10(phoneInput.value)) {
+          window.AgriValidator.showError(phoneInput);
+          isValid = false;
+        } else if (phoneInput) {
+          window.AgriValidator.hideError(phoneInput);
+        }
+
+        if (emailInput && !window.AgriValidator.isEmail(emailInput.value)) {
+          window.AgriValidator.showError(emailInput);
+          isValid = false;
+        } else if (emailInput) {
+          window.AgriValidator.hideError(emailInput);
+        }
+
+        if (passInput && passInput.value.length < 6) {
+          window.AgriValidator.showError(passInput);
+          isValid = false;
+        } else if (passInput) {
+          window.AgriValidator.hideError(passInput);
+        }
+
+        if (confirmInput && (confirmInput.value !== passInput.value || confirmInput.value.length === 0)) {
+          window.AgriValidator.showError(confirmInput);
+          isValid = false;
+        } else if (confirmInput) {
+          window.AgriValidator.hideError(confirmInput);
+        }
+
+        if (currentRole === 'farmer') {
+          const farmNameInput = document.getElementById('regFarmName');
+          if (farmNameInput && !window.AgriValidator.isNotEmpty(farmNameInput.value)) {
+            window.AgriValidator.showError(farmNameInput);
+            isValid = false;
+          } else if (farmNameInput) {
+            window.AgriValidator.hideError(farmNameInput);
+          }
+        }
+
+        if (agreeInput && !agreeInput.checked) {
+          if (agreeError) agreeError.style.display = 'block';
+          isValid = false;
+        } else if (agreeError) {
+          agreeError.style.display = 'none';
+        }
+
+        if (isValid) {
+          const emailVal = emailInput.value.trim();
+          const nameVal = nameInput ? nameInput.value.trim() : 'Registered User';
+          const roleKey = currentRole === 'farmer' ? 'seller' : 'user';
+          const roleTitle = currentRole === 'farmer' ? 'Master Producer' : 'Harvest Patron';
+
+          localStorage.setItem('agri_logged_in', roleKey);
+          localStorage.setItem('agri_user_email', emailVal);
+          localStorage.setItem('agri_user_name', nameVal);
+          localStorage.setItem('agri_user_role', roleTitle);
+          localStorage.setItem('agri_login_time', new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+
+          window.AgriToast.show(`Account created for ${nameVal}! Redirecting to dashboard...`, 'success');
+          setTimeout(() => {
+            if (currentRole === 'farmer') {
+              window.location.href = 'seller-dashboard.html';
+            } else {
+              window.location.href = 'user-dashboard.html';
+            }
+          }, 800);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+
+

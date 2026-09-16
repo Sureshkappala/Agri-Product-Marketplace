@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - AgriDirect Marketplace</title>
+  <meta name="description" content="View verified product specifications, harvest origin, organic certifications, direct farmer pricing, and real customer reviews.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Announcement Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <span>🌱 Direct From 150+ Verified Local Farmers</span>
+        <span>🚚 Free Farm Delivery On Orders Over $75</span>
+      </div>
+      <div class="topbar-right">
+        <span>Farmer Support: +1 (800) 555-AGRI</span>
+        <a href="seller-dashboard.html">Become a Seller</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img">
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="categories.html" class="nav-link">Categories</a>
+          <a href="farmers.html" class="nav-link">Farmers</a>
+          <a href="product-details.html" class="nav-link active">Products</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="shop.html" class="action-icon-btn" aria-label="Search Marketplace">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </a>
+          <a href="wishlist.html" class="action-icon-btn" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+            <span class="action-badge wishlist-count-badge">2</span>
+          </a>
+          <a href="cart.html" class="action-icon-btn" aria-label="Shopping Cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg>
+            <span class="action-badge cart-count-badge">3</span>
+          </a>
+          <a href="login.html" class="btn btn-sm btn-primary">Login</a>
+          <button class="hamburger-btn" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img">
+      </div>
+      <button class="mobile-drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+
+    <!-- Search in Drawer -->
+    <div class="mobile-drawer-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search catalog..." onkeydown="if(event.key==='Enter') window.location.href='shop.html?search='+encodeURIComponent(this.value)">
+    </div>
+
+    <nav class="mobile-drawer-links">
+      <a href="index.html">Home <span>→</span></a>
+      <a href="about.html">About Us <span>→</span></a>
+      <a href="shop.html">Shop Catalog <span>→</span></a>
+      <a href="categories.html">All Categories <span>→</span></a>
+      <a href="farmers.html">Meet Farmers <span>→</span></a>
+      <a href="product-details.html" class="active">Product Spotlight <span>—</span></a>
+      <a href="contact.html">Customer Contact <span>→</span></a>
+    </nav>
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn btn-primary">Login</a>
+      <a href="user-dashboard.html" class="btn btn-outline">My Account</a>
+      <div class="mobile-drawer-info">
+        <div class="drawer-info-label">Direct Farm Concierge</div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Call:</span>
+          <span class="drawer-info-val">+1 (800) 555-AGRI</span>
+        </div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Email:</span>
+          <span class="drawer-info-val">concierge@stackly.com</span>
+        </div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Hubs:</span>
+          <span class="drawer-info-val">California • Oregon • Midwest • Texas</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Page Header / Breadcrumb Banner -->
+  <section class="page-header" style="background: var(--cream-surface); border-bottom: 1.5px solid var(--border); padding: 1.5rem 0; margin-bottom: 2rem;">
+    <div class="container">
+      <div class="breadcrumbs" style="font-size:0.875rem; color:var(--text-muted);">
+        <a href="index.html" style="color:var(--text-muted);">Home</a> &nbsp;/&nbsp; <a href="shop.html" style="color:var(--text-muted);">Shop Marketplace</a> &nbsp;/&nbsp; <a href="categories.html" style="color:var(--text-muted);" id="detailBreadcrumbCat">Seeds</a> &nbsp;/&nbsp; <span style="color:var(--primary); font-weight:600;" id="detailBreadcrumbTitle">Certified High-Yield Winter Wheat Seeds</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:1rem;">
+    <div class="container">
+      <div class="grid product-detail-grid" style="grid-template-columns: 1fr 1.15fr; gap:3.5rem; align-items:flex-start;">
+        
+        <!-- Left: Image Gallery & Zoom -->
+        <div>
+          <div class="card p-2" style="background:var(--white); border-radius:var(--radius-lg); overflow:hidden;">
+            <div class="image-zoom-container" style="height:420px; border-radius:var(--radius-md); overflow:hidden; position:relative; cursor:crosshair;">
+              <img id="detailMainImg" src="assets/images/prod-wheat-seeds.webp" alt="Product Image" style="width:100%; height:100%; object-fit:cover; transition:transform 0.2s ease-out;">
+            </div>
+          </div>
+          <!-- Thumbnails -->
+          <div style="display:flex; gap:0.75rem; margin-top:1rem;" id="detailThumbnails">
+            <img class="detail-thumb active" src="assets/images/prod-wheat-seeds.webp" alt="Thumbnail 1" style="width:75px; height:75px; object-fit:cover; border-radius:var(--radius-md); cursor:pointer; border:2px solid var(--primary);">
+            <img class="detail-thumb" src="assets/images/prod-veg-seeds.webp" alt="Thumbnail 2" style="width:75px; height:75px; object-fit:cover; border-radius:var(--radius-md); cursor:pointer; border:2px solid transparent; opacity:0.7;">
+            <img class="detail-thumb" src="assets/images/hero-farm.webp" alt="Thumbnail 3" style="width:75px; height:75px; object-fit:cover; border-radius:var(--radius-md); cursor:pointer; border:2px solid transparent; opacity:0.7;">
+          </div>
+        </div>
+
+        <!-- Right: Product Information & Purchase Controls -->
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+            <span class="badge badge-success" id="detailBadge">Certified Organic</span>
+            <span style="font-size:0.85rem; font-weight:700; color:var(--primary);"><i class="fa-solid fa-circle-check"></i> In Stock (Fast Dispatch)</span>
+          </div>
+
+          <h1 id="detailTitle" style="font-size:2.1rem; color:var(--primary-dark); line-height:1.25; margin-bottom:0.75rem;">Certified High-Yield Winter Wheat Seeds</h1>
+
+          <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.25rem;">
+            <div class="rating-stars" style="color:var(--accent); font-size:1.05rem;" id="detailRatingStars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <span style="color:var(--text-muted); font-size:0.9rem;" id="detailRatingText">4.8 (78 customer ratings)</span>
+            <span style="color:var(--border);">|</span>
+            <span style="color:var(--text-muted); font-size:0.9rem;">SKU: <strong style="color:var(--text-dark);" id="detailSku">AGRI-WHT-09</strong></span>
+          </div>
+
+          <!-- Price Block -->
+          <div style="background:var(--cream); padding:1.25rem 1.5rem; border-radius:var(--radius-md); margin-bottom:1.5rem; display:flex; align-items:baseline; gap:1rem;">
+            <span id="detailPrice" style="font-size:2.2rem; font-weight:800; color:var(--primary-dark); font-family:var(--font-heading);">$52.00</span>
+            <span id="detailOrigPrice" style="font-size:1.3rem; color:var(--text-muted); text-decoration:line-through;">$60.00</span>
+            <span class="badge badge-warning" id="detailDiscount">13% OFF</span>
+          </div>
+
+          <p id="detailDesc" style="color:var(--text-muted); font-size:1rem; line-height:1.65; margin-bottom:1.5rem;">
+            High-protein winter wheat seed with drought resilience and exceptional tillering capacity for commercial harvests.
+          </p>
+
+          <!-- Farmer Card Hook -->
+          <div class="card p-3 mb-4" style="background:var(--white); border-left:4px solid var(--primary); display:flex; align-items:center; justify-content:space-between;">
+            <div style="display:flex; align-items:center; gap:1rem;">
+              <img src="assets/images/farmer-1.webp" id="detailFarmerImg" alt="Farmer" style="width:52px; height:52px; border-radius:50%; object-fit:cover;">
+              <div>
+                <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Grown & Shipped Direct By</span>
+                <h4 style="font-size:1rem; color:var(--primary-dark); margin:0;" id="detailFarmerName">Robert MacIntyre (GreenValley Farms)</h4>
+                <span style="font-size:0.82rem; color:var(--primary);" id="detailFarmerLocation"><i class="fa-solid fa-location-dot"></i> Willamette Valley, Oregon</span>
+              </div>
+            </div>
+            <a href="farmer-store.html" class="btn btn-outline btn-sm" id="detailFarmerStoreLink">View Store</a>
+          </div>
+
+          <!-- Quantity & Action Buttons -->
+          <div class="product-detail-actions" style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap; margin-bottom:2rem;">
+            <div class="quantity-input" style="height:48px;">
+              <button class="quantity-btn" id="qtyMinus" aria-label="Decrease quantity">-</button>
+              <input type="number" id="detailQty" value="1" min="1" max="99" aria-label="Product quantity">
+              <button class="quantity-btn" id="qtyPlus" aria-label="Increase quantity">+</button>
+            </div>
+            <button class="btn btn-primary btn-lg" id="detailAddToCartBtn" style="flex:1; justify-content:center;">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart
+            </button>
+            <button class="btn btn-accent btn-lg" id="detailBuyNowBtn">
+              Buy Now
+            </button>
+            <button class="btn btn-outline btn-lg" id="detailWishlistBtn" style="padding:0 1.25rem;" title="Add to Wishlist">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+
+          <!-- Feature Highlights -->
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; border-top:1px solid var(--border); padding-top:1.5rem; font-size:0.88rem; color:var(--text-muted);">
+            <div><i class="fa-solid fa-truck-fast" style="color:var(--primary); margin-right:0.5rem;"></i> Ships in 24 hrs in thermal pods</div>
+            <div><i class="fa-solid fa-rotate-left" style="color:var(--primary); margin-right:0.5rem;"></i> 100% Quality & Freshness Guarantee</div>
+            <div><i class="fa-solid fa-shield-halved" style="color:var(--primary); margin-right:0.5rem;"></i> Lab-tested zero synthetic pesticides</div>
+            <div><i class="fa-solid fa-hand-holding-dollar" style="color:var(--primary); margin-right:0.5rem;"></i> Direct farm payment guarantee</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT TABS -->
+  <section class="section" style="background:var(--cream); padding-top:3rem;">
+    <div class="container">
+      <div class="tabs-nav" style="border-bottom:2px solid var(--border); margin-bottom:2rem; justify-content:center;">
+        <button class="tab-btn active" data-tab="tab-description">Detailed Description</button>
+        <button class="tab-btn" data-tab="tab-specs">Agronomic Specifications</button>
+        <button class="tab-btn" data-tab="tab-farmer">Producer Profile</button>
+        <button class="tab-btn" data-tab="tab-reviews">Ratings & Reviews (48)</button>
+      </div>
+
+      <!-- Description Tab -->
+      <div class="tab-pane active" id="tab-description">
+        <div class="card p-4" style="background:var(--white);">
+          <h3 style="font-size:1.3rem; color:var(--primary-dark); margin-bottom:1rem;">Crop Harvest Overview</h3>
+          <p style="color:var(--text-muted); line-height:1.7; margin-bottom:1rem;">
+            Our Heirloom Golden Wheat represents the gold standard in whole-grain milling. Cultivated on rich volcanic alluvial soils, this grain is harvested at peak maturity and moisture content below 12% to prevent any natural spoilage while preserving essential vitamin E and bran fibers.
+          </p>
+          <h4 style="font-size:1.05rem; color:var(--text-dark); margin-bottom:0.5rem;">Recommended Culinary & Ag Use:</h4>
+          <ul style="list-style-type:disc; padding-left:1.5rem; color:var(--text-muted); line-height:1.7;">
+            <li>Stone ground flour for artisanal sourdoughs, rustic loaves, and pasta extrusion.</li>
+            <li>Whole-berry grain salads, sprouted wheat berries, and breakfast porridge.</li>
+            <li>Cover crop seed planting for nitrogen replenishment and soil aeration.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Specifications Tab -->
+      <div class="tab-pane" id="tab-specs">
+        <div class="card p-4" style="background:var(--white);">
+          <h3 style="font-size:1.3rem; color:var(--primary-dark); margin-bottom:1.25rem;">Technical & Lab Specifications</h3>
+          <table style="width:100%; border-collapse:collapse; font-size:0.92rem;">
+            <tbody>
+              <tr style="border-bottom:1px solid var(--border);">
+                <td style="padding:0.75rem 0; font-weight:700; color:var(--primary-dark); width:35%;">Brand / Line</td>
+                <td style="padding:0.75rem 0; color:var(--text-muted);" id="specBrand">GoldenGrain Bio</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border);">
+                <td style="padding:0.75rem 0; font-weight:700; color:var(--primary-dark);">Suitable Crops & Soil</td>
+                <td style="padding:0.75rem 0; color:var(--text-muted);" id="specCrops">Extensive Field Farming, Grain Production</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border);">
+                <td style="padding:0.75rem 0; font-weight:700; color:var(--primary-dark);">Package / Unit Size</td>
+                <td style="padding:0.75rem 0; color:var(--text-muted);" id="specPackSize">20 kg certified treated sack</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border);">
+                <td style="padding:0.75rem 0; font-weight:700; color:var(--primary-dark);">Recommended Usage</td>
+                <td style="padding:0.75rem 0; color:var(--text-muted);" id="specUsage">120-150 kg per hectare seed rate</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border);">
+                <td style="padding:0.75rem 0; font-weight:700; color:var(--primary-dark);">Harvest Origin</td>
+                <td style="padding:0.75rem 0; color:var(--text-muted);" id="specOrigin">Oregon, USA</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Farmer Tab -->
+      <div class="tab-pane" id="tab-farmer">
+        <div class="card p-4" style="background:var(--white);">
+          <div style="display:flex; gap:1.5rem; align-items:center; margin-bottom:1.25rem;">
+            <img src="assets/images/farmer-1.webp" id="tabFarmerImg" alt="Farmer" style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid var(--primary-light);">
+            <div>
+              <h3 style="font-size:1.3rem; color:var(--primary-dark); margin:0;" id="tabFarmerName">Robert MacIntyre</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem; margin:0.25rem 0;" id="tabFarmerLocation">Master Grower &bull; Willamette Valley, Oregon</p>
+              <span class="badge badge-success"><i class="fa-solid fa-certificate"></i> Verified 5-Star Producer</span>
+            </div>
+          </div>
+          <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.7;" id="tabFarmerBio">
+            "We believe that true flavor and nutrition start with soil biological activity. When you purchase this harvest, you directly support regenerative carbon sequestration on our family farm."
+          </p>
+        </div>
+      </div>
+
+      <!-- Reviews Tab -->
+      <div class="tab-pane" id="tab-reviews">
+        <div class="card p-4" style="background:var(--white);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <h3 style="font-size:1.3rem; color:var(--primary-dark); margin-bottom:0.25rem;" id="tabReviewsHeader">Customer Reviews (78)</h3>
+              <div style="display:flex; align-items:center; gap:0.5rem;">
+                <div style="color:var(--accent); font-size:1.1rem;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <span style="font-weight:700; color:var(--text-dark);" id="tabReviewsAvg">4.8 out of 5</span>
+              </div>
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="window.AgriToast.show('Review submitted for moderation!', 'success');"><i class="fa-solid fa-pen"></i> Write a Review</button>
+          </div>
+
+          <!-- Review 1 -->
+          <div style="border-bottom:1px solid var(--border); padding-bottom:1.25rem; margin-bottom:1.25rem;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
+              <strong style="color:var(--text-dark);">Marcus Vance</strong>
+              <div style="color:var(--accent); font-size:0.85rem;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            </div>
+            <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.6;">Exceptional high-yield harvest quality. Cleaned thoroughly without debris. Germination and growth rates were exceptional across our acreage.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RELATED PRODUCTS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-primary">DISCOVER MORE</span>
+        <h2 class="section-title">Complementary Farm Harvests</h2>
+      </div>
+
+      <div class="grid grid-4" id="relatedProductsGrid">
+        <!-- Injected via script.js or fallback items -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <a href="index.html">
+              <img src="assets/images/logo-light.webp" alt="Stackly" class="footer-logo">
+            </a>
+          </div>
+          <p class="footer-desc">Mobilizing intelligent agricultural curation, bespoke organic supplies, sustainable farming equipment, and direct farm-to-door delivery for modern life.</p>
+          <div class="footer-social-icons">
+            <a href="404.html" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Stackly</a>
+            <a href="shop.html">Shop Catalog</a>
+            <a href="categories.html">Categories</a>
+            <a href="farmers.html">Farmers Directory</a>
+            <a href="farmer-store.html">Featured Harvests</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Support</h4>
+          <div class="footer-links">
+            <a href="contact.html">Contact Coordinates</a>
+            <a href="404.html">Terms & Agreements</a>
+            <a href="404.html">Security Audits</a>
+            <a href="404.html">Size & Fit Guide</a>
+            <a href="user-dashboard.html">Order Status</a>
+            <a href="user-dashboard.html">User Dashboard</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Newsletter</h4>
+          <p class="footer-newsletter-text">Get quarterly updates, smart style alerts, and platform feature reports.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Stackly updates!'); this.reset();">
+            <input type="email" placeholder="Your Email" required class="footer-newsletter-input" aria-label="Your Email">
+            <button type="submit" class="footer-newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-copy">© 2026 Stackly. All rights reserved. Designed for financial clarity and wealth tracking.</div>
+        <div class="footer-bottom-nav">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Product details dynamic hydration
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const urlId = params.get('id');
+      const prodId = urlId ? parseInt(urlId) : 9; // Default to wheat seeds or selected product
+      const product = (window.AgriData && window.AgriData.products) 
+        ? (window.AgriData.products.find(p => p.id === prodId) || window.AgriData.products[0]) 
+        : null;
+
+      if (product) {
+        const prodName = product.name || product.title || 'Agricultural Product';
+        const prodPrice = product.price || 0;
+        const prodOldPrice = product.oldPrice || product.originalPrice || 0;
+        const prodImage = product.image || 'assets/images/prod-wheat-seeds.webp';
+        const prodCat = product.categoryName || product.category || 'Seeds';
+        const prodRating = product.rating || 4.9;
+        const prodReviews = product.reviews || product.reviewsCount || 48;
+        const prodSeller = product.seller || product.farmer || 'Robert MacIntyre';
+
+        document.title = `${prodName} - AgriDirect Marketplace`;
+        
+        const titleEl = document.getElementById('detailTitle');
+        const priceEl = document.getElementById('detailPrice');
+        const origPriceEl = document.getElementById('detailOrigPrice');
+        const discountEl = document.getElementById('detailDiscount');
+        const mainImg = document.getElementById('detailMainImg');
+        const breadcrumbTitle = document.getElementById('detailBreadcrumbTitle');
+        const breadcrumbCat = document.getElementById('detailBreadcrumbCat');
+        const ratingStars = document.getElementById('detailRatingStars');
+        const ratingText = document.getElementById('detailRatingText');
+        const skuEl = document.getElementById('detailSku');
+        const descEl = document.getElementById('detailDesc');
+        const badgeEl = document.getElementById('detailBadge');
+
+        if (titleEl) titleEl.textContent = prodName;
+        if (priceEl) priceEl.textContent = `$${prodPrice.toFixed(2)}`;
+        if (origPriceEl) {
+          if (prodOldPrice && prodOldPrice > prodPrice) {
+            origPriceEl.textContent = `$${prodOldPrice.toFixed(2)}`;
+            origPriceEl.style.display = 'inline';
+            if (discountEl) {
+              const discPct = Math.round(((prodOldPrice - prodPrice) / prodOldPrice) * 100);
+              discountEl.textContent = `${discPct}% OFF`;
+              discountEl.style.display = 'inline-flex';
+            }
+          } else {
+            origPriceEl.style.display = 'none';
+            if (discountEl) discountEl.style.display = 'none';
+          }
+        }
+        if (mainImg) {
+          mainImg.src = prodImage;
+          mainImg.alt = prodName;
+        }
+        if (breadcrumbTitle) breadcrumbTitle.textContent = prodName;
+        if (breadcrumbCat) breadcrumbCat.textContent = prodCat;
+        if (descEl && product.description) descEl.textContent = product.description;
+        if (badgeEl) badgeEl.textContent = product.badge || 'Certified Organic';
+        if (skuEl) skuEl.textContent = `AGRI-${prodCat.substring(0,3).toUpperCase()}-0${product.id}`;
+        if (ratingText) ratingText.textContent = `${prodRating} (${prodReviews} customer ratings)`;
+
+        // Setup Dynamic Thumbnails
+        const thumbnailsContainer = document.getElementById('detailThumbnails');
+        if (thumbnailsContainer) {
+          const alternateImgs = [
+            prodImage,
+            'assets/images/prod-veg-seeds.webp',
+            'assets/images/hero-farm.webp'
+          ];
+          thumbnailsContainer.innerHTML = alternateImgs.map((imgSrc, idx) => `
+            <img class="detail-thumb ${idx === 0 ? 'active' : ''}" 
+                 src="${imgSrc}" 
+                 alt="Thumbnail ${idx + 1}" 
+                 style="width:75px; height:75px; object-fit:cover; border-radius:var(--radius-md); cursor:pointer; border:2px solid ${idx === 0 ? 'var(--primary)' : 'transparent'}; opacity:${idx === 0 ? '1' : '0.7'}; transition:all 0.2s ease;">
+          `).join('');
+
+          // Thumbnail click handler
+          thumbnailsContainer.querySelectorAll('.detail-thumb').forEach(thumb => {
+            thumb.addEventListener('click', () => {
+              thumbnailsContainer.querySelectorAll('.detail-thumb').forEach(t => {
+                t.classList.remove('active');
+                t.style.borderColor = 'transparent';
+                t.style.opacity = '0.7';
+              });
+              thumb.classList.add('active');
+              thumb.style.borderColor = 'var(--primary)';
+              thumb.style.opacity = '1';
+              if (mainImg) mainImg.src = thumb.src;
+            });
+          });
+        }
+
+        // Image zoom on hover
+        const zoomContainer = document.querySelector('.image-zoom-container');
+        if (zoomContainer && mainImg) {
+          zoomContainer.addEventListener('mousemove', (e) => {
+            const rect = zoomContainer.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            mainImg.style.transformOrigin = `${x}% ${y}%`;
+            mainImg.style.transform = 'scale(1.35)';
+          });
+          zoomContainer.addEventListener('mouseleave', () => {
+            mainImg.style.transformOrigin = 'center center';
+            mainImg.style.transform = 'scale(1)';
+          });
+        }
+
+        // Farmer Info & Profile tab
+        const farmer = (window.AgriData && window.AgriData.farmers)
+          ? (window.AgriData.farmers.find(f => f.id === product.sellerId || f.farmName === prodSeller || f.name === prodSeller) || window.AgriData.farmers[0])
+          : null;
+
+        if (farmer) {
+          const detailFarmerImg = document.getElementById('detailFarmerImg');
+          const detailFarmerName = document.getElementById('detailFarmerName');
+          const detailFarmerLoc = document.getElementById('detailFarmerLocation');
+          const detailFarmerStore = document.getElementById('detailFarmerStoreLink');
+          if (detailFarmerImg) detailFarmerImg.src = farmer.image;
+          if (detailFarmerName) detailFarmerName.textContent = `${farmer.name} (${farmer.farmName})`;
+          if (detailFarmerLoc) detailFarmerLoc.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${farmer.location}`;
+          if (detailFarmerStore) detailFarmerStore.href = `farmer-store.html?farmer=${farmer.id}`;
+
+          const tabFarmerImg = document.getElementById('tabFarmerImg');
+          const tabFarmerName = document.getElementById('tabFarmerName');
+          const tabFarmerLoc = document.getElementById('tabFarmerLocation');
+          const tabFarmerBio = document.getElementById('tabFarmerBio');
+          if (tabFarmerImg) tabFarmerImg.src = farmer.image;
+          if (tabFarmerName) tabFarmerName.textContent = farmer.name;
+          if (tabFarmerLoc) tabFarmerLoc.textContent = `Master Grower • ${farmer.location}`;
+          if (tabFarmerBio && farmer.bio) tabFarmerBio.textContent = `"${farmer.bio}"`;
+        }
+
+        // Specifications Tab
+        const specBrand = document.getElementById('specBrand');
+        const specCrops = document.getElementById('specCrops');
+        const specPackSize = document.getElementById('specPackSize');
+        const specUsage = document.getElementById('specUsage');
+        const specOrigin = document.getElementById('specOrigin');
+        if (specBrand) specBrand.textContent = product.brand || 'AgriDirect Certified';
+        if (specCrops) specCrops.textContent = product.suitableCrops || 'Field Crops & Organic Garden Beds';
+        if (specPackSize) specPackSize.textContent = product.packSize || product.unit || 'Standard Unit Packaging';
+        if (specUsage) specUsage.textContent = product.usage || 'Direct Agricultural Application';
+        if (specOrigin) specOrigin.textContent = product.origin || 'United States';
+
+        // Reviews Tab Header
+        const tabReviewsHeader = document.getElementById('tabReviewsHeader');
+        const tabReviewsAvg = document.getElementById('tabReviewsAvg');
+        if (tabReviewsHeader) tabReviewsHeader.textContent = `Customer Reviews (${prodReviews})`;
+        if (tabReviewsAvg) tabReviewsAvg.textContent = `${prodRating} out of 5`;
+
+        // Add to Cart handler
+        const addBtn = document.getElementById('detailAddToCartBtn');
+        if (addBtn) {
+          addBtn.addEventListener('click', () => {
+            const qty = parseInt(document.getElementById('detailQty').value) || 1;
+            window.AgriCart.addItem(product.id, qty);
+          });
+        }
+
+        // Buy Now handler
+        const buyNowBtn = document.getElementById('detailBuyNowBtn');
+        if (buyNowBtn) {
+          buyNowBtn.addEventListener('click', () => {
+            const qty = parseInt(document.getElementById('detailQty').value) || 1;
+            window.AgriCart.addItem(product.id, qty);
+            window.location.href = 'checkout.html';
+          });
+        }
+
+        // Wishlist button
+        const wishBtn = document.getElementById('detailWishlistBtn');
+        if (wishBtn) {
+          if (window.AgriWishlist.has(product.id)) {
+            wishBtn.classList.add('active');
+            wishBtn.style.color = '#dc2626';
+          }
+          wishBtn.addEventListener('click', () => {
+            const isSaved = window.AgriWishlist.toggleItem(product.id);
+            wishBtn.classList.toggle('active', isSaved);
+            wishBtn.style.color = isSaved ? '#dc2626' : '';
+          });
+        }
+      }
+
+      // Quantity adjustments
+      const qtyMinus = document.getElementById('qtyMinus');
+      const qtyPlus = document.getElementById('qtyPlus');
+      const qtyInput = document.getElementById('detailQty');
+      if (qtyMinus && qtyPlus && qtyInput) {
+        qtyMinus.addEventListener('click', () => {
+          let val = parseInt(qtyInput.value) || 1;
+          if (val > 1) qtyInput.value = val - 1;
+        });
+        qtyPlus.addEventListener('click', () => {
+          let val = parseInt(qtyInput.value) || 1;
+          if (val < 99) qtyInput.value = val + 1;
+        });
+      }
+
+      // Tab Switching
+      document.querySelectorAll('.tabs-nav .tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('data-tab');
+          document.querySelectorAll('.tabs-nav .tab-btn').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+          btn.classList.add('active');
+          const pane = document.getElementById(target);
+          if (pane) pane.classList.add('active');
+        });
+      });
+
+      // Render related products
+      const relatedGrid = document.getElementById('relatedProductsGrid');
+      if (relatedGrid && window.AgriData && window.AgriData.products) {
+        const related = window.AgriData.products.filter(p => p.id !== prodId).slice(0, 4);
+        relatedGrid.innerHTML = related.map(p => `
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="${p.image}" alt="${p.name}" loading="lazy">
+              <div class="product-badges">
+                <span class="product-badge badge-organic">${p.badge || 'Organic'}</span>
+              </div>
+              <div class="product-actions">
+                <button class="product-action-btn add-to-wishlist-btn ${window.AgriWishlist.has(p.id) ? 'active' : ''}" data-id="${p.id}" title="Wishlist">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <div class="product-hover-add">
+                <button class="btn-quick-add add-to-cart-btn" data-id="${p.id}">
+                  <i class="fa-solid fa-cart-plus"></i> Quick Add
+                </button>
+              </div>
+            </div>
+            <div class="product-body">
+              <div class="product-category">${p.categoryName || p.category}</div>
+              <h3 class="product-title"><a href="product-details.html?id=${p.id}">${p.name}</a></h3>
+              <div class="product-rating">
+                <span class="rating-stars" style="color: var(--accent-orange); font-size: 0.85rem;">★★★★★</span>
+                <strong>${p.rating || 4.8}</strong>
+                <span class="rating-count">(${p.reviews || 48})</span>
+              </div>
+              <div class="product-footer">
+                <div class="product-price">
+                  <span class="price-current">$${p.price.toFixed(2)}</span>
+                  ${p.oldPrice ? `<span class="price-original">$${p.oldPrice.toFixed(2)}</span>` : ''}
+                  <span class="product-unit">/ ${p.unit}</span>
+                </div>
+                <button class="btn btn-sm btn-primary add-to-cart-btn" data-id="${p.id}">
+                  <i class="fa-solid fa-basket-shopping"></i> Add
+                </button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+
+        // Bind related cart & wishlist buttons
+        relatedGrid.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const id = Number(btn.getAttribute('data-id'));
+            window.AgriCart.addItem(id, 1);
+          });
+        });
+
+        relatedGrid.querySelectorAll('.add-to-wishlist-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const id = Number(btn.getAttribute('data-id'));
+            const active = window.AgriWishlist.toggleItem(id);
+            btn.classList.toggle('active', active);
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+
+

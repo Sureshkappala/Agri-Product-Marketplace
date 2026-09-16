@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard - AgriDirect Marketplace</title>
+  <meta name="description" content="Manage your agricultural harvest orders, real-time cold-chain tracking, saved addresses, and profile settings.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:#f4f7f6; margin:0; padding:0;">
+
+  <!-- APP DASHBOARD LAYOUT -->
+  <div class="app-dashboard-layout">
+    
+    <!-- BACKDROP FOR MOBILE SIDEBAR -->
+    <div class="dash-sidebar-backdrop" id="dashBackdrop" onclick="toggleDashSidebar(false);"></div>
+
+    <!-- LEFT DARK APP SIDEBAR -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <!-- Logo & Mobile Close -->
+      <div class="dash-sidebar-header">
+        <a href="user-dashboard.html" class="dash-logo-wrap" style="text-decoration:none;" title="Customer Dashboard">
+          <img src="assets/images/logo-light.webp" alt="Stackly" style="height:42px; max-width:190px; object-fit:contain;">
+        </a>
+        <button class="dash-sidebar-close" onclick="toggleDashSidebar(false);" aria-label="Close Navigation">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Section -->
+      <div class="dash-nav-label">NAVIGATION</div>
+      <nav class="dash-nav-list">
+        <a href="javascript:void(0)" class="dash-nav-item active" data-tab="overview" onclick="switchDashboardTab('overview', this);">
+          <i class="fa-solid fa-table-cells-large"></i> Dashboard Overview
+        </a>
+        <a href="javascript:void(0)" class="dash-nav-item" data-tab="orders" onclick="switchDashboardTab('orders', this);">
+          <i class="fa-regular fa-clipboard"></i> Order History
+        </a>
+        <a href="javascript:void(0)" class="dash-nav-item" data-tab="tracking" onclick="switchDashboardTab('tracking', this);">
+          <i class="fa-solid fa-truck-fast"></i> Shipment Tracking
+        </a>
+        <a href="javascript:void(0)" class="dash-nav-item" data-tab="wishlist" onclick="switchDashboardTab('wishlist', this);">
+          <i class="fa-regular fa-heart"></i> Saved Wishlist
+        </a>
+        <a href="javascript:void(0)" class="dash-nav-item" data-tab="addresses" onclick="switchDashboardTab('addresses', this);">
+          <i class="fa-solid fa-location-dot"></i> Saved Addresses
+        </a>
+        <a href="javascript:void(0)" class="dash-nav-item" data-tab="settings" onclick="switchDashboardTab('settings', this);">
+          <i class="fa-solid fa-gear"></i> Account Settings
+        </a>
+      </nav>
+
+      <!-- Sidebar Bottom Profile -->
+      <div class="dash-sidebar-bottom">
+        <div class="dash-user-card">
+          <img src="assets/images/user-1.webp" alt="User" class="dash-user-avatar">
+          <div style="overflow:hidden;">
+            <div class="dash-user-name" id="dashSidebarName" style="white-space:nowrap; text-overflow:ellipsis; overflow:hidden;">Suresh Kappala</div>
+            <div class="dash-user-role" id="dashSidebarRole">Harvest Patron</div>
+          </div>
+        </div>
+
+        <a href="login.html" class="dash-logout-link" onclick="localStorage.removeItem('agri_logged_in'); localStorage.removeItem('agri_user_email'); localStorage.removeItem('agri_user_name');">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN DASHBOARD BODY -->
+    <main class="dash-main-area" id="dash-main-container">
+      
+      <!-- TOPBAR -->
+      <div class="dash-topbar">
+        <div class="dash-topbar-left" style="display:flex; align-items:center; gap:0.75rem;">
+          <button class="dash-mobile-toggle" id="dashMobileToggle" onclick="toggleDashSidebar();" aria-label="Open Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div>
+            <h1 class="dash-page-title">Welcome Back, <span id="dashTopbarName">Suresh</span>! 👋</h1>
+            <div class="dash-page-subtitle">September 2026 • AgriDirect Harvest Console</div>
+          </div>
+        </div>
+        <div class="dash-topbar-actions">
+          <a href="shop.html" class="btn-quick-expense">
+            <i class="fa-solid fa-plus"></i> Quick Order
+          </a>
+          <div class="dash-icon-btn" title="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span style="position:absolute; top:6px; right:6px; width:8px; height:8px; background:#ef4444; border-radius:50%;"></span>
+          </div>
+          <img src="assets/images/user-1.webp" alt="Suresh" class="dash-topbar-avatar">
+        </div>
+      </div>
+
+      <!-- WELCOME HERO BANNER -->
+      <div class="dash-hero-banner">
+        <div>
+          <h2 class="dash-hero-title">Welcome back, <span id="dashHeroName">Suresh</span> 👋</h2>
+          <div class="dash-hero-meta" style="display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; margin-top:0.4rem;">
+            <span style="background:rgba(255,255,255,0.08); padding:0.22rem 0.6rem; border-radius:6px; border:1px solid rgba(255,255,255,0.12); font-size:0.78rem;">
+              <i class="fa-solid fa-user" style="color:#38bdf8; margin-right:0.35rem;"></i> Name: <strong id="dashHeroFullName">Suresh Kappala</strong>
+            </span>
+            <span style="background:rgba(255,255,255,0.08); padding:0.22rem 0.6rem; border-radius:6px; border:1px solid rgba(255,255,255,0.12); font-size:0.78rem;">
+              <i class="fa-solid fa-envelope" style="color:#38bdf8; margin-right:0.35rem;"></i> Email: <strong id="dashHeroEmail">buyer@agridirect.com</strong>
+            </span>
+            <span style="background:rgba(255,255,255,0.08); padding:0.22rem 0.6rem; border-radius:6px; border:1px solid rgba(255,255,255,0.12); font-size:0.78rem;">
+              <i class="fa-solid fa-shield-halved" style="color:#10b981; margin-right:0.35rem;"></i> Role: <span class="role-highlight" id="dashHeroRole">Harvest Patron</span>
+            </span>
+            <span class="dash-session-badge"><i class="fa-solid fa-circle-check"></i> ACTIVE SESSION</span>
+          </div>
+        </div>
+        <div class="dash-hero-actions">
+          <button class="btn-hero-outline" onclick="switchDashboardTab('settings');">Account Settings</button>
+          <a href="shop.html" class="btn-hero-primary"><i class="fa-solid fa-plus"></i> Add Farm Order</a>
+        </div>
+      </div>
+
+      <!-- TAB 1: OVERVIEW & KPIS -->
+      <div class="dashboard-tab-content active" id="tab-overview">
+        
+        <!-- 4 KPI METRIC CARDS -->
+        <div class="dash-kpi-grid">
+          <!-- Card 1 -->
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-title">TOTAL ORDERS</span>
+              <span style="background:#e0f2fe; color:#0ea5e9; border-radius:6px; padding:0.3rem 0.55rem; font-size:0.85rem;"><i class="fa-solid fa-credit-card"></i></span>
+            </div>
+            <div class="dash-kpi-value">14</div>
+            <div class="dash-kpi-footer green">
+              <i class="fa-solid fa-check"></i> 12 Completed <span class="dash-kpi-footer-sub">• on schedule</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-title">ACTIVE SHIPMENTS</span>
+              <span style="background:#dcfce7; color:#10b981; border-radius:6px; padding:0.3rem 0.55rem; font-size:0.85rem;"><i class="fa-solid fa-chart-line"></i></span>
+            </div>
+            <div class="dash-kpi-value" style="color:#0ea5e9;">2</div>
+            <div class="dash-kpi-footer" style="color:#0ea5e9;">
+              <i class="fa-solid fa-snowflake"></i> In Thermal Transit <span class="dash-kpi-footer-sub">(4.2°C)</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-title">HARVEST POINTS</span>
+              <span style="background:#fef3c7; color:#f59e0b; border-radius:6px; padding:0.3rem 0.55rem; font-size:0.85rem;"><i class="fa-solid fa-seedling"></i></span>
+            </div>
+            <div class="dash-kpi-value" style="color:#d97706;">840</div>
+            <div class="dash-kpi-footer green">
+              <i class="fa-solid fa-tag"></i> $15 discount <span class="dash-kpi-footer-sub">redeemable</span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-title">DIRECT FARM SPEND</span>
+              <span style="background:#e0e7ff; color:#6366f1; border-radius:6px; padding:0.3rem 0.55rem; font-size:0.85rem;"><i class="fa-solid fa-shield-halved"></i></span>
+            </div>
+            <div class="dash-kpi-value">$428.50</div>
+            <div class="dash-kpi-footer green">
+              <i class="fa-solid fa-heart"></i> 4 Family Farms <span class="dash-kpi-footer-sub">funded</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-COLUMN CONTENT ROW -->
+        <div class="dash-content-row">
+          
+          <!-- LEFT COLUMN (Live Tracking + Orders) -->
+          <div class="dash-col-left">
+            <!-- Live Tracking Stepper Card -->
+            <div class="dash-card">
+              <div class="dash-card-title-bar">
+                <div>
+                  <h3 class="dash-card-heading">Live Tracking • #AGRI-74291</h3>
+                  <div class="dash-card-heading-sub">From GreenValley Farms • Expected: Tomorrow, 14:00</div>
+                </div>
+                <button class="btn btn-sm btn-outline" onclick="switchDashboardTab('tracking');">Full GPS Telemetry</button>
+              </div>
+
+              <!-- Stepper Timeline -->
+              <div class="shipment-stepper-wrap" style="margin:1rem 0;">
+                <div class="shipment-stepper-line"></div>
+                <div class="shipment-stepper-line-progress"></div>
+
+                <!-- Step 1 -->
+                <div class="stepper-step completed">
+                  <div class="stepper-node"><i class="fa-solid fa-check"></i></div>
+                  <div class="stepper-title">HARVESTED & CHILLED</div>
+                  <div class="stepper-date">Nov 02 • 06:30 AM</div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="stepper-step completed">
+                  <div class="stepper-node"><i class="fa-solid fa-check"></i></div>
+                  <div class="stepper-title">LAB QUALITY VERIFIED</div>
+                  <div class="stepper-date">Nov 02 • 11:15 AM</div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="stepper-step active">
+                  <div class="stepper-node">3</div>
+                  <div class="stepper-title">THERMAL POD TRANSIT</div>
+                  <div class="stepper-date">Nov 03 • In Progress (4°C)</div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="stepper-step">
+                  <div class="stepper-node">4</div>
+                  <div class="stepper-title" style="color:#94a3b8;">DOORSTEP ARRIVAL</div>
+                  <div class="stepper-date">Est. Tomorrow, 14:00</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Orders Table Card -->
+            <div class="dash-card">
+              <div class="dash-card-title-bar">
+                <h3 class="dash-card-heading">Recent Orders</h3>
+                <a href="javascript:void(0)" class="dashboard-card-link" onclick="switchDashboardTab('orders');">View All</a>
+              </div>
+
+              <div style="overflow-x:auto;">
+                <table class="table-minimal">
+                  <thead>
+                    <tr>
+                      <th>ORDER ID</th>
+                      <th>DATE</th>
+                      <th>ITEMS</th>
+                      <th>TOTAL</th>
+                      <th>STATUS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>#AGRI-74108</strong></td>
+                      <td style="color:#64748b;">Oct 24, 2026</td>
+                      <td style="color:#64748b;">2 items</td>
+                      <td style="font-weight:700; color:#0f2438;">$680.00</td>
+                      <td><span class="badge-delivered">DELIVERED</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>#AGRI-74291</strong></td>
+                      <td style="color:#64748b;">Nov 02, 2026</td>
+                      <td style="color:#64748b;">1 item</td>
+                      <td style="font-weight:700; color:#0f2438;">$240.00</td>
+                      <td class="badge-transit">IN TRANSIT</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN (Category Breakdown + Quick Actions) -->
+          <div class="dash-col-right">
+            <!-- Category Donut Chart Card -->
+            <div class="dash-card">
+              <div class="dash-card-title-bar">
+                <h3 class="dash-card-heading">Spending by Category</h3>
+                <a href="shop.html" style="font-size:0.8rem; color:#0ea5e9; font-weight:600; text-decoration:none;">Details →</a>
+              </div>
+
+              <div class="donut-chart-container">
+                <!-- SVG Donut Chart Mockup -->
+                <svg width="170" height="170" viewBox="0 0 42 42" style="transform:rotate(-90deg);">
+                  <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#f1f5f9" stroke-width="6"></circle>
+                  <!-- Organic Seeds (35%) -->
+                  <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#10b981" stroke-width="6" stroke-dasharray="35 65" stroke-dashoffset="0"></circle>
+                  <!-- Fertilizers (25%) -->
+                  <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#0ea5e9" stroke-width="6" stroke-dasharray="25 75" stroke-dashoffset="-35"></circle>
+                  <!-- Tools & Hardware (22%) -->
+                  <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#e11d48" stroke-width="6" stroke-dasharray="22 78" stroke-dashoffset="-60"></circle>
+                  <!-- Irrigation (18%) -->
+                  <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#f59e0b" stroke-width="6" stroke-dasharray="18 82" stroke-dashoffset="-82"></circle>
+                </svg>
+
+                <div style="position:relative; margin-top:-105px; text-align:center; height:105px; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                  <div style="font-size:1.3rem; font-weight:800; color:#0f172a;">$3,240</div>
+                  <div style="font-size:0.68rem; font-weight:600; color:#64748b; text-transform:uppercase;">Total Harvests</div>
+                </div>
+
+                <!-- Legend -->
+                <div class="donut-legend">
+                  <div class="legend-item">
+                    <div class="legend-left">
+                      <span class="legend-dot" style="background:#10b981;"></span>
+                      <span>Organic Seeds & Seedlings</span>
+                    </div>
+                    <strong>35%</strong>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-left">
+                      <span class="legend-dot" style="background:#0ea5e9;"></span>
+                      <span>Bio-Compost & Fertilizers</span>
+                    </div>
+                    <strong>25%</strong>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-left">
+                      <span class="legend-dot" style="background:#e11d48;"></span>
+                      <span>Farming Hand Tools</span>
+                    </div>
+                    <strong>22%</strong>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-left">
+                      <span class="legend-dot" style="background:#f59e0b;"></span>
+                      <span>Drip & Solar Irrigation</span>
+                    </div>
+                    <strong>18%</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Farm Direct Concierge Card -->
+            <div class="dash-card" style="background:linear-gradient(135deg, #0b1a28, #132f4c); color:#ffffff; border:none;">
+              <div style="font-size:0.75rem; text-transform:uppercase; color:#38bdf8; font-weight:800; letter-spacing:0.6px; margin-bottom:0.4rem;">DIRECT FARM CONCIERGE</div>
+              <h4 style="font-size:1.05rem; font-weight:800; margin-bottom:0.5rem; color:#ffffff;">Need bespoke bulk harvest delivery?</h4>
+              <p style="font-size:0.82rem; color:#94a3b8; line-height:1.45; margin-bottom:1rem;">Contact our verified regional farm coordinator for direct allotment reservations.</p>
+              <a href="contact.html" class="btn btn-sm btn-primary" style="width:100%; text-align:center; display:block;"><i class="fa-solid fa-headset"></i> Connect With Concierge</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- TAB 2: ORDER HISTORY -->
+      <div class="dashboard-tab-content" id="tab-orders">
+        <div class="dash-card">
+          <div class="dash-card-title-bar">
+            <div>
+              <h3 class="dash-card-heading">Order History</h3>
+              <div class="dash-card-heading-sub">Complete archival ledger of verified harvests & deliveries</div>
+            </div>
+            <a href="shop.html" class="btn btn-sm btn-primary">+ Place New Order</a>
+          </div>
+
+          <div class="module-badge-filter">
+            <button class="filter-pill-btn active" onclick="filterOrderRows('all', this)">All Orders (3)</button>
+            <button class="filter-pill-btn" onclick="filterOrderRows('in-transit', this)">In Transit (1)</button>
+            <button class="filter-pill-btn" onclick="filterOrderRows('delivered', this)">Delivered (2)</button>
+          </div>
+
+          <!-- Order 1 -->
+          <div class="order-detail-card" data-status="in-transit">
+            <div class="order-detail-header">
+              <div>
+                <span style="font-weight:700; font-size:1.05rem; color:#0f172a;">Order #AGRI-74291</span>
+                <span style="font-size:0.82rem; color:#64748b; margin-left:0.75rem;">Placed on Nov 02, 2026</span>
+              </div>
+              <div>
+                <span class="badge-transit" style="margin-right:1rem;">IN TRANSIT</span>
+                <button class="btn btn-sm btn-outline" onclick="switchDashboardTab('tracking')"><i class="fa-solid fa-location-crosshairs"></i> Track Live</button>
+              </div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+              <div style="display:flex; align-items:center; gap:1rem;">
+                <img src="assets/images/prod-veg-seeds.webp" alt="Product" style="width:52px; height:52px; border-radius:6px; object-fit:cover; border:1px solid #e2e8f0;">
+                <div>
+                  <div style="font-weight:600; font-size:0.92rem; color:#0f172a;">Organic Heirloom Vegetable Seed Kit & Supplies</div>
+                  <div style="font-size:0.8rem; color:#64748b;">Qty: 1 • Seller: GreenValley Farms</div>
+                </div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:1.1rem; font-weight:700; color:#0f172a;">$240.00</div>
+                <div style="font-size:0.75rem; color:#16a34a;"><i class="fa-solid fa-shield-check"></i> Insured Transit</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order 2 -->
+          <div class="order-detail-card" data-status="delivered">
+            <div class="order-detail-header">
+              <div>
+                <span style="font-weight:700; font-size:1.05rem; color:#0f172a;">Order #AGRI-74108</span>
+                <span style="font-size:0.82rem; color:#64748b; margin-left:0.75rem;">Placed on Oct 24, 2026</span>
+              </div>
+              <div>
+                <span class="badge-delivered" style="margin-right:1rem;">DELIVERED</span>
+                <button class="btn btn-sm btn-outline" onclick="alert('Receipt for #AGRI-74108 downloaded successfully.');"><i class="fa-solid fa-file-invoice"></i> Receipt</button>
+              </div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+              <div style="display:flex; align-items:center; gap:1rem;">
+                <img src="assets/images/prod-organic-fertilizer.webp" alt="Product" style="width:52px; height:52px; border-radius:6px; object-fit:cover; border:1px solid #e2e8f0;">
+                <div>
+                  <div style="font-weight:600; font-size:0.92rem; color:#0f172a;">Bio-Enriched Organic Compost Fertilizer (25kg)</div>
+                  <div style="font-size:0.8rem; color:#64748b;">Qty: 2 • Seller: EcoRoots Agrotech</div>
+                </div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:1.1rem; font-weight:700; color:#0f172a;">$680.00</div>
+                <div style="font-size:0.75rem; color:#64748b;">Delivered Oct 27, 2026</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order 3 -->
+          <div class="order-detail-card" data-status="delivered">
+            <div class="order-detail-header">
+              <div>
+                <span style="font-weight:700; font-size:1.05rem; color:#0f172a;">Order #AGRI-73950</span>
+                <span style="font-size:0.82rem; color:#64748b; margin-left:0.75rem;">Placed on Oct 10, 2026</span>
+              </div>
+              <div>
+                <span class="badge-delivered" style="margin-right:1rem;">DELIVERED</span>
+                <button class="btn btn-sm btn-outline" onclick="alert('Receipt for #AGRI-73950 downloaded.');"><i class="fa-solid fa-file-invoice"></i> Receipt</button>
+              </div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+              <div style="display:flex; align-items:center; gap:1rem;">
+                <img src="assets/images/prod-garden-tools.webp" alt="Product" style="width:52px; height:52px; border-radius:6px; object-fit:cover; border:1px solid #e2e8f0;">
+                <div>
+                  <div style="font-weight:600; font-size:0.92rem; color:#0f172a;">Carbon-Steel Ergonomic Gardening Hand Tools</div>
+                  <div style="font-size:0.8rem; color:#64748b;">Qty: 1 • Seller: AgriCraft Hardware</div>
+                </div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:1.1rem; font-weight:700; color:#0f172a;">$49.99</div>
+                <div style="font-size:0.75rem; color:#64748b;">Delivered Oct 13, 2026</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 3: SHIPMENT TRACKING -->
+      <div class="dashboard-tab-content" id="tab-tracking">
+        <div class="dash-card">
+          <div class="dash-card-title-bar">
+            <div>
+              <h3 class="dash-card-heading">Shipment Tracking</h3>
+              <div class="dash-card-heading-sub">Order Ref: <strong>#AGRI-74291</strong> • Carrier: Farm Express Cold Logistics</div>
+            </div>
+            <span class="badge-delivered" style="background:#e0f2fe; color:#0284c7;">Active GPS Link</span>
+          </div>
+
+          <!-- Telemetry Bar -->
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; padding:1.25rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; margin-bottom:2rem;">
+            <div>
+              <div style="font-size:0.72rem; text-transform:uppercase; color:#64748b; font-weight:700;">Climate Pod Temp</div>
+              <div style="font-size:1.15rem; font-weight:700; color:#0f172a; margin-top:0.2rem;"><i class="fa-solid fa-temperature-half" style="color:#0284c7;"></i> 4.2°C (Optimal)</div>
+            </div>
+            <div>
+              <div style="font-size:0.72rem; text-transform:uppercase; color:#64748b; font-weight:700;">Current Checkpoint</div>
+              <div style="font-size:1.15rem; font-weight:700; color:#0f172a; margin-top:0.2rem;"><i class="fa-solid fa-location-dot" style="color:#e11d48;"></i> Regional AgriHub #04</div>
+            </div>
+            <div>
+              <div style="font-size:0.72rem; text-transform:uppercase; color:#64748b; font-weight:700;">Est. Doorstep ETA</div>
+              <div style="font-size:1.15rem; font-weight:700; color:#0f172a; margin-top:0.2rem;"><i class="fa-solid fa-clock" style="color:#16a34a;"></i> Tomorrow, 14:00</div>
+            </div>
+          </div>
+
+          <!-- Stepper Timeline -->
+          <div class="shipment-stepper-wrap" style="margin-bottom:2.5rem;">
+            <div class="shipment-stepper-line"></div>
+            <div class="shipment-stepper-line-progress"></div>
+
+            <div class="stepper-step completed">
+              <div class="stepper-node"><i class="fa-solid fa-check"></i></div>
+              <div class="stepper-title">HARVESTED & CHILLED</div>
+              <div class="stepper-date">Nov 02 • 06:30 AM</div>
+            </div>
+
+            <div class="stepper-step completed">
+              <div class="stepper-node"><i class="fa-solid fa-check"></i></div>
+              <div class="stepper-title">LAB QUALITY VERIFIED</div>
+              <div class="stepper-date">Nov 02 • 11:15 AM</div>
+            </div>
+
+            <div class="stepper-step active">
+              <div class="stepper-node">3</div>
+              <div class="stepper-title">THERMAL POD TRANSIT</div>
+              <div class="stepper-date">Nov 03 • In Progress (4°C)</div>
+            </div>
+
+            <div class="stepper-step">
+              <div class="stepper-node">4</div>
+              <div class="stepper-title" style="color:#94a3b8;">DOORSTEP ARRIVAL</div>
+              <div class="stepper-date">Est. Tomorrow, 14:00</div>
+            </div>
+          </div>
+
+          <!-- Milestones Log -->
+          <h4 style="font-size:0.95rem; font-weight:700; color:#0f172a; margin-bottom:1rem; text-transform:uppercase; letter-spacing:0.5px;">Telemetry Event Logs</h4>
+          <div style="border-left:2px solid #e2e8f0; padding-left:1.25rem; margin-left:0.5rem; display:flex; flex-direction:column; gap:1.25rem;">
+            <div>
+              <div style="font-size:0.88rem; font-weight:700; color:#0f172a;">Departed Sorting Depot — Regional Cold-Chain Central</div>
+              <div style="font-size:0.75rem; color:#64748b;">Nov 03, 2026 • 08:45 AM • Carrier Seal #748194 Verified</div>
+            </div>
+            <div>
+              <div style="font-size:0.88rem; font-weight:700; color:#0f172a;">Cold-Chain Sensor Calibration Complete</div>
+              <div style="font-size:0.75rem; color:#64748b;">Nov 02, 2026 • 18:30 PM • Thermal containment pod stable at 4.2°C</div>
+            </div>
+            <div>
+              <div style="font-size:0.88rem; font-weight:700; color:#0f172a;">Order Packaged & QC Certified</div>
+              <div style="font-size:0.75rem; color:#64748b;">Nov 02, 2026 • 09:15 AM • GreenValley Farm Distribution Hub</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: SAVED WISHLIST -->
+      <div class="dashboard-tab-content" id="tab-wishlist">
+        <div class="dash-card">
+          <div class="dash-card-title-bar">
+            <div>
+              <h3 class="dash-card-heading">Saved Wishlist</h3>
+              <div class="dash-card-heading-sub">Curated catalog pieces reserved for your harvest schedule</div>
+            </div>
+            <a href="shop.html" class="btn btn-sm btn-outline"><i class="fa-solid fa-compass"></i> Explore Catalog</a>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:1.5rem;">
+            <!-- Wishlist Item 1 -->
+            <div style="border:1.5px solid #e2e8f0; border-radius:8px; padding:1.25rem; background:#ffffff; display:flex; flex-direction:column;">
+              <img src="assets/images/prod-drip-kit.webp" alt="Solar Drip Kit" style="width:100%; height:160px; object-fit:cover; border-radius:6px; margin-bottom:1rem;">
+              <div style="font-size:0.72rem; text-transform:uppercase; color:#0ea5e9; font-weight:700;">IRRIGATION</div>
+              <div style="font-weight:700; font-size:0.95rem; color:#0f172a; margin:0.25rem 0 0.5rem 0;">Automated Solar Drip Kit (50m)</div>
+              <div style="font-size:1.1rem; font-weight:700; color:#0f172a; margin-bottom:1rem;">$119.00</div>
+              <div style="display:flex; gap:0.5rem; margin-top:auto;">
+                <button class="btn btn-sm btn-primary" style="flex:1;" onclick="alert('Item added to cart!');"><i class="fa-solid fa-cart-shopping"></i> Add to Bag</button>
+                <button class="btn btn-sm btn-outline" style="color:#ef4444;" title="Remove" onclick="this.closest('div[style*=\'border\']').remove();"><i class="fa-solid fa-trash"></i></button>
+              </div>
+            </div>
+
+            <!-- Wishlist Item 2 -->
+            <div style="border:1.5px solid #e2e8f0; border-radius:8px; padding:1.25rem; background:#ffffff; display:flex; flex-direction:column;">
+              <img src="assets/images/prod-sprayer.webp" alt="Sprayer" style="width:100%; height:160px; object-fit:cover; border-radius:6px; margin-bottom:1rem;">
+              <div style="font-size:0.72rem; text-transform:uppercase; color:#0ea5e9; font-weight:700;">EQUIPMENT</div>
+              <div style="font-weight:700; font-size:0.95rem; color:#0f172a; margin:0.25rem 0 0.5rem 0;">Pro-Grade 16L Backpack Farm Sprayer</div>
+              <div style="font-size:1.1rem; font-weight:700; color:#0f172a; margin-bottom:1rem;">$64.99</div>
+              <div style="display:flex; gap:0.5rem; margin-top:auto;">
+                <button class="btn btn-sm btn-primary" style="flex:1;" onclick="alert('Item added to cart!');"><i class="fa-solid fa-cart-shopping"></i> Add to Bag</button>
+                <button class="btn btn-sm btn-outline" style="color:#ef4444;" title="Remove" onclick="this.closest('div[style*=\'border\']').remove();"><i class="fa-solid fa-trash"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5: SAVED ADDRESSES -->
+      <div class="dashboard-tab-content" id="tab-addresses">
+        <div class="dash-card">
+          <div class="dash-card-title-bar">
+            <div>
+              <h3 class="dash-card-heading">Saved Addresses</h3>
+              <div class="dash-card-heading-sub">Primary delivery coordinates for certified cold-chain couriers</div>
+            </div>
+            <button class="btn btn-sm btn-primary" onclick="alert('Add Address Dialog: Enter street, apartment, postal code.');">+ Add New Address</button>
+          </div>
+
+          <div class="address-grid">
+            <!-- Address 1 -->
+            <div class="address-box is-default">
+              <span class="address-badge-tag" style="background:#0ea5e9;">DEFAULT PRIMARY</span>
+              <div style="font-weight:700; font-size:1.05rem; color:#0f172a; margin-bottom:0.4rem;">Suresh Kappala</div>
+              <div style="font-size:0.88rem; color:#475569; line-height:1.5;">
+                742 Evergreen Valley Farm Road, Suite 402<br>
+                San Francisco, CA 94107<br>
+                United States<br>
+                <span style="font-size:0.8rem; color:#64748b;">Phone: +1 (555) 382-9910</span>
+              </div>
+              <div style="margin-top:1.25rem; display:flex; gap:0.75rem;">
+                <button class="btn btn-sm btn-outline" onclick="alert('Edit address dialog opened');"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+              </div>
+            </div>
+
+            <!-- Address 2 -->
+            <div class="address-box">
+              <span class="address-badge-tag" style="background:#64748b;">SECONDARY / FARMHOUSE</span>
+              <div style="font-weight:700; font-size:1.05rem; color:#0f172a; margin-bottom:0.4rem;">Suresh Kappala (Orchard Drop)</div>
+              <div style="font-size:0.88rem; color:#475569; line-height:1.5;">
+                108 Valley View Road<br>
+                Napa County, CA 94558<br>
+                United States<br>
+                <span style="font-size:0.8rem; color:#64748b;">Phone: +1 (555) 382-9910</span>
+              </div>
+              <div style="margin-top:1.25rem; display:flex; gap:0.75rem;">
+                <button class="btn btn-sm btn-outline" onclick="alert('Set as default primary address');">Set Default</button>
+                <button class="btn btn-sm btn-outline" onclick="alert('Edit address dialog opened');"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 6: ACCOUNT SETTINGS -->
+      <div class="dashboard-tab-content" id="tab-settings">
+        <div class="dash-card">
+          <div class="dash-card-title-bar">
+            <div>
+              <h3 class="dash-card-heading">Account & Security Settings</h3>
+              <div class="dash-card-heading-sub">Personal profile, security credentials, and dispatch notifications</div>
+            </div>
+          </div>
+
+          <form onsubmit="handleProfileSave(event);" style="display:flex; flex-direction:column; gap:1.75rem;">
+            <div class="settings-form-grid">
+              <div class="form-group-atelier">
+                <label>Full Name</label>
+                <input type="text" class="form-control-atelier" id="settingFullName" value="Suresh Kappala" required>
+              </div>
+              <div class="form-group-atelier">
+                <label>Patron Username</label>
+                <input type="text" class="form-control-atelier" id="settingUsername" value="sureshkappala92" readonly style="background:#f8fafc; color:#64748b;">
+              </div>
+              <div class="form-group-atelier">
+                <label>Email Address</label>
+                <input type="email" class="form-control-atelier" id="settingEmail" value="suresh.kappala@stackly.org" required>
+              </div>
+              <div class="form-group-atelier">
+                <label>Phone Number</label>
+                <input type="tel" class="form-control-atelier" value="+1 (555) 382-9910">
+              </div>
+            </div>
+
+            <div style="border-top:1px solid #e2e8f0; padding-top:1.5rem;">
+              <h4 style="font-size:1rem; font-weight:700; color:#0f172a; margin-bottom:1rem;">Notification Preferences</h4>
+              <div style="display:flex; flex-direction:column; gap:0.75rem;">
+                <label style="display:flex; align-items:center; gap:0.65rem; font-size:0.88rem; color:#334155; cursor:pointer;">
+                  <input type="checkbox" checked style="accent-color:#0ea5e9; width:16px; height:16px;"> SMS Live Telemetry & ETA Updates
+                </label>
+                <label style="display:flex; align-items:center; gap:0.65rem; font-size:0.88rem; color:#334155; cursor:pointer;">
+                  <input type="checkbox" checked style="accent-color:#0ea5e9; width:16px; height:16px;"> Harvest Drop Invitations & Seasonal Allotments
+                </label>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:1rem; margin-top:0.5rem;">
+              <button type="submit" class="btn btn-primary" style="background:#0ea5e9; border-color:#0ea5e9;">Save Changes</button>
+              <button type="reset" class="btn btn-outline">Discard</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    // Tab switching engine for Patron Dashboard Side Modules
+    function switchDashboardTab(tabId, clickedElement) {
+      // 1. Hide all tab contents
+      const allTabs = document.querySelectorAll('.dashboard-tab-content');
+      allTabs.forEach(tab => tab.classList.remove('active'));
+
+      // 2. Remove active class from nav links
+      const allNavLinks = document.querySelectorAll('.dash-nav-item');
+      allNavLinks.forEach(link => link.classList.remove('active'));
+
+      // 3. Activate target tab content
+      const targetTab = document.getElementById('tab-' + tabId);
+      if (targetTab) {
+        targetTab.classList.add('active');
+      }
+
+      // 4. Activate clicked or corresponding nav link
+      if (clickedElement) {
+        clickedElement.classList.add('active');
+      } else {
+        const matchingLink = document.querySelector(`.dash-nav-item[data-tab="${tabId}"]`);
+        if (matchingLink) matchingLink.classList.add('active');
+      }
+
+      // 5. Scroll container back to top cleanly without jumping
+      const mainContainer = document.getElementById('dash-main-container');
+      if (mainContainer) mainContainer.scrollTop = 0;
+      window.scrollTo(0, 0);
+
+      // Close mobile drawer on navigation
+      if (window.innerWidth <= 992) {
+        toggleDashSidebar(false);
+      }
+    }
+
+    // Toggle Mobile Sidebar Drawer
+    function toggleDashSidebar(force) {
+      const sidebar = document.getElementById('dashSidebar');
+      const backdrop = document.getElementById('dashBackdrop');
+      if (!sidebar) return;
+      const isOpen = sidebar.classList.contains('open');
+      const shouldOpen = force !== undefined ? force : !isOpen;
+      if (shouldOpen) {
+        sidebar.classList.add('open');
+        if (backdrop) backdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        sidebar.classList.remove('open');
+        if (backdrop) backdrop.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Filter order rows inside Order History tab
+    function filterOrderRows(filter, btn) {
+      const allBtns = document.querySelectorAll('.filter-pill-btn');
+      allBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.order-detail-card');
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.status === filter) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Load active user credentials dynamically
+    function loadUserCredentials() {
+      const email = localStorage.getItem('agri_user_email') || 'buyer@agridirect.com';
+      const name = localStorage.getItem('agri_user_name') || 'Suresh Kappala';
+      const role = localStorage.getItem('agri_user_role') || 'Harvest Patron';
+
+      const firstName = name.split(' ')[0] || 'Suresh';
+
+      const topbarName = document.getElementById('dashTopbarName');
+      if (topbarName) topbarName.textContent = firstName;
+
+      const heroName = document.getElementById('dashHeroName');
+      if (heroName) heroName.textContent = firstName;
+
+      const heroFullName = document.getElementById('dashHeroFullName');
+      if (heroFullName) heroFullName.textContent = name;
+
+      const heroEmail = document.getElementById('dashHeroEmail');
+      if (heroEmail) heroEmail.textContent = email;
+
+      const heroRole = document.getElementById('dashHeroRole');
+      if (heroRole) heroRole.textContent = role;
+
+      const sidebarName = document.getElementById('dashSidebarName');
+      if (sidebarName) sidebarName.textContent = name;
+
+      const sidebarRole = document.getElementById('dashSidebarRole');
+      if (sidebarRole) sidebarRole.textContent = role;
+
+      const inputName = document.getElementById('settingFullName');
+      if (inputName) inputName.value = name;
+
+      const inputEmail = document.getElementById('settingEmail');
+      if (inputEmail) inputEmail.value = email;
+
+      const inputUser = document.getElementById('settingUsername');
+      if (inputUser) inputUser.value = email.split('@')[0];
+    }
+
+    function handleProfileSave(e) {
+      e.preventDefault();
+      const newName = document.getElementById('settingFullName').value.trim();
+      const newEmail = document.getElementById('settingEmail').value.trim();
+
+      if (newName) localStorage.setItem('agri_user_name', newName);
+      if (newEmail) localStorage.setItem('agri_user_email', newEmail);
+
+      loadUserCredentials();
+      window.AgriToast.show('Profile credentials updated successfully!', 'success');
+    }
+
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      loadUserCredentials();
+      window.scrollTo(0, 0);
+      const mainContainer = document.getElementById('dash-main-container');
+      if (mainContainer) mainContainer.scrollTop = 0;
+
+      const currentName = localStorage.getItem('agri_user_name') || 'Suresh Kappala';
+      const currentEmail = localStorage.getItem('agri_user_email') || 'buyer@agridirect.com';
+      const currentRole = localStorage.getItem('agri_user_role') || 'Harvest Patron';
+      window.AgriToast.show(`Welcome back, ${currentName}! Logged in as: ${currentEmail} (${currentRole})`, 'info');
+    });
+  </script>
+</body>
+</html>
+
+

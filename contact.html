@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Agronomy Support - AgriMarket</title>
+  <meta name="description" content="Reach our dedicated agricultural assistance desk, cold-chain logistics team, or farmer onboarding specialists.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Announcement Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <span>🌱 Direct From 150+ Verified Local Farmers</span>
+        <span>🚚 Free Farm Delivery On Orders Over $75</span>
+      </div>
+      <div class="topbar-right">
+        <span>Farmer Support: +1 (800) 555-AGRI</span>
+        <a href="seller-dashboard.html">Become a Seller</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img">
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="categories.html" class="nav-link">Categories</a>
+          <a href="farmers.html" class="nav-link">Farmers</a>
+          <a href="product-details.html" class="nav-link">Products</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="shop.html" class="action-icon-btn" aria-label="Search Marketplace">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </a>
+          <a href="wishlist.html" class="action-icon-btn" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+            <span class="action-badge wishlist-count-badge">2</span>
+          </a>
+          <a href="cart.html" class="action-icon-btn" aria-label="Shopping Cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg>
+            <span class="action-badge cart-count-badge">3</span>
+          </a>
+          <a href="login.html" class="btn btn-sm btn-primary">Login</a>
+          <button class="hamburger-btn" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img">
+      </div>
+      <button class="mobile-drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+
+    <!-- Search in Drawer -->
+    <div class="mobile-drawer-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search catalog..." onkeydown="if(event.key==='Enter') window.location.href='shop.html?search='+encodeURIComponent(this.value)">
+    </div>
+
+    <nav class="mobile-drawer-links">
+      <a href="index.html">Home <span>→</span></a>
+      <a href="about.html">About Us <span>→</span></a>
+      <a href="shop.html">Shop Catalog <span>→</span></a>
+      <a href="categories.html">All Categories <span>→</span></a>
+      <a href="farmers.html">Meet Farmers <span>→</span></a>
+      <a href="product-details.html">Product Spotlight <span>→</span></a>
+      <a href="contact.html" class="active">Customer Contact <span>—</span></a>
+    </nav>
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn btn-primary">Login</a>
+      <a href="user-dashboard.html" class="btn btn-outline">My Account</a>
+      <div class="mobile-drawer-info">
+        <div class="drawer-info-label">Direct Farm Concierge</div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Call:</span>
+          <span class="drawer-info-val">+1 (800) 555-AGRI</span>
+        </div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Email:</span>
+          <span class="drawer-info-val">concierge@stackly.com</span>
+        </div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Hubs:</span>
+          <span class="drawer-info-val">California • Oregon • Midwest • Texas</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span class="active">Contact & Agronomy Support</span>
+      </div>
+      <h1 class="page-title">We're Here to Help You Grow</h1>
+      <p class="page-subtitle">Have questions about a harvest shipment, organic testing certificate, or producer registration? Get in touch with our agronomist support team.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT & FAQ SECTION -->
+  <section class="section">
+    <div class="container">
+      
+      <!-- 3 Info Cards -->
+      <div class="grid grid-3 mb-4" style="gap:1.5rem;">
+        <div class="card p-4 text-center">
+          <div style="width:60px; height:60px; border-radius:50%; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin:0 auto 1rem; border:1px solid var(--border);">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <h3 style="font-size:1.2rem; color:var(--primary-dark); margin-bottom:0.25rem;">Helpline & Dispatch</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:0.75rem;">Mon - Sat from 6:00 AM to 8:00 PM PST</p>
+          <a href="tel:+18004582474" style="font-weight:700; color:var(--primary); font-size:1.1rem;">+1 (800) 458-AGRI</a>
+        </div>
+
+        <div class="card p-4 text-center">
+          <div style="width:60px; height:60px; border-radius:50%; background:rgba(233,168,37,0.15); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin:0 auto 1rem; border:1px solid var(--border);">
+            <i class="fa-solid fa-envelope-open-text"></i>
+          </div>
+          <h3 style="font-size:1.2rem; color:var(--primary-dark); margin-bottom:0.25rem;">Agronomy Inquiries</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:0.75rem;">Average response time: Under 2 hours</p>
+          <a href="mailto:support@agridirect-market.com" style="font-weight:700; color:var(--primary); font-size:1.05rem;">support@agridirect-market.com</a>
+        </div>
+
+        <div class="card p-4 text-center">
+          <div style="width:60px; height:60px; border-radius:50%; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin:0 auto 1rem; border:1px solid var(--border);">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <h3 style="font-size:1.2rem; color:var(--primary-dark); margin-bottom:0.25rem;">Central Hub</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:0.75rem;">742 Evergreen Harvest Way</p>
+          <span style="font-weight:700; color:var(--primary-dark);">Agronomy Valley, OR 97401</span>
+        </div>
+      </div>
+
+      <!-- Main Form & FAQ Grid -->
+      <div class="grid" style="grid-template-columns: 1.15fr 1fr; gap:3rem; align-items:flex-start;">
+        
+        <!-- Left: Contact Form -->
+        <div class="card p-4">
+          <h2 style="font-size:1.4rem; color:var(--primary-dark); margin-bottom:1.5rem; border-bottom:1px solid var(--border); padding-bottom:0.75rem;">
+            Send an Inquiry
+          </h2>
+
+          <form id="contactForm" novalidate>
+            <div class="grid grid-2" style="gap:1rem;">
+              <div class="form-group">
+                <label class="form-label" for="contactName">Your Name *</label>
+                <input type="text" id="contactName" class="form-control" placeholder="e.g. Maria Gonzalez" autocomplete="name" required>
+                <span class="form-error">Please enter letters and spaces only (no numbers).</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactPhone">Mobile Phone (10 Digits) *</label>
+                <input type="tel" id="contactPhone" class="form-control" placeholder="e.g. 5415550199" maxlength="10" inputmode="numeric" pattern="[0-9]*" autocomplete="tel" required>
+                <span class="form-error">Must be exactly 10 digits (no alphabets).</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactEmail">Email Address *</label>
+              <input type="email" id="contactEmail" class="form-control" placeholder="maria@example.com" required>
+              <span class="form-error">Please enter a valid email address.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactSubject">Inquiry Category *</label>
+              <select id="contactSubject" class="form-control" required>
+                <option value="">Select Topic</option>
+                <option value="order">Order Tracking & Cold-Chain Transit</option>
+                <option value="seller">Farmer Onboarding & Verification</option>
+                <option value="quality">Organic Certification & Quality Assay</option>
+                <option value="wholesale">Commercial Ag / Bulk Purchasing</option>
+                <option value="other">General Support</option>
+              </select>
+              <span class="form-error">Please select a category.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactMessage">Your Message *</label>
+              <textarea id="contactMessage" class="form-control" rows="5" placeholder="Provide details regarding your order, crop requirements, or questions..." required></textarea>
+              <span class="form-error">Message cannot be empty.</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;">
+              Submit Inquiry
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: FAQ Accordions -->
+        <div>
+          <h2 style="font-size:1.4rem; color:var(--primary-dark); margin-bottom:1.5rem; border-bottom:1px solid var(--border); padding-bottom:0.75rem;">
+            Frequently Asked Questions
+          </h2>
+
+          <div style="display:flex; flex-direction:column; gap:1rem;">
+            
+            <details class="card p-3" style="cursor:pointer;" open>
+              <summary style="font-weight:700; color:var(--primary-dark); font-size:1.05rem; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                How does farm-to-table cold-chain work?
+                <i class="fa-solid fa-chevron-down" style="color:var(--primary);"></i>
+              </summary>
+              <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin-top:0.75rem; border-top:1px solid var(--border); padding-top:0.75rem;">
+                When you order perishable organic produce, the harvest is gathered at sunrise, pre-chilled in on-farm cooling stations, packed into compostable insulated pods with non-toxic freeze packs, and dispatched via express courier to arrive within 24-48 hours.
+              </p>
+            </details>
+
+            <details class="card p-3" style="cursor:pointer;">
+              <summary style="font-weight:700; color:var(--primary-dark); font-size:1.05rem; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                How do I verify a seller's organic credentials?
+                <i class="fa-solid fa-chevron-down" style="color:var(--primary);"></i>
+              </summary>
+              <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin-top:0.75rem; border-top:1px solid var(--border); padding-top:0.75rem;">
+                Every producer profile and product detail page displays verified badges linked directly to their USDA National Organic Program (NOP) certifier ID number and lab assay reports.
+              </p>
+            </details>
+
+            <details class="card p-3" style="cursor:pointer;">
+              <summary style="font-weight:700; color:var(--primary-dark); font-size:1.05rem; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                What is your freshness & return guarantee?
+                <i class="fa-solid fa-chevron-down" style="color:var(--primary);"></i>
+              </summary>
+              <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin-top:0.75rem; border-top:1px solid var(--border); padding-top:0.75rem;">
+                If any fresh produce or seeds arrive damaged or substandard, simply send a photo within 48 hours of delivery for an instant replacement or 100% refund without return shipping hassle.
+              </p>
+            </details>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REGIONAL AGRONOMY HUBS & DEPOTS -->
+  <section class="section-padding" style="background-color: var(--cream-surface); border-top: 1.5px solid var(--border); border-bottom: 1.5px solid var(--border);">
+    <div class="container">
+      <div class="section-header text-center" style="max-width: 680px; margin: 0 auto 3rem;">
+        <span class="badge-leaf">Physical Logistics</span>
+        <h2 style="font-size: 2rem; color: var(--primary-dark); margin-top: 0.5rem;">Regional Agronomy Hubs & Fulfilment Depots</h2>
+        <p style="color: var(--text-muted);">Direct pickup, bulk freight aggregation, and on-site soil testing facilities across major agricultural corridors.</p>
+      </div>
+
+      <div class="grid grid-3" style="gap: 2rem;">
+        <div class="card p-4" style="background:var(--white); border-radius:14px;">
+          <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+            <div style="width:44px; height:44px; border-radius:50%; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
+              <i class="fa-solid fa-warehouse"></i>
+            </div>
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--primary-dark); margin:0;">Pacific Northwest Hub</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted);">Depot #PNW-01</span>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin-bottom:0.75rem;">
+            <i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> 842 Harvest Ridge Parkway, Salem, OR 97301
+          </p>
+          <div style="font-size:0.82rem; color:var(--text-muted); display:flex; flex-direction:column; gap:0.3rem;">
+            <div><strong>Hours:</strong> Mon - Sat: 5:30 AM - 7:00 PM PST</div>
+            <div><strong>Services:</strong> Cold-chain crossdock, seed purity testing</div>
+          </div>
+        </div>
+
+        <div class="card p-4" style="background:var(--white); border-radius:14px;">
+          <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+            <div style="width:44px; height:44px; border-radius:50%; background:rgba(233,168,37,0.15); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
+              <i class="fa-solid fa-warehouse"></i>
+            </div>
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--primary-dark); margin:0;">California Central Valley Hub</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted);">Depot #CCV-04</span>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin-bottom:0.75rem;">
+            <i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> 310 Sunbelt Industrial Blvd, Fresno, CA 93706
+          </p>
+          <div style="font-size:0.82rem; color:var(--text-muted); display:flex; flex-direction:column; gap:0.3rem;">
+            <div><strong>Hours:</strong> Mon - Fri: 6:00 AM - 8:00 PM PST</div>
+            <div><strong>Services:</strong> Irrigation calibration, bulk compost depot</div>
+          </div>
+        </div>
+
+        <div class="card p-4" style="background:var(--white); border-radius:14px;">
+          <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+            <div style="width:44px; height:44px; border-radius:50%; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
+              <i class="fa-solid fa-warehouse"></i>
+            </div>
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--primary-dark); margin:0;">Midwest Heartland Hub</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted);">Depot #MWH-09</span>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin-bottom:0.75rem;">
+            <i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> 1920 Prairie Grain Way, Des Moines, IA 50313
+          </p>
+          <div style="font-size:0.82rem; color:var(--text-muted); display:flex; flex-direction:column; gap:0.3rem;">
+            <div><strong>Hours:</strong> Mon - Sat: 6:00 AM - 6:30 PM CST</div>
+            <div><strong>Services:</strong> Grain quality assay, railcar freight dispatch</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMERGENCY HOTLINE & ADVISORY SECTION -->
+  <section class="section-padding" style="background-color: var(--white);">
+    <div class="container" style="max-width: 860px;">
+      <div class="card p-4 text-center" style="border: 2px solid var(--primary); background: var(--cream-surface); border-radius:16px;">
+        <span class="badge badge-success mb-2" style="font-weight:700;">LIVE AGRONOMIST SUPPORT</span>
+        <h2 style="font-size:1.85rem; color:var(--primary-dark); margin-bottom:0.5rem;">Urgent Crop Disease or Pest Diagnostic?</h2>
+        <p style="color:var(--text-muted); font-size:0.95rem; max-width:600px; margin:0 auto 1.5rem;">
+          Our emergency agronomy hotline connects you directly with a board-certified plant pathologist to identify crop blight, soil nutrient deficiencies, or pest outbreaks.
+        </p>
+        <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+          <a href="tel:+18004582474" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone-volume"></i> Call Diagnostic Desk (+1 800 458-AGRI)</a>
+          <button class="btn btn-outline btn-lg" onclick="AgriToast.show('Consultation booking request dispatched to an agronomist!', 'success');"><i class="fa-solid fa-calendar-check"></i> Book Video Consult</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <a href="index.html">
+              <img src="assets/images/logo-light.webp" alt="Stackly" class="footer-logo">
+            </a>
+          </div>
+          <p class="footer-desc">Mobilizing intelligent agricultural curation, bespoke organic supplies, sustainable farming equipment, and direct farm-to-door delivery for modern life.</p>
+          <div class="footer-social-icons">
+            <a href="404.html" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Stackly</a>
+            <a href="shop.html">Shop Catalog</a>
+            <a href="categories.html">Categories</a>
+            <a href="farmers.html">Farmers Directory</a>
+            <a href="farmer-store.html">Featured Harvests</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Support</h4>
+          <div class="footer-links">
+            <a href="contact.html">Contact Coordinates</a>
+            <a href="404.html">Terms & Agreements</a>
+            <a href="404.html">Security Audits</a>
+            <a href="404.html">Size & Fit Guide</a>
+            <a href="user-dashboard.html">Order Status</a>
+            <a href="user-dashboard.html">User Dashboard</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Newsletter</h4>
+          <p class="footer-newsletter-text">Get quarterly updates, smart style alerts, and platform feature reports.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Stackly updates!'); this.reset();">
+            <input type="email" placeholder="Your Email" required class="footer-newsletter-input" aria-label="Your Email">
+            <button type="submit" class="footer-newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-copy">© 2026 Stackly. All rights reserved. Designed for financial clarity and wealth tracking.</div>
+        <div class="footer-bottom-nav">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    const contactName = document.getElementById('contactName');
+    const contactPhone = document.getElementById('contactPhone');
+    const contactEmail = document.getElementById('contactEmail');
+    const contactSubject = document.getElementById('contactSubject');
+    const contactMessage = document.getElementById('contactMessage');
+
+    if (contactName) {
+      contactName.addEventListener('input', () => {
+        contactName.value = contactName.value.replace(/[^A-Za-z\s'-]/g, '');
+        if (contactName.value.trim().length >= 2 && window.AgriValidator.isName(contactName.value)) {
+          window.AgriValidator.hideError(contactName);
+        }
+      });
+    }
+
+    if (contactPhone) {
+      contactPhone.addEventListener('input', () => {
+        contactPhone.value = contactPhone.value.replace(/\D/g, '').slice(0, 10);
+        if (window.AgriValidator.isPhone10(contactPhone.value)) {
+          window.AgriValidator.hideError(contactPhone);
+        }
+      });
+    }
+
+    if (contactEmail) {
+      contactEmail.addEventListener('input', () => {
+        if (window.AgriValidator.isEmail(contactEmail.value)) {
+          window.AgriValidator.hideError(contactEmail);
+        }
+      });
+    }
+
+    if (contactSubject) {
+      contactSubject.addEventListener('change', () => {
+        if (window.AgriValidator.isNotEmpty(contactSubject.value)) {
+          window.AgriValidator.hideError(contactSubject);
+        }
+      });
+    }
+
+    if (contactMessage) {
+      contactMessage.addEventListener('input', () => {
+        if (window.AgriValidator.isNotEmpty(contactMessage.value)) {
+          window.AgriValidator.hideError(contactMessage);
+        }
+      });
+    }
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let isValid = true;
+
+        if (contactName && !window.AgriValidator.isName(contactName.value)) {
+          window.AgriValidator.showError(contactName);
+          isValid = false;
+        } else if (contactName) {
+          window.AgriValidator.hideError(contactName);
+        }
+
+        if (contactPhone && !window.AgriValidator.isPhone10(contactPhone.value)) {
+          window.AgriValidator.showError(contactPhone);
+          isValid = false;
+        } else if (contactPhone) {
+          window.AgriValidator.hideError(contactPhone);
+        }
+
+        if (contactEmail && !window.AgriValidator.isEmail(contactEmail.value)) {
+          window.AgriValidator.showError(contactEmail);
+          isValid = false;
+        } else if (contactEmail) {
+          window.AgriValidator.hideError(contactEmail);
+        }
+
+        if (contactSubject && !window.AgriValidator.isNotEmpty(contactSubject.value)) {
+          window.AgriValidator.showError(contactSubject);
+          isValid = false;
+        } else if (contactSubject) {
+          window.AgriValidator.hideError(contactSubject);
+        }
+
+        if (contactMessage && !window.AgriValidator.isNotEmpty(contactMessage.value)) {
+          window.AgriValidator.showError(contactMessage);
+          isValid = false;
+        } else if (contactMessage) {
+          window.AgriValidator.hideError(contactMessage);
+        }
+
+        if (isValid) {
+          const senderName = contactName ? contactName.value.trim() : 'Valued Customer';
+          window.AgriToast.show(`Thank you, ${senderName}! Your inquiry has been dispatched to our agronomy support team.`, 'success');
+          contactForm.reset();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+
+

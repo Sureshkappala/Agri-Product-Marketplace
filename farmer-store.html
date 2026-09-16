@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenValley Organics - Farmer Storefront | AgriDirect</title>
+  <meta name="description" content="Official farm storefront for Robert MacIntyre & GreenValley Organics. Direct-from-farm certified organic heirloom produce and bio-fertilizers.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Announcement Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <span>🌱 Direct From 150+ Verified Local Farmers</span>
+        <span>🚚 Free Farm Delivery On Orders Over $75</span>
+      </div>
+      <div class="topbar-right">
+        <span>Farmer Support: +1 (800) 555-AGRI</span>
+        <a href="seller-dashboard.html">Become a Seller</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img">
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="categories.html" class="nav-link">Categories</a>
+          <a href="farmers.html" class="nav-link active">Farmers</a>
+          <a href="product-details.html" class="nav-link">Products</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="shop.html" class="action-icon-btn" aria-label="Search Marketplace">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </a>
+          <a href="wishlist.html" class="action-icon-btn" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+            <span class="action-badge wishlist-count-badge">2</span>
+          </a>
+          <a href="cart.html" class="action-icon-btn" aria-label="Shopping Cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg>
+            <span class="action-badge cart-count-badge">3</span>
+          </a>
+          <a href="login.html" class="btn btn-sm btn-primary">Login</a>
+          <button class="hamburger-btn" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img">
+      </div>
+      <button class="mobile-drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+
+    <!-- Search in Drawer -->
+    <div class="mobile-drawer-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search catalog..." onkeydown="if(event.key==='Enter') window.location.href='shop.html?search='+encodeURIComponent(this.value)">
+    </div>
+
+    <nav class="mobile-drawer-links">
+      <a href="index.html">Home <span>→</span></a>
+      <a href="about.html">About Us <span>→</span></a>
+      <a href="shop.html">Shop Catalog <span>→</span></a>
+      <a href="categories.html">All Categories <span>→</span></a>
+      <a href="farmers.html" class="active">Meet Farmers <span>—</span></a>
+      <a href="product-details.html">Product Spotlight <span>→</span></a>
+      <a href="contact.html">Customer Contact <span>→</span></a>
+    </nav>
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn btn-primary">Login</a>
+      <a href="user-dashboard.html" class="btn btn-outline">My Account</a>
+      <div class="mobile-drawer-info">
+        <div class="drawer-info-label">Direct Farm Concierge</div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Call:</span>
+          <span class="drawer-info-val">+1 (800) 555-AGRI</span>
+        </div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Email:</span>
+          <span class="drawer-info-val">concierge@stackly.com</span>
+        </div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Hubs:</span>
+          <span class="drawer-info-val">California • Oregon • Midwest • Texas</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Page Header / Breadcrumb Banner -->
+  <section class="page-header" style="background: var(--cream-surface); border-bottom: 1.5px solid var(--border); padding: 1.5rem 0; margin-bottom: 2rem;">
+    <div class="container">
+      <div class="breadcrumbs" style="font-size:0.875rem; color:var(--text-muted);">
+        <a href="index.html" style="color:var(--text-muted);">Home</a> &nbsp;/&nbsp; <a href="farmers.html" style="color:var(--text-muted);">Farmers Directory</a> &nbsp;/&nbsp; <span style="color:var(--primary); font-weight:600;">GreenValley Organics</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORE HERO PROFILE HEADER -->
+  <div class="container mb-4">
+    <div class="card p-0" style="border-radius:16px; overflow:hidden;">
+      <!-- Cover Banner -->
+      <div style="height:220px; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); position:relative; overflow:hidden;">
+        <img src="assets/images/farm-store-hero.webp" alt="GreenValley Farm Cover" style="width:100%; height:100%; object-fit:cover; opacity:0.4;">
+        <div style="position:absolute; top:1rem; right:1rem; display:flex; gap:0.5rem;">
+          <span class="badge badge-success"><i class="fa-solid fa-circle-check"></i> Verified Farm</span>
+          <span class="badge badge-warning" style="background:#fef3c7; color:#92400e; border:1px solid #fde68a;"><i class="fa-solid fa-award"></i> Top Rated 2026</span>
+        </div>
+      </div>
+
+      <!-- Farmer Info Bar -->
+      <div style="padding:0 2rem 1.75rem; position:relative;">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:1.5rem; margin-top:-50px; margin-bottom:1.5rem;">
+          <div style="display:flex; align-items:flex-end; gap:1.5rem; flex-wrap:wrap;">
+            <div style="width:110px; height:110px; border-radius:50%; border:4px solid var(--white); overflow:hidden; box-shadow:var(--shadow-md); background:var(--white);">
+              <img src="assets/images/farmer-1.webp" alt="Robert MacIntyre" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div style="padding-bottom:0.25rem;">
+              <h1 style="font-size:1.85rem; color:var(--primary-dark); margin:0 0 0.25rem; line-height:1.2;">GreenValley Organics</h1>
+              <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; font-size:0.9rem; color:var(--text-muted);">
+                <span style="color:var(--text-dark); font-weight:600;"><i class="fa-solid fa-user" style="color:var(--primary);"></i> Robert MacIntyre</span>
+                <span>•</span>
+                <span><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> Willamette Valley, Oregon</span>
+                <span>•</span>
+                <span style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-star"></i> 4.9 (128 reviews)</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <button class="btn btn-outline" onclick="window.AgriToast.show('Store link copied to clipboard!', 'info')"><i class="fa-solid fa-share-nodes"></i> Share Store</button>
+            <button class="btn btn-primary" id="contactSellerBtn"><i class="fa-solid fa-paper-plane"></i> Contact Farmer</button>
+          </div>
+        </div>
+
+        <!-- Operating Stats Counters -->
+        <div class="grid grid-4" style="gap:1rem; border-top:1.5px solid var(--border); padding-top:1.25rem;">
+          <div style="text-align:center;">
+            <div style="font-size:1.35rem; font-weight:800; color:var(--primary-dark);">320 Acres</div>
+            <div style="font-size:0.8rem; color:var(--text-muted); font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Cultivated Land</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:1.35rem; font-weight:800; color:var(--primary-dark);">1,420+</div>
+            <div style="font-size:0.8rem; color:var(--text-muted); font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Harvests Shipped</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:1.35rem; font-weight:800; color:var(--primary-dark);">99.4%</div>
+            <div style="font-size:0.8rem; color:var(--text-muted); font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">On-Time Dispatch</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:1.35rem; font-weight:800; color:var(--primary-dark);">Since 2018</div>
+            <div style="font-size:0.8rem; color:var(--text-muted); font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">AgriDirect Partner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" style="padding-top:1rem;">
+    <div class="container">
+      <div class="farmer-store-grid">
+        
+        <!-- Store Sidebar -->
+        <div>
+          <div class="card p-3 mb-3">
+            <h3 style="font-size:1.1rem; color:var(--primary-dark); margin-bottom:1rem; border-bottom:1px solid var(--border); padding-bottom:0.5rem;">Farm Story</h3>
+            <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+              Cultivating 320 acres in Oregon's pristine Willamette Valley. We follow biodynamic, zero-pesticide regenerative agriculture that restores topsoil microbiology while growing nutrient-dense crops.
+            </p>
+            <h4 style="font-size:0.95rem; color:var(--text-dark); margin-bottom:0.5rem;">Certifications</h4>
+            <div style="display:flex; flex-direction:column; gap:0.4rem; font-size:0.82rem; color:var(--text-muted); margin-bottom:1rem;">
+              <span><i class="fa-solid fa-check" style="color:var(--primary);"></i> USDA National Organic (NOP)</span>
+              <span><i class="fa-solid fa-check" style="color:var(--primary);"></i> Non-GMO Project Verified</span>
+              <span><i class="fa-solid fa-check" style="color:var(--primary);"></i> Oregon Tilth Certified</span>
+              <span><i class="fa-solid fa-check" style="color:var(--primary);"></i> Demeter Biodynamic Seal</span>
+            </div>
+          </div>
+
+          <div class="card p-3">
+            <h3 style="font-size:1.1rem; color:var(--primary-dark); margin-bottom:1rem; border-bottom:1px solid var(--border); padding-bottom:0.5rem;">Store Categories</h3>
+            <ul style="display:flex; flex-direction:column; gap:0.6rem; font-size:0.9rem;">
+              <li><a href="farmer-store.html" style="color:var(--primary); font-weight:600;">All Items (24)</a></li>
+              <li><a href="shop.html?cat=seeds" style="color:var(--text-muted);">Heirloom Seeds (8)</a></li>
+              <li><a href="shop.html?cat=produce" style="color:var(--text-muted);">Fresh Organic Harvest (10)</a></li>
+              <li><a href="shop.html?cat=fertilizers" style="color:var(--text-muted);">Bio-Fertilizers & Compost (6)</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Store Main Content -->
+        <div>
+          <!-- Tab Navigation -->
+          <div class="tabs-nav" style="border-bottom:2px solid var(--border); margin-bottom:2rem;">
+            <button class="tab-btn active" data-tab="store-products">Products on Offer</button>
+            <button class="tab-btn" data-tab="store-about">Farming Practices & Story</button>
+            <button class="tab-btn" data-tab="store-reviews">Customer Reviews (128)</button>
+          </div>
+
+          <!-- TAB 1: PRODUCTS -->
+          <div class="tab-pane active" id="store-products">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+              <h2 style="font-size:1.4rem; color:var(--primary-dark);">Products from GreenValley Organics</h2>
+              <span style="font-size:0.9rem; color:var(--text-muted);">Showing 6 featured items</span>
+            </div>
+
+            <div class="product-grid">
+              <!-- Product 1 -->
+              <div class="product-card">
+                <div class="product-thumb">
+                  <img src="assets/images/prod-wheat-seeds.webp" alt="Certified High-Yield Winter Wheat Seeds" loading="lazy">
+                  <div class="product-badges"><span class="product-badge badge-organic">Certified</span></div>
+                  <div class="product-actions">
+                    <button class="product-action-btn" data-id="9" onclick="AgriWishlist.toggle(9); this.classList.toggle('active');" aria-label="Add to Wishlist">
+                      <i class="fa-regular fa-heart"></i>
+                    </button>
+                  </div>
+                  <div class="product-hover-add">
+                    <button class="btn-quick-add" onclick="AgriCart.addItem(9)">
+                      <i class="fa-solid fa-cart-plus"></i> Quick Add
+                    </button>
+                  </div>
+                </div>
+                <div class="product-body">
+                  <div class="product-category">Seeds</div>
+                  <h3 class="product-title"><a href="product-details.html?id=9">Certified High-Yield Winter Wheat Seeds</a></h3>
+                  <div class="product-rating">
+                    <span class="rating-stars" style="color: var(--accent-orange); font-size: 0.85rem;">★★★★★</span>
+                    <strong>4.8</strong>
+                    <span class="rating-count">(78)</span>
+                  </div>
+                  <div class="product-footer">
+                    <div class="product-price">
+                      <span class="price-current">$52.00</span>
+                      <span class="price-original">$60.00</span>
+                      <span class="product-unit">/ 20 kg bag</span>
+                    </div>
+                    <button class="btn btn-sm btn-primary" onclick="AgriCart.addItem(9)">
+                      <i class="fa-solid fa-basket-shopping"></i> Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 2 -->
+              <div class="product-card">
+                <div class="product-thumb">
+                  <img src="assets/images/prod-fresh-veggies.webp" alt="Fresh Farm Harvest Organic Vegetable Box" loading="lazy">
+                  <div class="product-badges"><span class="product-badge badge-organic">Fresh Harvest</span></div>
+                  <div class="product-actions">
+                    <button class="product-action-btn" data-id="7" onclick="AgriWishlist.toggle(7); this.classList.toggle('active');" aria-label="Add to Wishlist">
+                      <i class="fa-regular fa-heart"></i>
+                    </button>
+                  </div>
+                  <div class="product-hover-add">
+                    <button class="btn-quick-add" onclick="AgriCart.addItem(7)">
+                      <i class="fa-solid fa-cart-plus"></i> Quick Add
+                    </button>
+                  </div>
+                </div>
+                <div class="product-body">
+                  <div class="product-category">Fresh Produce</div>
+                  <h3 class="product-title"><a href="product-details.html?id=7">Fresh Farm Harvest Organic Vegetable Box</a></h3>
+                  <div class="product-rating">
+                    <span class="rating-stars" style="color: var(--accent-orange); font-size: 0.85rem;">★★★★★</span>
+                    <strong>5.0</strong>
+                    <span class="rating-count">(310)</span>
+                  </div>
+                  <div class="product-footer">
+                    <div class="product-price">
+                      <span class="price-current">$34.00</span>
+                      <span class="price-original">$40.00</span>
+                      <span class="product-unit">/ 8 kg box</span>
+                    </div>
+                    <button class="btn btn-sm btn-primary" onclick="AgriCart.addItem(7)">
+                      <i class="fa-solid fa-basket-shopping"></i> Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 3 -->
+              <div class="product-card">
+                <div class="product-thumb">
+                  <img src="assets/images/prod-organic-fertilizer.webp" alt="Bio-Enriched Organic Compost Fertilizer" loading="lazy">
+                  <div class="product-badges"><span class="product-badge badge-organic">Organic</span></div>
+                  <div class="product-actions">
+                    <button class="product-action-btn" data-id="2" onclick="AgriWishlist.toggle(2); this.classList.toggle('active');" aria-label="Add to Wishlist">
+                      <i class="fa-regular fa-heart"></i>
+                    </button>
+                  </div>
+                  <div class="product-hover-add">
+                    <button class="btn-quick-add" onclick="AgriCart.addItem(2)">
+                      <i class="fa-solid fa-cart-plus"></i> Quick Add
+                    </button>
+                  </div>
+                </div>
+                <div class="product-body">
+                  <div class="product-category">Fertilizers</div>
+                  <h3 class="product-title"><a href="product-details.html?id=2">Bio-Enriched Organic Compost Fertilizer</a></h3>
+                  <div class="product-rating">
+                    <span class="rating-stars" style="color: var(--accent-orange); font-size: 0.85rem;">★★★★★</span>
+                    <strong>4.8</strong>
+                    <span class="rating-count">(94)</span>
+                  </div>
+                  <div class="product-footer">
+                    <div class="product-price">
+                      <span class="price-current">$38.50</span>
+                      <span class="price-original">$45.00</span>
+                      <span class="product-unit">/ 25 kg bag</span>
+                    </div>
+                    <button class="btn btn-sm btn-primary" onclick="AgriCart.addItem(2)">
+                      <i class="fa-solid fa-basket-shopping"></i> Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: FARM STORY -->
+          <div class="tab-pane" id="store-about">
+            <div class="card p-4">
+              <h3 style="font-size:1.4rem; color:var(--primary-dark); margin-bottom:1rem;">Generations of Regenerative Heritage</h3>
+              <p style="color:var(--text-muted); line-height:1.7; margin-bottom:1.25rem;">
+                Robert MacIntyre represents the third generation of farmers tending the loam soils of Willamette Valley. In 2012, the entire acreage transitioned away from synthetic fertilizers to 100% biological compost tea injections, cover cropping with hairy vetch and crimson clover, and rotational livestock grazing.
+              </p>
+              <h4 style="font-size:1.1rem; color:var(--text-dark); margin-bottom:0.75rem;">Soil Health & Traceability</h4>
+              <p style="color:var(--text-muted); line-height:1.7; margin-bottom:1.5rem;">
+                All seeds are preserved in non-hybrid heirloom libraries and tested annually for 0.00% glyphosate or synthetic residue. Harvests are gathered early at morning dew and packed directly into biodegradable shipping units within 3 hours.
+              </p>
+              <div class="grid grid-2" style="gap:1rem;">
+                <div style="background:var(--cream); padding:1rem; border-radius:var(--radius-md);">
+                  <strong style="color:var(--primary-dark); display:block; margin-bottom:0.25rem;">Total Farm Area:</strong>
+                  <span style="color:var(--text-muted);">320 Acres Dedicated Certified Organic</span>
+                </div>
+                <div style="background:var(--cream); padding:1rem; border-radius:var(--radius-md);">
+                  <strong style="color:var(--primary-dark); display:block; margin-bottom:0.25rem;">Water Source:</strong>
+                  <span style="color:var(--text-muted);">Glacial mountain snowpack aquifer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: REVIEWS -->
+          <div class="tab-pane" id="store-reviews">
+            <div class="card p-4">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                <h3 style="font-size:1.3rem; color:var(--primary-dark);">Customer Feedback for Robert</h3>
+                <span class="badge badge-success"><i class="fa-solid fa-star"></i> 4.9 Average Rating</span>
+              </div>
+
+              <!-- Review 1 -->
+              <div style="border-bottom:1px solid var(--border); padding-bottom:1.25rem; margin-bottom:1.25rem;">
+                <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+                  <div>
+                    <strong style="color:var(--text-dark);">David Sterling</strong>
+                    <span style="color:var(--text-muted); font-size:0.85rem; margin-left:0.5rem;">Verified Buyer</span>
+                  </div>
+                  <div style="color:var(--accent); font-size:0.85rem;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.5;">"The beefsteak tomatoes arrived in flawless condition. You can taste the difference immediately compared to store-bought produce. Packed with real tomato aroma and sweet acidity."</p>
+              </div>
+
+              <!-- Review 2 -->
+              <div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+                  <div>
+                    <strong style="color:var(--text-dark);">Clara Hoffmann</strong>
+                    <span style="color:var(--text-muted); font-size:0.85rem; margin-left:0.5rem;">Commercial Baker</span>
+                  </div>
+                  <div style="color:var(--accent); font-size:0.85rem;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.5;">"We source 100 lbs of wheat grain monthly from Robert for our sourdough bakery. Outstanding protein content and milling quality every single order."</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-backdrop" id="contactSellerModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Send Message to Robert MacIntyre</h3>
+        <button class="modal-close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="sellerInquiryForm">
+          <div class="form-group">
+            <label class="form-label" for="sellerMsgName">Your Name *</label>
+            <input type="text" id="sellerMsgName" class="form-control" placeholder="e.g. Eleanor Vance" required>
+            <span class="form-error">Please enter a valid name.</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="sellerMsgEmail">Your Email Address *</label>
+            <input type="email" id="sellerMsgEmail" class="form-control" placeholder="eleanor@example.com" required>
+            <span class="form-error">Please enter a valid email.</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="sellerMsgText">Message / Bulk Inquiry *</label>
+            <textarea id="sellerMsgText" class="form-control" rows="4" placeholder="Ask about wholesale pricing, custom harvest schedules, or bulk seed orders..." required></textarea>
+            <span class="form-error">Please enter your message.</span>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;"><i class="fa-solid fa-paper-plane"></i> Send Direct Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <a href="index.html">
+              <img src="assets/images/logo-light.webp" alt="Stackly" class="footer-logo">
+            </a>
+          </div>
+          <p class="footer-desc">Mobilizing intelligent agricultural curation, bespoke organic supplies, sustainable farming equipment, and direct farm-to-door delivery for modern life.</p>
+          <div class="footer-social-icons">
+            <a href="404.html" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Stackly</a>
+            <a href="shop.html">Shop Catalog</a>
+            <a href="categories.html">Categories</a>
+            <a href="farmers.html">Farmers Directory</a>
+            <a href="farmer-store.html">Featured Harvests</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Support</h4>
+          <div class="footer-links">
+            <a href="contact.html">Contact Coordinates</a>
+            <a href="404.html">Terms & Agreements</a>
+            <a href="404.html">Security Audits</a>
+            <a href="404.html">Size & Fit Guide</a>
+            <a href="user-dashboard.html">Order Status</a>
+            <a href="user-dashboard.html">User Dashboard</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Newsletter</h4>
+          <p class="footer-newsletter-text">Get quarterly updates, smart style alerts, and platform feature reports.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Stackly updates!'); this.reset();">
+            <input type="email" placeholder="Your Email" required class="footer-newsletter-input" aria-label="Your Email">
+            <button type="submit" class="footer-newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-copy">© 2026 Stackly. All rights reserved. Designed for financial clarity and wealth tracking.</div>
+        <div class="footer-bottom-nav">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Modal trigger for contact seller
+    const contactBtn = document.getElementById('contactSellerBtn');
+    const contactModal = document.getElementById('contactSellerModal');
+    if (contactBtn && contactModal) {
+      contactBtn.addEventListener('click', () => {
+        contactModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+    const form = document.getElementById('sellerInquiryForm');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        window.AgriToast.show('Your message was successfully sent to the farmer!', 'success');
+        contactModal.classList.remove('active');
+        document.body.style.overflow = '';
+        form.reset();
+      });
+    }
+  </script>
+</body>
+</html>
+
+

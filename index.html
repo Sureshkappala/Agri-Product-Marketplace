@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriMarket - Fresh Products & Trusted Farmer Marketplace</title>
+  <meta name="description" content="Discover verified agricultural products, organic fertilizers, quality seeds, farming equipment, and fresh farm produce directly from trusted farmers.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Announcement Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <span>🌱 Direct From 150+ Verified Local Farmers</span>
+        <span>🚚 Free Farm Delivery On Orders Over $75</span>
+      </div>
+      <div class="topbar-right">
+        <span>Farmer Support: +1 (800) 555-AGRI</span>
+        <a href="seller-dashboard.html">Become a Seller</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img">
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="categories.html" class="nav-link">Categories</a>
+          <a href="farmers.html" class="nav-link">Farmers</a>
+          <a href="product-details.html" class="nav-link">Products</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="shop.html" class="action-icon-btn" aria-label="Search Marketplace">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </a>
+          <a href="wishlist.html" class="action-icon-btn" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+            <span class="action-badge wishlist-count-badge">2</span>
+          </a>
+          <a href="cart.html" class="action-icon-btn" aria-label="Shopping Cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg>
+            <span class="action-badge cart-count-badge">3</span>
+          </a>
+          <a href="login.html" class="btn btn-sm btn-primary">Login</a>
+          <button class="hamburger-btn" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img">
+      </div>
+      <button class="mobile-drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+
+    <!-- Search in Drawer -->
+    <div class="mobile-drawer-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search catalog..." onkeydown="if(event.key==='Enter') window.location.href='shop.html?search='+encodeURIComponent(this.value)">
+    </div>
+
+    <nav class="mobile-drawer-links">
+      <a href="index.html" class="active">Home <span>—</span></a>
+      <a href="about.html">About Us <span>→</span></a>
+      <a href="shop.html">Shop Catalog <span>→</span></a>
+      <a href="categories.html">All Categories <span>→</span></a>
+      <a href="farmers.html">Meet Farmers <span>→</span></a>
+      <a href="product-details.html">Product Spotlight <span>→</span></a>
+      <a href="contact.html">Customer Contact <span>→</span></a>
+    </nav>
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn btn-primary">Login</a>
+      <a href="user-dashboard.html" class="btn btn-outline">My Account</a>
+      <div class="mobile-drawer-info">
+        <div class="drawer-info-label">Direct Farm Concierge</div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Call:</span>
+          <span class="drawer-info-val">+1 (800) 555-AGRI</span>
+        </div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Email:</span>
+          <span class="drawer-info-val">concierge@stackly.com</span>
+        </div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Hubs:</span>
+          <span class="drawer-info-val">California • Oregon • Midwest • Texas</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+<section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="badge-leaf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+            </svg>
+            Pure Agriculture Marketplace
+          </span>
+          <h1>Fresh Products. <span class="highlight">Trusted Farmers.</span> Better Farming.</h1>
+          <p class="hero-subtitle">Discover quality agricultural products, high-yield certified seeds, bio-fertilizers, and smart irrigation supplies direct from verified regional growers.</p>
+          <div class="hero-buttons">
+            <a href="shop.html" class="btn btn-lg btn-primary">Shop Products</a>
+            <a href="categories.html" class="btn btn-lg btn-outline">Explore Categories</a>
+          </div>
+          <div class="hero-trust-bar">
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div class="trust-text">
+                <strong>100% Verified</strong>
+                <span>Direct Farmer Sellers</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="trust-text">
+                <strong>Quality Assured</strong>
+                <span>Certified Bio-Inputs</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+              </div>
+              <div class="trust-text">
+                <strong>Fast Dispatch</strong>
+                <span>Climate-Safe Freight</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <div class="hero-img-card">
+            <img src="assets/images/hero-farm.webp" alt="Lush organic agricultural harvest farm with fresh vegetables in wooden crates during sunrise" width="960" height="640">
+          </div>
+          <div class="hero-floating-card">
+            <div class="floating-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div>
+              <strong style="display:block; font-size:1.1rem; color:var(--forest-dark);">4.9 / 5.0 Rating</strong>
+              <span style="font-size:0.8rem; color:var(--gray-600);">Over 10,000+ Farm Orders</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: SHOP BY CATEGORY -->
+  <section class="section-padding" style="background-color: var(--white);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-leaf">Farm Sectors</span>
+        <h2>Shop by Agricultural Category</h2>
+        <p>Explore specialized farming supplies, high-germination seeds, organic fertilizers, and durable tools curated for modern cultivators.</p>
+      </div>
+
+      <div class="category-grid">
+        <div class="category-card">
+          <div class="cat-thumb">
+            <img src="assets/images/cat-seeds.webp" alt="Agricultural Seeds Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <h3>Seeds</h3>
+            <p>Heirloom, hybrid, and certified high-germination vegetable and grain seeds.</p>
+            <a href="shop.html?cat=seeds" class="cat-link">Explore Seeds <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="cat-thumb">
+            <img src="assets/images/cat-fertilizers.webp" alt="Organic Fertilizers Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <h3>Fertilizers</h3>
+            <p>Bio-composts, slow-release NPK granules, and mineral soil conditioners.</p>
+            <a href="shop.html?cat=fertilizers" class="cat-link">Explore Fertilizers <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="cat-thumb">
+            <img src="assets/images/cat-pesticides.webp" alt="Botanical Pesticides Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <h3>Pesticides</h3>
+            <p>Cold-pressed botanical neem oils, bio-fungicides, and plant protectants.</p>
+            <a href="shop.html?cat=pesticides" class="cat-link">Explore Pesticides <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="cat-thumb">
+            <img src="assets/images/cat-tools.webp" alt="Farming Tools Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <h3>Farming Tools</h3>
+            <p>Ergonomic hand trowels, pruning shears, soil weeders, and spades.</p>
+            <a href="shop.html?cat=tools" class="cat-link">Explore Tools <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="cat-thumb">
+            <img src="assets/images/cat-equipment.webp" alt="Agricultural Equipment Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <h3>Equipment</h3>
+            <p>Tumbling composter drums, backpack sprayers, aerators, and tillers.</p>
+            <a href="shop.html?cat=equipment" class="cat-link">Explore Equipment <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="cat-thumb">
+            <img src="assets/images/cat-organic.webp" alt="Organic Farm Products Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <h3>Organic Products</h3>
+            <p>Certified bio-inputs, organic amendments, and vertical grow systems.</p>
+            <a href="shop.html?cat=organic" class="cat-link">Explore Organic <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="cat-thumb">
+            <img src="assets/images/cat-produce.webp" alt="Fresh Farm Produce Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <h3>Fresh Produce</h3>
+            <p>Farm-to-table seasonal harvest boxes, heirloom tomatoes, and crisp greens.</p>
+            <a href="shop.html?cat=produce" class="cat-link">Explore Produce <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="cat-thumb">
+            <img src="assets/images/cat-irrigation.webp" alt="Irrigation Systems Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <h3>Irrigation</h3>
+            <p>Solar-automated micro-drip kits, emitter tubes, and smart controllers.</p>
+            <a href="shop.html?cat=irrigation" class="cat-link">Explore Irrigation <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="cat-thumb">
+            <img src="assets/images/cat-feed.webp" alt="Animal Feed Category" loading="lazy">
+          </div>
+          <div class="cat-body">
+            <h3>Animal Feed</h3>
+            <p>Nutrient-dense pasture forage blends, mineral licks, and grain supplements.</p>
+            <a href="shop.html?cat=feed" class="cat-link">Explore Feed <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: FEATURED AGRI PRODUCTS -->
+  <section class="section-padding" style="background-color: var(--cream-surface);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-leaf">Marketplace Highlights</span>
+        <h2>Featured Agricultural Products</h2>
+        <p>Top-rated farming supplies, biological soil nutrients, and tools chosen by commercial farms and homesteaders.</p>
+      </div>
+
+      <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-thumb">
+            <img src="assets/images/prod-veg-seeds.webp" alt="Organic Heirloom Vegetable Seed Kit" loading="lazy">
+            <div class="product-badges"><span class="product-badge badge-sale">Sale -22%</span></div>
+            <div class="product-actions">
+              <button class="product-action-btn" data-id="1" onclick="AgriWishlist.toggle(1); this.classList.toggle('active');" aria-label="Add to Wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="product-hover-add">
+              <button class="btn-quick-add" onclick="AgriCart.addItem(1)">
+                <i class="fa-solid fa-cart-plus"></i> Quick Add
+              </button>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-category">Seeds</div>
+            <h3 class="product-title"><a href="product-details.html?id=1">Organic Heirloom Vegetable Seed Kit</a></h3>
+            <div class="product-seller">By <a href="farmer-store.html?id=1">GreenValley Farms</a></div>
+            <div class="product-rating">
+              <span class="rating-stars" style="color: var(--accent-orange); font-size: 0.85rem;">★★★★★</span>
+              <strong>4.9</strong>
+              <span class="rating-count">(128)</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-current">$24.99</span>
+                <span class="price-original">$32.00</span>
+                <span class="product-unit">/ 15 varieties</span>
+              </div>
+              <button class="btn btn-sm btn-primary" onclick="AgriCart.addItem(1)">
+                <i class="fa-solid fa-basket-shopping"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-thumb">
+            <img src="assets/images/prod-organic-fertilizer.webp" alt="Bio-Enriched Organic Compost Fertilizer" loading="lazy">
+            <div class="product-badges"><span class="product-badge badge-organic">Organic</span></div>
+            <div class="product-actions">
+              <button class="product-action-btn" data-id="2" onclick="AgriWishlist.toggle(2); this.classList.toggle('active');" aria-label="Add to Wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="product-hover-add">
+              <button class="btn-quick-add" onclick="AgriCart.addItem(2)">
+                <i class="fa-solid fa-cart-plus"></i> Quick Add
+              </button>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-category">Fertilizers</div>
+            <h3 class="product-title"><a href="product-details.html?id=2">Bio-Enriched Organic Compost Fertilizer</a></h3>
+            <div class="product-seller">By <a href="farmer-store.html?id=2">EcoRoots Agrotech</a></div>
+            <div class="product-rating">
+              <span class="rating-stars" style="color: var(--accent-orange); font-size: 0.85rem;">★★★★★</span>
+              <strong>4.8</strong>
+              <span class="rating-count">(94)</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-current">$38.50</span>
+                <span class="price-original">$45.00</span>
+                <span class="product-unit">/ 25 kg bag</span>
+              </div>
+              <button class="btn btn-sm btn-primary" onclick="AgriCart.addItem(2)">
+                <i class="fa-solid fa-basket-shopping"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-thumb">
+            <img src="assets/images/prod-garden-tools.webp" alt="Ergonomic Carbon-Steel Gardening Hand Tools" loading="lazy">
+            <div class="product-badges"><span class="product-badge badge-category">Popular</span></div>
+            <div class="product-actions">
+              <button class="product-action-btn" data-id="3" onclick="AgriWishlist.toggle(3); this.classList.toggle('active');" aria-label="Add to Wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="product-hover-add">
+              <button class="btn-quick-add" onclick="AgriCart.addItem(3)">
+                <i class="fa-solid fa-cart-plus"></i> Quick Add
+              </button>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-category">Farming Tools</div>
+            <h3 class="product-title"><a href="product-details.html?id=3">Carbon-Steel Gardening Hand Tools</a></h3>
+            <div class="product-seller">By <a href="farmer-store.html?id=3">AgriCraft Hardware</a></div>
+            <div class="product-rating">
+              <span class="rating-stars" style="color: var(--accent-orange); font-size: 0.85rem;">★★★★★</span>
+              <strong>4.9</strong>
+              <span class="rating-count">(210)</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-current">$49.99</span>
+                <span class="price-original">$65.00</span>
+                <span class="product-unit">/ set of 4</span>
+              </div>
+              <button class="btn btn-sm btn-primary" onclick="AgriCart.addItem(3)">
+                <i class="fa-solid fa-basket-shopping"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+          <div class="product-thumb">
+            <img src="assets/images/prod-drip-kit.webp" alt="Automated Solar Drip Irrigation Starter Kit" loading="lazy">
+            <div class="product-badges"><span class="product-badge badge-leaf">Top Rated</span></div>
+            <div class="product-actions">
+              <button class="product-action-btn" data-id="4" onclick="AgriWishlist.toggle(4); this.classList.toggle('active');" aria-label="Add to Wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="product-hover-add">
+              <button class="btn-quick-add" onclick="AgriCart.addItem(4)">
+                <i class="fa-solid fa-cart-plus"></i> Quick Add
+              </button>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-category">Irrigation</div>
+            <h3 class="product-title"><a href="product-details.html?id=4">Solar Drip Irrigation Starter Kit</a></h3>
+            <div class="product-seller">By <a href="farmer-store.html?id=4">AquaYield Systems</a></div>
+            <div class="product-rating">
+              <span class="rating-stars" style="color: var(--accent-orange); font-size: 0.85rem;">★★★★★</span>
+              <strong>4.7</strong>
+              <span class="rating-count">(62)</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-current">$119.00</span>
+                <span class="price-original">$145.00</span>
+                <span class="product-unit">/ 50m kit</span>
+              </div>
+              <button class="btn btn-sm btn-primary" onclick="AgriCart.addItem(4)">
+                <i class="fa-solid fa-basket-shopping"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top: 3rem;">
+        <a href="shop.html" class="btn btn-primary btn-lg">View All Marketplace Products →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT AGRIMARKET SPOTLIGHT SECTION (HOME EDITORIAL) -->
+  <section class="section-padding" style="background-color: var(--cream-surface); border-top: 1.5px solid var(--border); border-bottom: 1.5px solid var(--border);">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 1.1fr 1fr; gap: 3.5rem; align-items: center;">
+        
+        <!-- Left: Image with floating badge -->
+        <div class="hero-image-wrapper">
+          <div class="hero-img-card" style="border-radius: var(--radius-xl); overflow:hidden; border: 1.5px solid var(--border); box-shadow: var(--shadow-md);">
+            <img src="assets/images/about-mission.webp" alt="Farmers examining organic soil fertility" style="width: 100%; height: 440px; object-fit: cover;">
+          </div>
+          <div class="hero-floating-card" style="border: 1.5px solid var(--border);">
+            <div class="floating-icon" style="font-size:1.5rem;">🌱</div>
+            <div>
+              <strong style="display:block; color:var(--primary-dark); font-size:1.05rem;">100% Soil Traceable</strong>
+              <span style="color:var(--text-muted); font-size:0.85rem;">Zero Synthetic Additives or Sprays</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Story Copy & Points -->
+        <div>
+          <span class="badge-leaf mb-2">Our Agricultural Story</span>
+          <h2 style="font-size: 2.2rem; color: var(--primary-dark); line-height: 1.25; margin-bottom: 1.25rem;">Cultivating A Transparent Food & Farming Future</h2>
+          <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem;">
+            AgriMarket was born from a simple mission: connecting hardworking regional farmers, organic seed savers, and agronomists directly with conscious consumers and agricultural buyers without intermediary markups.
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.75rem;">
+            Every product on our platform—from heritage grains to biological composts and precision micro-drip kits—is vetted against third-party non-GMO genetics and soil microbial vitality standards.
+          </p>
+
+          <div class="grid grid-2" style="gap: 1rem; margin-bottom: 2rem;">
+            <div style="display:flex; align-items:flex-start; gap:0.6rem;">
+              <i class="fa-solid fa-circle-check" style="color:var(--primary); font-size:1.15rem; margin-top:2px;"></i>
+              <div>
+                <strong style="display:block; font-size:0.92rem; color:var(--primary-dark);">Fair Farmgate Return</strong>
+                <span style="font-size:0.82rem; color:var(--text-muted);">88% of retail goes straight to growers</span>
+              </div>
+            </div>
+
+            <div style="display:flex; align-items:flex-start; gap:0.6rem;">
+              <i class="fa-solid fa-circle-check" style="color:var(--primary); font-size:1.15rem; margin-top:2px;"></i>
+              <div>
+                <strong style="display:block; font-size:0.92rem; color:var(--primary-dark);">Lab-Screened Quality</strong>
+                <span style="font-size:0.82rem; color:var(--text-muted);">95%+ seed germination verification</span>
+              </div>
+            </div>
+
+            <div style="display:flex; align-items:flex-start; gap:0.6rem;">
+              <i class="fa-solid fa-circle-check" style="color:var(--primary); font-size:1.15rem; margin-top:2px;"></i>
+              <div>
+                <strong style="display:block; font-size:0.92rem; color:var(--primary-dark);">Carbon-Neutral Logistics</strong>
+                <span style="font-size:0.82rem; color:var(--text-muted);">150-mile regional hub routing</span>
+              </div>
+            </div>
+
+            <div style="display:flex; align-items:flex-start; gap:0.6rem;">
+              <i class="fa-solid fa-circle-check" style="color:var(--primary); font-size:1.15rem; margin-top:2px;"></i>
+              <div>
+                <strong style="display:block; font-size:0.92rem; color:var(--primary-dark);">Free Expert Support</strong>
+                <span style="font-size:0.82rem; color:var(--text-muted);">Agronomist telephone hotline</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+            <a href="about.html" class="btn btn-primary btn-lg">Learn More About Us →</a>
+            <a href="farmers.html" class="btn btn-outline btn-lg">Meet Our Farmers</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: MEET OUR TRUSTED FARMERS -->
+  <section class="section-padding" style="background-color: var(--white);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-leaf">Direct Producers</span>
+        <h2>Meet Our Trusted Farmers</h2>
+        <p>Connect with verified regional growers and agricultural producers who cultivate using authentic sustainable practices.</p>
+      </div>
+
+      <div class="farmer-grid">
+        <div class="farmer-card">
+          <div class="farmer-avatar-wrap">
+            <img src="assets/images/farmer-1.webp" alt="Robert MacIntyre - GreenValley Farms" class="farmer-avatar" loading="lazy">
+            <div class="farmer-badge-float" title="Verified Producer">✓</div>
+          </div>
+          <h3 class="farmer-name">Robert MacIntyre</h3>
+          <div class="farmer-location">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Willamette Valley, OR
+          </div>
+          <span class="farmer-category">Heirloom Seeds & Grains</span>
+          <div class="farmer-stats">
+            <div class="f-stat"><strong>4.9 ★</strong><span>Rating</span></div>
+            <div class="f-stat"><strong>28</strong><span>Products</span></div>
+            <div class="f-stat"><strong>24 Yrs</strong><span>Experience</span></div>
+          </div>
+          <a href="farmer-store.html" class="btn btn-sm btn-outline btn-full">View Store</a>
+        </div>
+
+        <div class="farmer-card">
+          <div class="farmer-avatar-wrap">
+            <img src="assets/images/farmer-2.webp" alt="Elena Rostova - EcoRoots Agrotech" class="farmer-avatar" loading="lazy">
+            <div class="farmer-badge-float" title="Verified Producer">✓</div>
+          </div>
+          <h3 class="farmer-name">Elena Rostova</h3>
+          <div class="farmer-location">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Sonoma County, CA
+          </div>
+          <span class="farmer-category">Organic Fertilizers</span>
+          <div class="farmer-stats">
+            <div class="f-stat"><strong>4.8 ★</strong><span>Rating</span></div>
+            <div class="f-stat"><strong>19</strong><span>Products</span></div>
+            <div class="f-stat"><strong>14 Yrs</strong><span>Experience</span></div>
+          </div>
+          <a href="farmer-store.html" class="btn btn-sm btn-outline btn-full">View Store</a>
+        </div>
+
+        <div class="farmer-card">
+          <div class="farmer-avatar-wrap">
+            <img src="assets/images/farmer-3.webp" alt="Arthur Jenkins - AgriCraft Hardware" class="farmer-avatar" loading="lazy">
+            <div class="farmer-badge-float" title="Verified Producer">✓</div>
+          </div>
+          <h3 class="farmer-name">Arthur Jenkins</h3>
+          <div class="farmer-location">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Lancaster, PA
+          </div>
+          <span class="farmer-category">Tools & Sprayers</span>
+          <div class="farmer-stats">
+            <div class="f-stat"><strong>4.9 ★</strong><span>Rating</span></div>
+            <div class="f-stat"><strong>42</strong><span>Products</span></div>
+            <div class="f-stat"><strong>30 Yrs</strong><span>Experience</span></div>
+          </div>
+          <a href="farmer-store.html" class="btn btn-sm btn-outline btn-full">View Store</a>
+        </div>
+
+        <div class="farmer-card">
+          <div class="farmer-avatar-wrap">
+            <img src="assets/images/farmer-5.webp" alt="David Kimani - Sunrise Organic" class="farmer-avatar" loading="lazy">
+            <div class="farmer-badge-float" title="Verified Producer">✓</div>
+          </div>
+          <h3 class="farmer-name">David Kimani</h3>
+          <div class="farmer-location">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Boulder, CO
+          </div>
+          <span class="farmer-category">Produce & Hydroponics</span>
+          <div class="farmer-stats">
+            <div class="f-stat"><strong>5.0 ★</strong><span>Rating</span></div>
+            <div class="f-stat"><strong>35</strong><span>Products</span></div>
+            <div class="f-stat"><strong>16 Yrs</strong><span>Experience</span></div>
+          </div>
+          <a href="farmer-store.html" class="btn btn-sm btn-outline btn-full">View Store</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: SEASONAL FARM ESSENTIALS -->
+  <section class="section-padding" style="background-color: var(--white);">
+    <div class="container">
+      <div class="seasonal-banner">
+        <div class="seasonal-grid">
+          <div class="seasonal-content">
+            <span class="badge-leaf"><i class="fa-solid fa-leaf"></i> Seasonal Selection</span>
+            <h2>This Season's Farm Essentials</h2>
+            <p>Prepare your fields and gardens for peak fertility. Save up to 25% on seasonal organic fertilizers, pruning gear, and high-germination seed sets.</p>
+            <a href="shop.html" class="btn btn-amber btn-lg"><i class="fa-solid fa-tag"></i> Explore Seasonal Deals</a>
+          </div>
+
+          <div class="seasonal-items-row">
+            <a href="shop.html" class="seasonal-mini-card">
+              <div class="seasonal-mini-thumb">
+                <img src="assets/images/prod-veg-seeds.webp" alt="Vegetable Seeds">
+              </div>
+              <div class="seasonal-mini-info">
+                <h4>Heirloom Seed Pack</h4>
+                <span>$24.99 <small style="color:rgba(255,255,255,0.7); font-weight:normal;">/ 15pk</small></span>
+              </div>
+            </a>
+            <a href="shop.html" class="seasonal-mini-card">
+              <div class="seasonal-mini-thumb">
+                <img src="assets/images/prod-organic-fertilizer.webp" alt="Compost Fertilizer">
+              </div>
+              <div class="seasonal-mini-info">
+                <h4>BioRich 25kg Sack</h4>
+                <span>$38.50 <small style="color:rgba(255,255,255,0.7); font-weight:normal;">/ bag</small></span>
+              </div>
+            </a>
+            <a href="shop.html" class="seasonal-mini-card">
+              <div class="seasonal-mini-thumb">
+                <img src="assets/images/prod-pruning-shears.webp" alt="Pruning Shears">
+              </div>
+              <div class="seasonal-mini-info">
+                <h4>Titanium Shears</h4>
+                <span>$31.99 <small style="color:rgba(255,255,255,0.7); font-weight:normal;">/ pair</small></span>
+              </div>
+            </a>
+            <a href="shop.html" class="seasonal-mini-card">
+              <div class="seasonal-mini-thumb">
+                <img src="assets/images/prod-drip-kit.webp" alt="Drip Kit">
+              </div>
+              <div class="seasonal-mini-info">
+                <h4>Solar Drip 50m</h4>
+                <span>$119.00 <small style="color:rgba(255,255,255,0.7); font-weight:normal;">/ kit</small></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: WHY CHOOSE OUR MARKETPLACE -->
+  <section class="section-padding" style="background-color: var(--cream-surface);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-leaf">Platform Benefits</span>
+        <h2>Why Choose Our Marketplace</h2>
+        <p>We empower farmers and buyers with transparency, verified biological supplies, and direct agricultural trade.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3>Verified Farmers</h3>
+          <p>Every grower is rigorously vetted for authentic sustainable practices, non-GMO genetics, and farm credibility.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <h3>Quality Assured</h3>
+          <p>All biological supplies, seeds, and equipment meet industry germination and durability benchmarks.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3>Fair Pricing</h3>
+          <p>Direct farm-to-door purchasing eliminates unnecessary middlemen markups, rewarding growers and buyers alike.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h3>Secure Shopping</h3>
+          <p>End-to-end encrypted checkout with full buyer protection and transparent batch tracking.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+          </div>
+          <h3>Reliable Delivery</h3>
+          <p>Climate-controlled transport networks engineered specifically for live seeds, biological inputs, and machinery.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h3>Farmer Support</h3>
+          <p>Dedicated agronomy helpline and seller guidance to troubleshoot crop ailments and product application.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: HOW IT WORKS (4 STEPS) -->
+  <section class="section-padding" style="background-color: var(--white);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-leaf">Seamless Workflow</span>
+        <h2>How AgriMarket Works</h2>
+        <p>A simple 4-step process to connect your farm with trusted inputs and direct delivery.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3>Discover</h3>
+          <p>Browse hundreds of certified seeds, organic fertilizers, precision irrigation, and heavy tools.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3>Compare</h3>
+          <p>Inspect farmer profiles, real buyer ratings, regional soil compatibility, and direct farm prices.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3>Order</h3>
+          <p>Add items to your cart, apply promotional discounts, and complete a seamless checkout.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <h3>Receive</h3>
+          <p>Track your climate-safe shipment straight to your farm gate or suburban nursery doorstep.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: FARMER SPOTLIGHT EDITORIAL -->
+  <section class="container" style="margin-bottom: 4.5rem;">
+    <div class="spotlight-box">
+      <div class="spotlight-img">
+        <img src="assets/images/farmer-spotlight.webp" alt="Farmer Spotlight - Robert MacIntyre" loading="lazy">
+      </div>
+      <div class="spotlight-text">
+        <span class="badge-leaf">Farmer Spotlight</span>
+        <h2>From Our Fields to Your Farm</h2>
+        <blockquote>
+          "Preserving open-pollinated heirloom grain genetics isn't just tradition — it's the foundation of resilient agriculture in a changing climate."
+        </blockquote>
+        <div class="farmer-meta">
+          <div>
+            <strong>Robert MacIntyre</strong>
+            <span>Master Agronomist & Founder, GreenValley Farms</span>
+          </div>
+        </div>
+        <p style="color:var(--gray-700); margin-bottom: 2rem;">For over 24 years in Oregon's Willamette Valley, Robert has cultivated high-germination vegetable seeds without chemical coatings, shipping directly to thousands of growers across the continent.</p>
+        <a href="farmer-store.html" class="btn btn-primary btn-lg">View Robert's Farm Store</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: AGRICULTURE STATS COUNTER -->
+  <section class="container" style="margin-bottom: 4.5rem;">
+    <div class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-num" data-target="500" data-suffix="+">500+</div>
+          <div class="stat-label">Agricultural Products</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num" data-target="150" data-suffix="+">150+</div>
+          <div class="stat-label">Verified Farmers</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num" data-target="50" data-suffix="+">50+</div>
+          <div class="stat-label">Farming Categories</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num" data-target="10000" data-suffix="+">10,000+</div>
+          <div class="stat-label">Satisfied Growers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: CUSTOMER REVIEWS SLIDER -->
+  <section class="section-padding" style="background-color: var(--cream-surface);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-leaf">Testimonials</span>
+        <h2>Trusted by Real Farmers & Growers</h2>
+        <p>Read authentic experiences from commercial orchardists, greenhouse managers, and community farmers.</p>
+      </div>
+
+      <div class="testimonial-slider-wrap">
+        <div class="testimonial-track">
+          <div class="testimonial-card">
+            <div class="test-stars">★★★★★</div>
+            <p class="test-text">"The AquaYield solar drip kit transformed our 3-acre berry farm. We cut our water consumption in half and saw a 22% increase in fruit yield in just one season. Exceptional farmer support!"</p>
+            <div class="test-author">
+              <img src="assets/images/user-1.webp" alt="Marcus Holloway" class="test-avatar" loading="lazy">
+              <div class="test-info">
+                <strong>Marcus Holloway</strong>
+                <span>Commercial Orchardist • Solar Drip Kit</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="test-stars">★★★★★</div>
+            <p class="test-text">"Every single heirloom seed packet from GreenValley had a 95%+ germination rate. The marketplace makes it simple to buy direct from real farmers who stand behind their soil science."</p>
+            <div class="test-author">
+              <img src="assets/images/user-2.webp" alt="Claire Beauchamp" class="test-avatar" loading="lazy">
+              <div class="test-info">
+                <strong>Claire Beauchamp</strong>
+                <span>Urban Farm Owner • Bio-Enriched Compost</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="test-stars">★★★★★</div>
+            <p class="test-text">"Purchased the carbon-steel hand tools and organic neem spray 6 months ago. The build quality is unmatched and the marketplace checkout was flawless. Highly recommended to every serious farmer."</p>
+            <div class="test-author">
+              <img src="assets/images/user-3.webp" alt="Harrison Vance" class="test-avatar" loading="lazy">
+              <div class="test-info">
+                <strong>Harrison Vance</strong>
+                <span>Vegetable Grower • Garden Tools</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-controls">
+          <button class="slider-btn slider-prev" aria-label="Previous Review">←</button>
+          <div class="slider-dots">
+            <span class="slider-dot active"></span>
+            <span class="slider-dot"></span>
+            <span class="slider-dot"></span>
+          </div>
+          <button class="slider-btn slider-next" aria-label="Next Review">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11: NEWSLETTER -->
+  <section class="section-padding" style="background-color: var(--white);">
+    <div class="container">
+      <div class="newsletter-box">
+        <span class="badge-leaf">Farm Updates</span>
+        <h2 style="font-size:2.2rem; margin:0.5rem 0 0.75rem 0;">Stay Connected With Better Farming</h2>
+        <p style="color:var(--gray-600); max-width:540px; margin:0 auto;">Get seasonal planting calendars, exclusive farmer discounts, and regenerative agriculture advice delivered straight to your inbox.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email address" required aria-label="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11-A: SEASONAL HARVEST & PLANTING ALMANAC -->
+  <section class="section-padding" style="background-color: var(--cream-surface); border-top: 1.5px solid var(--border); border-bottom: 1.5px solid var(--border);">
+    <div class="container">
+      <div class="section-header text-center" style="max-width: 680px; margin: 0 auto 3rem;">
+        <span class="badge-leaf">Farm Almanac</span>
+        <h2 style="font-size: 2.2rem; color: var(--primary-dark); margin-top: 0.5rem;">Regional Planting & Harvest Calendar</h2>
+        <p style="color: var(--text-muted);">Coordinate your seed germination, compost application, and irrigation routines with seasonal soil cycles.</p>
+      </div>
+
+      <div class="grid grid-4" style="gap: 1.5rem;">
+        <div class="card p-4" style="border-radius:14px; background:var(--white); border-top:4px solid var(--primary);">
+          <div style="font-size:0.85rem; font-weight:800; color:var(--primary); text-transform:uppercase; margin-bottom:0.4rem;">Spring (Mar - May)</div>
+          <h3 style="font-size:1.15rem; color:var(--primary-dark); margin-bottom:0.5rem;">Early Sowing & Bio-Inoculation</h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin-bottom:1rem;">Top-dress beds with organic compost, calibrate drip lines, and sow cool-weather brassicas, peas, and heirloom carrots.</p>
+          <a href="shop.html?cat=seeds" style="font-size:0.82rem; font-weight:700; color:var(--primary);">Explore Spring Seeds →</a>
+        </div>
+
+        <div class="card p-4" style="border-radius:14px; background:var(--white); border-top:4px solid var(--accent);">
+          <div style="font-size:0.85rem; font-weight:800; color:var(--accent); text-transform:uppercase; margin-bottom:0.4rem;">Summer (Jun - Aug)</div>
+          <h3 style="font-size:1.15rem; color:var(--primary-dark); margin-bottom:0.5rem;">Peak Growth & Micro-Drip</h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin-bottom:1rem;">Automate solar irrigation cycles, spray cold-pressed neem oils against aphids, and harvest early warm-season crops.</p>
+          <a href="shop.html?cat=irrigation" style="font-size:0.82rem; font-weight:700; color:var(--primary);">Explore Irrigation →</a>
+        </div>
+
+        <div class="card p-4" style="border-radius:14px; background:var(--white); border-top:4px solid #b45309;">
+          <div style="font-size:0.85rem; font-weight:800; color:#b45309; text-transform:uppercase; margin-bottom:0.4rem;">Autumn (Sep - Nov)</div>
+          <h3 style="font-size:1.15rem; color:var(--primary-dark); margin-bottom:0.5rem;">Harvest & Cover Cropping</h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin-bottom:1rem;">Harvest winter squashes and heirloom wheat grains. Broadcast nitrogen-fixing crimson clover and winter rye blends.</p>
+          <a href="shop.html?cat=fertilizers" style="font-size:0.82rem; font-weight:700; color:var(--primary);">Explore Cover Crops →</a>
+        </div>
+
+        <div class="card p-4" style="border-radius:14px; background:var(--white); border-top:4px solid #475569;">
+          <div style="font-size:0.85rem; font-weight:800; color:#475569; text-transform:uppercase; margin-bottom:0.4rem;">Winter (Dec - Feb)</div>
+          <h3 style="font-size:1.15rem; color:var(--primary-dark); margin-bottom:0.5rem;">Soil Rest & Equipment Care</h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin-bottom:1rem;">Sharpen carbon tools, maintain tumbling composters, and plan spring crop rotations using lab soil assays.</p>
+          <a href="shop.html?cat=tools" style="font-size:0.82rem; font-weight:700; color:var(--primary);">Explore Tools →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11-B: FROM THE AGRONOMY JOURNAL -->
+  <section class="section-padding" style="background-color: var(--white);">
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:2.5rem; flex-wrap:wrap; gap:1rem;">
+        <div>
+          <span class="badge-leaf">Knowledge Base</span>
+          <h2 style="font-size: 2.2rem; color: var(--primary-dark); margin-top: 0.5rem;">From the Agronomy Journal</h2>
+          <p style="color: var(--text-muted); margin:0;">Expert insights, biodynamic field notes, and organic cultivation techniques.</p>
+        </div>
+        <a href="about.html" class="btn btn-outline">Read All Insights →</a>
+      </div>
+
+      <div class="grid grid-3" style="gap: 2rem;">
+        <a href="about.html" class="journal-card">
+          <div class="journal-thumb">
+            <img src="assets/images/cat-fertilizers.webp" alt="Organic Soil Microbiome and Compost" loading="lazy">
+          </div>
+          <div class="journal-body">
+            <span class="journal-tag" style="color:var(--primary);"><i class="fa-solid fa-leaf"></i> Soil Health • 5 Min Read</span>
+            <h3>Restoring Depleted Topsoil With Indigenous Microorganisms</h3>
+            <p>How aerobic compost teas and mycorrhizal fungi rebuild resilient fungal networks in farm acreage.</p>
+            <span class="journal-link">Read Story <span>→</span></span>
+          </div>
+        </a>
+
+        <a href="about.html" class="journal-card">
+          <div class="journal-thumb">
+            <img src="assets/images/prod-wheat-seeds.webp" alt="Open-Pollinated Heirloom Seeds" loading="lazy">
+          </div>
+          <div class="journal-body">
+            <span class="journal-tag" style="color:var(--accent);"><i class="fa-solid fa-seedling"></i> Genetic Heritage • 4 Min Read</span>
+            <h3>Why Open-Pollinated Heirloom Seeds Outperform Hybrids</h3>
+            <p>Exploring flavor density, multi-generational climate adaptation, and seed-saving autonomy.</p>
+            <span class="journal-link">Read Story <span>→</span></span>
+          </div>
+        </a>
+
+        <a href="about.html" class="journal-card">
+          <div class="journal-thumb">
+            <img src="assets/images/prod-drip-kit.webp" alt="Automated Solar Drip Irrigation Kit" loading="lazy">
+          </div>
+          <div class="journal-body">
+            <span class="journal-tag" style="color:var(--primary);"><i class="fa-solid fa-droplet"></i> Smart Farming • 6 Min Read</span>
+            <h3>Optimizing Micro-Drip Emitter Pressure for Drought Resilience</h3>
+            <p>Field-tested strategies for reducing orchard water usage by 40% while preventing root rot.</p>
+            <span class="journal-link">Read Story <span>→</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 12: FINAL CTA -->
+  <section class="container">
+    <div class="final-cta-section">
+      <h2>Grow Better With the Right Products.</h2>
+      <p>Join thousands of verified farmers and agricultural buyers building a sustainable, direct-from-field food future.</p>
+      <div class="final-cta-buttons">
+        <a href="shop.html" class="btn btn-amber btn-lg"><i class="fa-solid fa-basket-shopping"></i> Shop Now</a>
+        <a href="categories.html" class="btn btn-outline-white btn-lg"><i class="fa-solid fa-layer-group"></i> Explore Categories</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <a href="index.html">
+              <img src="assets/images/logo-light.webp" alt="Stackly" class="footer-logo">
+            </a>
+          </div>
+          <p class="footer-desc">Mobilizing intelligent agricultural curation, bespoke organic supplies, sustainable farming equipment, and direct farm-to-door delivery for modern life.</p>
+          <div class="footer-social-icons">
+            <a href="404.html" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Stackly</a>
+            <a href="shop.html">Shop Catalog</a>
+            <a href="categories.html">Categories</a>
+            <a href="farmers.html">Farmers Directory</a>
+            <a href="farmer-store.html">Featured Harvests</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Support</h4>
+          <div class="footer-links">
+            <a href="contact.html">Contact Coordinates</a>
+            <a href="404.html">Terms & Agreements</a>
+            <a href="404.html">Security Audits</a>
+            <a href="404.html">Size & Fit Guide</a>
+            <a href="user-dashboard.html">Order Status</a>
+            <a href="user-dashboard.html">User Dashboard</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Newsletter</h4>
+          <p class="footer-newsletter-text">Get quarterly updates, smart style alerts, and platform feature reports.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Stackly updates!'); this.reset();">
+            <input type="email" placeholder="Your Email" required class="footer-newsletter-input" aria-label="Your Email">
+            <button type="submit" class="footer-newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-copy">© 2026 Stackly. All rights reserved. Designed for financial clarity and wealth tracking.</div>
+        <div class="footer-bottom-nav">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partner Farmers - AgriDirect Marketplace</title>
+  <meta name="description" content="Discover and connect with verified, regenerative organic farmers across the region. View farm stories, products, and direct contact details.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Announcement Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <span>🌱 Direct From 150+ Verified Local Farmers</span>
+        <span>🚚 Free Farm Delivery On Orders Over $75</span>
+      </div>
+      <div class="topbar-right">
+        <span>Farmer Support: +1 (800) 555-AGRI</span>
+        <a href="seller-dashboard.html">Become a Seller</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img">
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="categories.html" class="nav-link">Categories</a>
+          <a href="farmers.html" class="nav-link active">Farmers</a>
+          <a href="product-details.html" class="nav-link">Products</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="shop.html" class="action-icon-btn" aria-label="Search Marketplace">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </a>
+          <a href="wishlist.html" class="action-icon-btn" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+            <span class="action-badge wishlist-count-badge">2</span>
+          </a>
+          <a href="cart.html" class="action-icon-btn" aria-label="Shopping Cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg>
+            <span class="action-badge cart-count-badge">3</span>
+          </a>
+          <a href="login.html" class="btn btn-sm btn-primary">Login</a>
+          <button class="hamburger-btn" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img">
+      </div>
+      <button class="mobile-drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+
+    <!-- Search in Drawer -->
+    <div class="mobile-drawer-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search catalog..." onkeydown="if(event.key==='Enter') window.location.href='shop.html?search='+encodeURIComponent(this.value)">
+    </div>
+
+    <nav class="mobile-drawer-links">
+      <a href="index.html">Home <span>→</span></a>
+      <a href="about.html">About Us <span>→</span></a>
+      <a href="shop.html">Shop Catalog <span>→</span></a>
+      <a href="categories.html">All Categories <span>→</span></a>
+      <a href="farmers.html" class="active">Meet Farmers <span>—</span></a>
+      <a href="product-details.html">Product Spotlight <span>→</span></a>
+      <a href="contact.html">Customer Contact <span>→</span></a>
+    </nav>
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn btn-primary">Login</a>
+      <a href="user-dashboard.html" class="btn btn-outline">My Account</a>
+      <div class="mobile-drawer-info">
+        <div class="drawer-info-label">Direct Farm Concierge</div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Call:</span>
+          <span class="drawer-info-val">+1 (800) 555-AGRI</span>
+        </div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Email:</span>
+          <span class="drawer-info-val">concierge@stackly.com</span>
+        </div>
+        <div class="drawer-info-row">
+          <span class="drawer-info-key">Hubs:</span>
+          <span class="drawer-info-val">California • Oregon • Midwest • Texas</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Page Header / Breadcrumb Banner -->
+  <section class="page-header" style="background: var(--cream-surface); border-bottom: 1.5px solid var(--border); padding: 2.5rem 0; margin-bottom: 2.5rem;">
+    <div class="container">
+      <div class="breadcrumbs" style="font-size:0.875rem; color:var(--text-muted); margin-bottom:0.4rem;">
+        <a href="index.html" style="color:var(--text-muted);">Home</a> &nbsp;/&nbsp; <span style="color:var(--primary); font-weight:600;">Meet Our Farmers</span>
+      </div>
+      <h1 style="font-size:2.25rem; color:var(--primary-dark); margin-bottom:0.35rem;">Verified Regional Farmers & Agricultural Producers</h1>
+      <p style="color:var(--text-muted); margin:0;">Directly connect with independent organic cultivators, family-owned orchards, and sustainable grain growers. 100% farm-traceable produce with transparent fair-trade economics.</p>
+    </div>
+  </section>
+
+  <!-- MAIN FARMERS CONTENT -->
+  <main class="container" style="margin-bottom: 4rem;">
+    
+    <!-- Filter & Search Controls Bar -->
+    <div class="card p-3 mb-4" style="border-radius:12px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
+      <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+        <span style="font-size:0.875rem; font-weight:700; color:var(--text-dark); margin-right:0.25rem;">Filter Region:</span>
+        <button class="btn btn-sm btn-primary filter-region-btn active" style="padding:0.35rem 0.85rem; border-radius:20px;">All Regions (6)</button>
+        <button class="btn btn-sm btn-outline filter-region-btn" style="padding:0.35rem 0.85rem; border-radius:20px;">Pacific Northwest</button>
+        <button class="btn btn-sm btn-outline filter-region-btn" style="padding:0.35rem 0.85rem; border-radius:20px;">California Central</button>
+        <button class="btn btn-sm btn-outline filter-region-btn" style="padding:0.35rem 0.85rem; border-radius:20px;">Midwest Heartland</button>
+        <button class="btn btn-sm btn-outline filter-region-btn" style="padding:0.35rem 0.85rem; border-radius:20px;">Appalachian Valleys</button>
+      </div>
+      <div style="position:relative; width:100%; max-width:280px;">
+        <input type="text" id="farmerSearchInput" placeholder="Search by farmer or farm..." style="width:100%; padding:0.5rem 1rem 0.5rem 2.2rem; border-radius:20px; border:1.5px solid var(--border); font-size:0.85rem; outline:none; background:var(--white);">
+        <i class="fa-solid fa-search" style="position:absolute; left:0.85rem; top:50%; transform:translateY(-50%); color:var(--text-muted); font-size:0.85rem;"></i>
+      </div>
+    </div>
+
+    <!-- Farmers Directory Grid -->
+    <div class="grid grid-3" style="gap:2rem;" id="farmersGrid">
+      
+      <!-- Farmer 1 -->
+      <div class="card p-0" style="border-radius:16px; overflow:hidden; display:flex; flex-direction:column; height:100%; transition: transform var(--transition-fast), box-shadow var(--transition-fast);">
+        <div style="height:140px; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); position:relative; overflow:hidden;">
+          <img src="assets/images/hero-farm.webp" alt="GreenValley Organics" style="width:100%; height:100%; object-fit:cover; opacity:0.35;">
+          <span class="badge badge-success" style="position:absolute; top:12px; right:12px; box-shadow:var(--shadow-sm);"><i class="fa-solid fa-circle-check"></i> USDA Organic</span>
+        </div>
+        <div style="padding:0 1.5rem 1.5rem; position:relative; display:flex; flex-direction:column; flex:1;">
+          <div style="width:72px; height:72px; border-radius:50%; border:3px solid var(--white); overflow:hidden; margin-top:-36px; box-shadow:var(--shadow-md); background:var(--white); margin-bottom:0.75rem;">
+            <img src="assets/images/farmer-1.webp" alt="Robert MacIntyre" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.25rem;">
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--primary-dark); margin:0; line-height:1.3;">Robert MacIntyre</h3>
+              <div style="font-size:0.85rem; font-weight:600; color:var(--text-dark);">GreenValley Organics</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.25rem; font-size:0.85rem; font-weight:700; color:var(--accent);">
+              <i class="fa-solid fa-star"></i> 4.9 <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">(128)</span>
+            </div>
+          </div>
+          <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.75rem; display:flex; gap:0.75rem; align-items:center;">
+            <span><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> Willamette, OR</span>
+            <span>•</span>
+            <span><i class="fa-solid fa-tractor" style="color:var(--primary);"></i> 320 Acres</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin-bottom:1rem; flex:1;">
+            Specializing in biodynamic heirloom grains, cold-pressed seed oils, and nitrogen-fixing cover crops with zero synthetic chemicals.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.35rem; margin-bottom:1.25rem;">
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Heirloom Wheat</span>
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Bio-Fertilizer</span>
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Liquid Kelp</span>
+          </div>
+          <a href="farmer-store.html" class="btn btn-sm btn-outline btn-full" style="text-align:center; font-weight:600;"><i class="fa-solid fa-store"></i> Visit Farm Store (24 Items)</a>
+        </div>
+      </div>
+
+      <!-- Farmer 2 -->
+      <div class="card p-0" style="border-radius:16px; overflow:hidden; display:flex; flex-direction:column; height:100%; transition: transform var(--transition-fast), box-shadow var(--transition-fast);">
+        <div style="height:140px; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); position:relative; overflow:hidden;">
+          <img src="assets/images/cat-produce.webp" alt="SunHarvest Orchards" style="width:100%; height:100%; object-fit:cover; opacity:0.35;">
+          <span class="badge badge-success" style="position:absolute; top:12px; right:12px; box-shadow:var(--shadow-sm);"><i class="fa-solid fa-circle-check"></i> Non-GMO</span>
+        </div>
+        <div style="padding:0 1.5rem 1.5rem; position:relative; display:flex; flex-direction:column; flex:1;">
+          <div style="width:72px; height:72px; border-radius:50%; border:3px solid var(--white); overflow:hidden; margin-top:-36px; box-shadow:var(--shadow-md); background:var(--white); margin-bottom:0.75rem;">
+            <img src="assets/images/farmer-2.webp" alt="Elena Rodriguez" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.25rem;">
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--primary-dark); margin:0; line-height:1.3;">Elena Rodriguez</h3>
+              <div style="font-size:0.85rem; font-weight:600; color:var(--text-dark);">SunHarvest Orchards</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.25rem; font-size:0.85rem; font-weight:700; color:var(--accent);">
+              <i class="fa-solid fa-star"></i> 4.8 <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">(94)</span>
+            </div>
+          </div>
+          <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.75rem; display:flex; gap:0.75rem; align-items:center;">
+            <span><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> Central Valley, CA</span>
+            <span>•</span>
+            <span><i class="fa-solid fa-tractor" style="color:var(--primary);"></i> 180 Acres</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin-bottom:1rem; flex:1;">
+            Sun-ripened organic stone fruits, heritage citrus varieties, and cold-pressed botanical sprays cultivated through solar-powered drip lines.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.35rem; margin-bottom:1.25rem;">
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Heritage Citrus</span>
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Organic Stone Fruit</span>
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Neem Extracts</span>
+          </div>
+          <a href="farmer-store.html" class="btn btn-sm btn-outline btn-full" style="text-align:center; font-weight:600;"><i class="fa-solid fa-store"></i> Visit Farm Store (18 Items)</a>
+        </div>
+      </div>
+
+      <!-- Farmer 3 -->
+      <div class="card p-0" style="border-radius:16px; overflow:hidden; display:flex; flex-direction:column; height:100%; transition: transform var(--transition-fast), box-shadow var(--transition-fast);">
+        <div style="height:140px; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); position:relative; overflow:hidden;">
+          <img src="assets/images/cat-seeds.webp" alt="Heartland Seed Collective" style="width:100%; height:100%; object-fit:cover; opacity:0.35;">
+          <span class="badge badge-success" style="position:absolute; top:12px; right:12px; box-shadow:var(--shadow-sm);"><i class="fa-solid fa-circle-check"></i> Certified Heirloom</span>
+        </div>
+        <div style="padding:0 1.5rem 1.5rem; position:relative; display:flex; flex-direction:column; flex:1;">
+          <div style="width:72px; height:72px; border-radius:50%; border:3px solid var(--white); overflow:hidden; margin-top:-36px; box-shadow:var(--shadow-md); background:var(--white); margin-bottom:0.75rem;">
+            <img src="assets/images/farmer-3.webp" alt="David Sterling" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.25rem;">
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--primary-dark); margin:0; line-height:1.3;">David Sterling</h3>
+              <div style="font-size:0.85rem; font-weight:600; color:var(--text-dark);">Heartland Seed Collective</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.25rem; font-size:0.85rem; font-weight:700; color:var(--accent);">
+              <i class="fa-solid fa-star"></i> 5.0 <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">(210)</span>
+            </div>
+          </div>
+          <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.75rem; display:flex; gap:0.75rem; align-items:center;">
+            <span><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> Des Moines, IA</span>
+            <span>•</span>
+            <span><i class="fa-solid fa-tractor" style="color:var(--primary);"></i> 450 Acres</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin-bottom:1rem; flex:1;">
+            Preserving 140+ open-pollinated heirloom crop varieties with lab-verified 98%+ germination rates for regenerative farmers.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.35rem; margin-bottom:1.25rem;">
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Open-Pollinated Seeds</span>
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Cover Crop Blends</span>
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Legumes</span>
+          </div>
+          <a href="farmer-store.html" class="btn btn-sm btn-outline btn-full" style="text-align:center; font-weight:600;"><i class="fa-solid fa-store"></i> Visit Farm Store (32 Items)</a>
+        </div>
+      </div>
+
+      <!-- Farmer 4 -->
+      <div class="card p-0" style="border-radius:16px; overflow:hidden; display:flex; flex-direction:column; height:100%; transition: transform var(--transition-fast), box-shadow var(--transition-fast);">
+        <div style="height:140px; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); position:relative; overflow:hidden;">
+          <img src="assets/images/cat-organic.webp" alt="Blue Ridge Botanicals" style="width:100%; height:100%; object-fit:cover; opacity:0.35;">
+          <span class="badge badge-success" style="position:absolute; top:12px; right:12px; box-shadow:var(--shadow-sm);"><i class="fa-solid fa-circle-check"></i> Certified Organic</span>
+        </div>
+        <div style="padding:0 1.5rem 1.5rem; position:relative; display:flex; flex-direction:column; flex:1;">
+          <div style="width:72px; height:72px; border-radius:50%; border:3px solid var(--white); overflow:hidden; margin-top:-36px; box-shadow:var(--shadow-md); background:var(--white); margin-bottom:0.75rem;">
+            <img src="assets/images/farmer-4.webp" alt="Clara Vance" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.25rem;">
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--primary-dark); margin:0; line-height:1.3;">Clara Vance</h3>
+              <div style="font-size:0.85rem; font-weight:600; color:var(--text-dark);">Blue Ridge Botanicals</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.25rem; font-size:0.85rem; font-weight:700; color:var(--accent);">
+              <i class="fa-solid fa-star"></i> 4.9 <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">(76)</span>
+            </div>
+          </div>
+          <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.75rem; display:flex; gap:0.75rem; align-items:center;">
+            <span><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> Asheville, NC</span>
+            <span>•</span>
+            <span><i class="fa-solid fa-tractor" style="color:var(--primary);"></i> 95 Acres</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin-bottom:1rem; flex:1;">
+            Mountain-grown medicinal herbs, raw artisanal honeycomb, and pure microbial compost tea concentrates brewed on-site.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.35rem; margin-bottom:1.25rem;">
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Culinary Herbs</span>
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Raw Honey</span>
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Compost Tea</span>
+          </div>
+          <a href="farmer-store.html" class="btn btn-sm btn-outline btn-full" style="text-align:center; font-weight:600;"><i class="fa-solid fa-store"></i> Visit Farm Store (16 Items)</a>
+        </div>
+      </div>
+
+      <!-- Farmer 5 -->
+      <div class="card p-0" style="border-radius:16px; overflow:hidden; display:flex; flex-direction:column; height:100%; transition: transform var(--transition-fast), box-shadow var(--transition-fast);">
+        <div style="height:140px; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); position:relative; overflow:hidden;">
+          <img src="assets/images/cat-fertilizers.webp" alt="Cascade Bio-Soils" style="width:100%; height:100%; object-fit:cover; opacity:0.35;">
+          <span class="badge badge-success" style="position:absolute; top:12px; right:12px; box-shadow:var(--shadow-sm);"><i class="fa-solid fa-circle-check"></i> OMRI Listed</span>
+        </div>
+        <div style="padding:0 1.5rem 1.5rem; position:relative; display:flex; flex-direction:column; flex:1;">
+          <div style="width:72px; height:72px; border-radius:50%; border:3px solid var(--white); overflow:hidden; margin-top:-36px; box-shadow:var(--shadow-md); background:var(--white); margin-bottom:0.75rem;">
+            <img src="assets/images/farmer-5.webp" alt="Marcus Thornton" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.25rem;">
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--primary-dark); margin:0; line-height:1.3;">Marcus Thornton</h3>
+              <div style="font-size:0.85rem; font-weight:600; color:var(--text-dark);">Cascade Bio-Soils</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.25rem; font-size:0.85rem; font-weight:700; color:var(--accent);">
+              <i class="fa-solid fa-star"></i> 4.8 <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">(112)</span>
+            </div>
+          </div>
+          <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.75rem; display:flex; gap:0.75rem; align-items:center;">
+            <span><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> Yakima Valley, WA</span>
+            <span>•</span>
+            <span><i class="fa-solid fa-tractor" style="color:var(--primary);"></i> 210 Acres</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin-bottom:1rem; flex:1;">
+            High-potency organic worm castings, volcanic rock mineral amendments, and mycorrhizal root inoculants for maximum crop vitality.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.35rem; margin-bottom:1.25rem;">
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Worm Castings</span>
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Rock Dust Minerals</span>
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Biochar</span>
+          </div>
+          <a href="farmer-store.html" class="btn btn-sm btn-outline btn-full" style="text-align:center; font-weight:600;"><i class="fa-solid fa-store"></i> Visit Farm Store (19 Items)</a>
+        </div>
+      </div>
+
+      <!-- Farmer 6 -->
+      <div class="card p-0" style="border-radius:16px; overflow:hidden; display:flex; flex-direction:column; height:100%; transition: transform var(--transition-fast), box-shadow var(--transition-fast);">
+        <div style="height:140px; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); position:relative; overflow:hidden;">
+          <img src="assets/images/cat-equipment.webp" alt="Prairie Wind Eco-Farms" style="width:100%; height:100%; object-fit:cover; opacity:0.35;">
+          <span class="badge badge-success" style="position:absolute; top:12px; right:12px; box-shadow:var(--shadow-sm);"><i class="fa-solid fa-circle-check"></i> Regenerative</span>
+        </div>
+        <div style="padding:0 1.5rem 1.5rem; position:relative; display:flex; flex-direction:column; flex:1;">
+          <div style="width:72px; height:72px; border-radius:50%; border:3px solid var(--white); overflow:hidden; margin-top:-36px; box-shadow:var(--shadow-md); background:var(--white); margin-bottom:0.75rem;">
+            <img src="assets/images/farmer-6.webp" alt="Sarah & Liam Jenkins" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.25rem;">
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--primary-dark); margin:0; line-height:1.3;">Sarah & Liam Jenkins</h3>
+              <div style="font-size:0.85rem; font-weight:600; color:var(--text-dark);">Prairie Wind Eco-Farms</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.25rem; font-size:0.85rem; font-weight:700; color:var(--accent);">
+              <i class="fa-solid fa-star"></i> 4.9 <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">(145)</span>
+            </div>
+          </div>
+          <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.75rem; display:flex; gap:0.75rem; align-items:center;">
+            <span><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> Bozeman, MT</span>
+            <span>•</span>
+            <span><i class="fa-solid fa-tractor" style="color:var(--primary);"></i> 600 Acres</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin-bottom:1rem; flex:1;">
+            Third-generation regenerative farmers growing organic flax, pulse crops, and certified organic animal forage with rotational grazing.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.35rem; margin-bottom:1.25rem;">
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Organic Flax</span>
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Pulse Grains</span>
+            <span style="font-size:0.75rem; background:var(--cream); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600; color:var(--text-dark);">Alfalfa Hay</span>
+          </div>
+          <a href="farmer-store.html" class="btn btn-sm btn-outline btn-full" style="text-align:center; font-weight:600;"><i class="fa-solid fa-store"></i> Visit Farm Store (22 Items)</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- DIRECT-TO-FARM BENEFITS SECTION -->
+  <section class="section" style="background:var(--cream-surface); border-top:1.5px solid var(--border); border-bottom:1.5px solid var(--border); padding:3.5rem 0;">
+    <div class="container">
+      <div style="text-align:center; max-width:680px; margin:0 auto 2.5rem;">
+        <span class="badge badge-success mb-2" style="font-weight:700;">WHY BUY DIRECT</span>
+        <h2 style="font-size:2rem; color:var(--primary-dark); margin-bottom:0.5rem;">The AgriDirect Producer Advantage</h2>
+        <p style="color:var(--text-muted);">Eliminating wholesale intermediaries connects farmers directly to consumers, restaurants, and agricultural buyers.</p>
+      </div>
+
+      <div class="grid grid-3" style="gap:2rem;">
+        <div class="card p-4 text-center">
+          <div style="width:60px; height:60px; border-radius:50%; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin:0 auto 1.25rem; border:1px solid var(--border);">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+          </div>
+          <h3 style="font-size:1.2rem; color:var(--primary-dark); margin-bottom:0.5rem;">Fair Farmer Compensation</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin:0;">88% of your payment goes directly into the farmer's pocket compared to just 14% through standard grocery distribution networks.</p>
+        </div>
+
+        <div class="card p-4 text-center">
+          <div style="width:60px; height:60px; border-radius:50%; background:rgba(233,168,37,0.15); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin:0 auto 1.25rem; border:1px solid var(--border);">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h3 style="font-size:1.2rem; color:var(--primary-dark); margin-bottom:0.5rem;">100% Soil Traceability</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin:0;">Every harvest comes with GPS coordinate provenance, soil chemistry analysis, and official organic certification paperwork.</p>
+        </div>
+
+        <div class="card p-4 text-center">
+          <div style="width:60px; height:60px; border-radius:50%; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin:0 auto 1.25rem; border:1px solid var(--border);">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <h3 style="font-size:1.2rem; color:var(--primary-dark); margin-bottom:0.5rem;">Cold-Chain Direct Dispatch</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin:0;">Crops are harvested upon order confirmation and shipped directly via climate-regulated freight for optimal farm-fresh longevity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BECOME A PRODUCER CTA -->
+  <section style="background: var(--cream); padding: 4rem 0; border-bottom:1.5px solid var(--border);">
+    <div class="container text-center" style="max-width:720px;">
+      <span class="badge badge-success mb-2">JOIN 2,500+ PRODUCERS</span>
+      <h2 style="font-size:2.2rem; color:var(--primary-dark); margin-bottom:1rem;">Are You an Agricultural Producer?</h2>
+      <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.6; margin-bottom:1.75rem;">Get your own verified digital storefront, direct deposit payouts, logistics support, and instant reach to thousands of quality-seeking buyers.</p>
+      <a href="register.html?role=seller" class="btn btn-primary btn-lg"><i class="fa-solid fa-tractor"></i> Open Your Farm Store</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <a href="index.html">
+              <img src="assets/images/logo-light.webp" alt="Stackly" class="footer-logo">
+            </a>
+          </div>
+          <p class="footer-desc">Mobilizing intelligent agricultural curation, bespoke organic supplies, sustainable farming equipment, and direct farm-to-door delivery for modern life.</p>
+          <div class="footer-social-icons">
+            <a href="404.html" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Stackly</a>
+            <a href="shop.html">Shop Catalog</a>
+            <a href="categories.html">Categories</a>
+            <a href="farmers.html">Farmers Directory</a>
+            <a href="farmer-store.html">Featured Harvests</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Support</h4>
+          <div class="footer-links">
+            <a href="contact.html">Contact Coordinates</a>
+            <a href="404.html">Terms & Agreements</a>
+            <a href="404.html">Security Audits</a>
+            <a href="404.html">Size & Fit Guide</a>
+            <a href="user-dashboard.html">Order Status</a>
+            <a href="user-dashboard.html">User Dashboard</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Newsletter</h4>
+          <p class="footer-newsletter-text">Get quarterly updates, smart style alerts, and platform feature reports.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Stackly updates!'); this.reset();">
+            <input type="email" placeholder="Your Email" required class="footer-newsletter-input" aria-label="Your Email">
+            <button type="submit" class="footer-newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-copy">© 2026 Stackly. All rights reserved. Designed for financial clarity and wealth tracking.</div>
+        <div class="footer-bottom-nav">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+

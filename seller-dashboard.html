@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer & Producer Portal - AgriDirect Marketplace</title>
+  <meta name="description" content="Manage your farm listings, harvest fulfillment queues, direct deposit earnings, and inventory on AgriDirect.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:#f4f7f6; margin:0; padding:0;">
+
+  <!-- APP DASHBOARD LAYOUT -->
+  <div class="app-dashboard-layout">
+    
+    <!-- BACKDROP FOR MOBILE SIDEBAR -->
+    <div class="dash-sidebar-backdrop" id="dashBackdrop" onclick="toggleDashSidebar(false);"></div>
+
+    <!-- LEFT DARK APP SIDEBAR -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <!-- Logo & Mobile Close -->
+      <div class="dash-sidebar-header">
+        <a href="seller-dashboard.html" class="dash-logo-wrap" style="text-decoration:none;" title="Farmer Producer Dashboard">
+          <img src="assets/images/logo-light.webp" alt="Stackly" style="height:42px; max-width:190px; object-fit:contain;">
+        </a>
+        <button class="dash-sidebar-close" onclick="toggleDashSidebar(false);" aria-label="Close Navigation">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Section -->
+      <div class="dash-nav-label">PRODUCER CONSOLE</div>
+      <nav class="dash-nav-list">
+        <a href="javascript:void(0)" class="dash-nav-item active" data-tab="overview" onclick="switchDashboardTab('overview', this);">
+          <span style="display:inline-flex; align-items:center; gap:0.75rem;">
+            <i class="fa-solid fa-table-cells-large"></i> Farm Overview
+          </span>
+        </a>
+        <a href="javascript:void(0)" class="dash-nav-item" data-tab="orders" onclick="switchDashboardTab('orders', this);">
+          <span style="display:inline-flex; align-items:center; gap:0.75rem;">
+            <i class="fa-solid fa-truck-ramp-box"></i> Harvest Orders
+          </span>
+          <span class="badge badge-warning" style="font-size:0.72rem; padding:0.18rem 0.5rem; border-radius:999px;">5 New</span>
+        </a>
+        <a href="javascript:void(0)" class="dash-nav-item" data-tab="inventory" onclick="switchDashboardTab('inventory', this);">
+          <span style="display:inline-flex; align-items:center; gap:0.75rem;">
+            <i class="fa-solid fa-boxes-stacked"></i> Crop Catalog (24)
+          </span>
+        </a>
+        <a href="javascript:void(0)" class="dash-nav-item" data-tab="payouts" onclick="switchDashboardTab('payouts', this);">
+          <span style="display:inline-flex; align-items:center; gap:0.75rem;">
+            <i class="fa-solid fa-money-bill-transfer"></i> Payout Settlements
+          </span>
+        </a>
+        <a href="javascript:void(0)" class="dash-nav-item" data-tab="certifications" onclick="switchDashboardTab('certifications', this);">
+          <span style="display:inline-flex; align-items:center; gap:0.75rem;">
+            <i class="fa-solid fa-award"></i> USDA & Badges
+          </span>
+        </a>
+        <a href="javascript:void(0)" class="dash-nav-item" data-tab="settings" onclick="switchDashboardTab('settings', this);">
+          <span style="display:inline-flex; align-items:center; gap:0.75rem;">
+            <i class="fa-solid fa-gear"></i> Producer Settings
+          </span>
+        </a>
+      </nav>
+
+      <!-- Sidebar Bottom Profile -->
+      <div class="dash-sidebar-bottom">
+        <div class="dash-user-card">
+          <img src="assets/images/farmer-1.webp" alt="Farmer" class="dash-user-avatar">
+          <div style="overflow:hidden;">
+            <div class="dash-user-name" id="sellerSidebarName" style="white-space:nowrap; text-overflow:ellipsis; overflow:hidden;">Robert MacIntyre</div>
+            <div class="dash-user-role" id="sellerSidebarRole">Master Producer</div>
+          </div>
+        </div>
+
+        <a href="login.html" class="dash-logout-link" onclick="localStorage.removeItem('agri_logged_in'); localStorage.removeItem('agri_user_email'); localStorage.removeItem('agri_user_name');">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN DASHBOARD BODY -->
+    <main class="dash-main-area" id="dash-main-container">
+      
+      <!-- TOPBAR -->
+      <div class="dash-topbar">
+        <div class="dash-topbar-left" style="display:flex; align-items:center; gap:0.75rem;">
+          <button class="dash-mobile-toggle" id="dashMobileToggle" onclick="toggleDashSidebar();" aria-label="Open Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div>
+            <h1 class="dash-page-title">Welcome Back, <span id="sellerTopbarName">Robert</span>! 🌾</h1>
+            <div class="dash-page-subtitle">September 2026 • <span id="sellerTopbarFarm">GreenValley Organics</span> • USDA Accredited Producer</div>
+          </div>
+        </div>
+        <div class="dash-topbar-actions">
+          <a href="farmer-store.html" class="btn-hero-outline" style="color:#0f172a; border-color:#cbd5e1; background:#ffffff; display:inline-flex; align-items:center; gap:0.4rem; padding:0.5rem 0.9rem; font-size:0.84rem;">
+            <i class="fa-solid fa-eye" style="color:var(--primary);"></i> Public Storefront
+          </a>
+          <button class="btn-quick-expense" onclick="openAddProductModal();">
+            <i class="fa-solid fa-plus"></i> Add Listing
+          </button>
+          <div class="dash-icon-btn" title="Harvest Alerts">
+            <i class="fa-solid fa-bell"></i>
+            <span style="position:absolute; top:6px; right:6px; width:8px; height:8px; background:#ef4444; border-radius:50%;"></span>
+          </div>
+          <img src="assets/images/farmer-1.webp" alt="Robert" class="dash-topbar-avatar">
+        </div>
+      </div>
+
+      <!-- WELCOME HERO BANNER -->
+      <div class="dash-hero-banner">
+        <div>
+          <h2 class="dash-hero-title">Welcome back, <span id="sellerHeroName">Robert</span> 👋</h2>
+          <div class="dash-hero-meta" style="display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; margin-top:0.4rem;">
+            <span style="background:rgba(255,255,255,0.08); padding:0.22rem 0.6rem; border-radius:6px; border:1px solid rgba(255,255,255,0.12); font-size:0.78rem;">
+              <i class="fa-solid fa-user" style="color:#38bdf8; margin-right:0.35rem;"></i> Producer: <strong id="sellerHeroFullName">Robert MacIntyre</strong>
+            </span>
+            <span style="background:rgba(255,255,255,0.08); padding:0.22rem 0.6rem; border-radius:6px; border:1px solid rgba(255,255,255,0.12); font-size:0.78rem;">
+              <i class="fa-solid fa-envelope" style="color:#38bdf8; margin-right:0.35rem;"></i> Email: <strong id="sellerHeroEmail">farmer.robert@greenvalley.com</strong>
+            </span>
+            <span style="background:rgba(255,255,255,0.08); padding:0.22rem 0.6rem; border-radius:6px; border:1px solid rgba(255,255,255,0.12); font-size:0.78rem;">
+              <i class="fa-solid fa-wheat-awn" style="color:#10b981; margin-right:0.35rem;"></i> Role: <span class="role-highlight" id="sellerHeroRole">Master Producer</span>
+            </span>
+            <span class="dash-session-badge"><i class="fa-solid fa-circle-check"></i> USDA VERIFIED</span>
+          </div>
+        </div>
+        <div class="dash-hero-actions">
+          <a href="farmer-store.html" class="btn-hero-outline"><i class="fa-solid fa-store"></i> View Store</a>
+          <button class="btn-hero-primary" onclick="openAddProductModal();"><i class="fa-solid fa-plus"></i> List New Harvest</button>
+        </div>
+      </div>
+
+      <!-- TAB 1: OVERVIEW & KPIS -->
+      <div class="dashboard-tab-content active" id="tab-overview">
+        
+        <!-- 4 KPI METRIC CARDS -->
+        <div class="dash-kpi-grid">
+          <!-- Card 1 -->
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-title">30-DAY REVENUE</span>
+              <span style="background:#e0f2fe; color:#0ea5e9; border-radius:6px; padding:0.3rem 0.55rem; font-size:0.85rem;"><i class="fa-solid fa-sack-dollar"></i></span>
+            </div>
+            <div class="dash-kpi-value">$18,420</div>
+            <div class="dash-kpi-footer green">
+              <i class="fa-solid fa-arrow-trend-up"></i> +14.2% vs last month <span class="dash-kpi-footer-sub">• on schedule</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-title">ACTIVE LISTINGS</span>
+              <span style="background:#dcfce7; color:#10b981; border-radius:6px; padding:0.3rem 0.55rem; font-size:0.85rem;"><i class="fa-solid fa-boxes-stacked"></i></span>
+            </div>
+            <div class="dash-kpi-value" style="color:#0ea5e9;">24</div>
+            <div class="dash-kpi-footer" style="color:#0ea5e9;">
+              <i class="fa-solid fa-check"></i> Grains, Greens & Compost <span class="dash-kpi-footer-sub">(in stock)</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-title">ORDERS TO HARVEST</span>
+              <span style="background:#fef3c7; color:#f59e0b; border-radius:6px; padding:0.3rem 0.55rem; font-size:0.85rem;"><i class="fa-solid fa-truck-ramp-box"></i></span>
+            </div>
+            <div class="dash-kpi-value" style="color:#d97706;">5</div>
+            <div class="dash-kpi-footer green">
+              <i class="fa-solid fa-clock"></i> Dispatch within 24h <span class="dash-kpi-footer-sub">• priority queue</span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-title">NEXT SETTLEMENT</span>
+              <span style="background:#e0e7ff; color:#6366f1; border-radius:6px; padding:0.3rem 0.55rem; font-size:0.85rem;"><i class="fa-solid fa-building-columns"></i></span>
+            </div>
+            <div class="dash-kpi-value">$4,210</div>
+            <div class="dash-kpi-footer green">
+              <i class="fa-solid fa-check-double"></i> Direct deposit Friday <span class="dash-kpi-footer-sub">• ACH verified</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-COLUMN CONTENT ROW -->
+        <div class="dash-content-row">
+          
+          <!-- LEFT COLUMN (Harvest Queue & Catalog) -->
+          <div class="dash-col-left">
+            
+            <!-- Card 1: Harvest & Packing Queue -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <div>
+                  <h3 class="dash-card-title">Harvest & Packing Queue (5)</h3>
+                  <div style="font-size:0.8rem; color:#64748b;">Orders awaiting harvest cutoff and cold-pack prep</div>
+                </div>
+                <span class="badge badge-warning" style="font-size:0.75rem; padding:0.3rem 0.6rem;">Action Required</span>
+              </div>
+              <div class="dash-card-body" style="padding:0; overflow-x:auto;">
+                <table class="dash-table">
+                  <thead>
+                    <tr>
+                      <th>Order Ref</th>
+                      <th>Customer</th>
+                      <th>Ordered Crops</th>
+                      <th>Destination</th>
+                      <th>Packing Status</th>
+                      <th>Fulfillment</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr id="row-84920">
+                      <td><strong style="color:#0f172a;">#AGRI-84920</strong></td>
+                      <td>Eleanor Vance</td>
+                      <td>Organic Golden Wheat (50 lbs) &times; 2</td>
+                      <td>Eugene, OR</td>
+                      <td><span class="badge badge-warning" id="badge-84920">Harvesting</span></td>
+                      <td>
+                        <button class="btn btn-primary btn-sm" onclick="markOrderDispatched('84920', this);">Mark Dispatched</button>
+                      </td>
+                    </tr>
+                    <tr id="row-84918">
+                      <td><strong style="color:#0f172a;">#AGRI-84918</strong></td>
+                      <td>Marcus Vance</td>
+                      <td>Heirloom Beefsteak Tomatoes (10 lbs) &times; 4</td>
+                      <td>Portland, OR</td>
+                      <td><span class="badge badge-warning" id="badge-84918">Chilling</span></td>
+                      <td>
+                        <button class="btn btn-primary btn-sm" onclick="markOrderDispatched('84918', this);">Mark Dispatched</button>
+                      </td>
+                    </tr>
+                    <tr id="row-84892">
+                      <td><strong style="color:#0f172a;">#AGRI-84892</strong></td>
+                      <td>Clara Hoffmann</td>
+                      <td>Bio-Active Vermicompost (25 lbs) &times; 1</td>
+                      <td>Salem, OR</td>
+                      <td><span class="badge badge-success">Packed</span></td>
+                      <td>
+                        <button class="btn btn-outline btn-sm" style="color:#10b981; border-color:#10b981;"><i class="fa-solid fa-check"></i> Dispatched</button>
+                      </td>
+                    </tr>
+                    <tr id="row-84875">
+                      <td><strong style="color:#0f172a;">#AGRI-84875</strong></td>
+                      <td>David Miller</td>
+                      <td>Crisp Honeycrisp Apples (20 lbs) &times; 3</td>
+                      <td>Bend, OR</td>
+                      <td><span class="badge badge-warning" id="badge-84875">Harvesting</span></td>
+                      <td>
+                        <button class="btn btn-primary btn-sm" onclick="markOrderDispatched('84875', this);">Mark Dispatched</button>
+                      </td>
+                    </tr>
+                    <tr id="row-84860">
+                      <td><strong style="color:#0f172a;">#AGRI-84860</strong></td>
+                      <td>Sarah Jenkins</td>
+                      <td>Organic Baby Spinach & Arugula (12 lbs) &times; 2</td>
+                      <td>Corvallis, OR</td>
+                      <td><span class="badge badge-success">Packed</span></td>
+                      <td>
+                        <button class="btn btn-outline btn-sm" style="color:#10b981; border-color:#10b981;"><i class="fa-solid fa-check"></i> Dispatched</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div style="padding:0.75rem 1.25rem; background:#f8fafc; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-size:0.8rem; color:#64748b;">Showing 5 live harvest orders scheduled for morning courier pickup</span>
+                <a href="javascript:void(0)" onclick="switchDashboardTab('orders');" style="font-size:0.82rem; font-weight:700; color:#0ea5e9; text-decoration:none;">View All Orders &rarr;</a>
+              </div>
+            </div>
+
+            <!-- Card 2: Crop & Produce Catalog -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <div>
+                  <h3 class="dash-card-title">Live Crop & Produce Catalog</h3>
+                  <div style="font-size:0.8rem; color:#64748b;">Manage active inventory listings and marketplace pricing</div>
+                </div>
+                <div style="display:flex; gap:0.5rem; align-items:center;">
+                  <input type="text" id="cropSearchInput" onkeyup="filterCropCatalog()" placeholder="Search crops..." style="padding:0.4rem 0.75rem; font-size:0.82rem; border:1px solid #cbd5e1; border-radius:6px; outline:none; width:170px;">
+                  <button class="btn btn-sm btn-outline" onclick="openAddProductModal();" style="font-size:0.8rem; padding:0.4rem 0.75rem;"><i class="fa-solid fa-plus"></i> Add Crop</button>
+                </div>
+              </div>
+              <div class="dash-card-body" style="padding:0; overflow-x:auto;">
+                <table class="dash-table" id="cropCatalogTable">
+                  <thead>
+                    <tr>
+                      <th>Item Title</th>
+                      <th>Category</th>
+                      <th>Price / Unit</th>
+                      <th>Stock Available</th>
+                      <th>Quality Badge</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div style="display:flex; align-items:center; gap:0.75rem;">
+                          <img src="assets/images/prod-wheat-seeds.webp" alt="Wheat" style="width:36px; height:36px; border-radius:6px; object-fit:cover; border:1px solid #e2e8f0;">
+                          <div>
+                            <strong style="color:#0f172a; font-size:0.88rem;">Organic Golden Wheat Grain</strong>
+                            <div style="font-size:0.75rem; color:#64748b;">50 lb burlap bags</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Grains & Cereals</td>
+                      <td><strong>$34.50</strong></td>
+                      <td>185 Bags</td>
+                      <td><span class="badge" style="background:#e0f2fe; color:#0369a1; font-size:0.72rem;">100% Organic</span></td>
+                      <td><span class="badge badge-success">In Stock</span></td>
+                      <td>
+                        <button class="btn btn-outline btn-sm" onclick="editCropListing('Organic Golden Wheat Grain', 34.50, 185);" style="padding:0.25rem 0.5rem;"><i class="fa-solid fa-pen"></i></button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div style="display:flex; align-items:center; gap:0.75rem;">
+                          <img src="assets/images/prod-fresh-veggies.webp" alt="Tomatoes" style="width:36px; height:36px; border-radius:6px; object-fit:cover; border:1px solid #e2e8f0;">
+                          <div>
+                            <strong style="color:#0f172a; font-size:0.88rem;">Heirloom Beefsteak Tomatoes</strong>
+                            <div style="font-size:0.75rem; color:#64748b;">10 lb wooden crate</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Fresh Vegetables</td>
+                      <td><strong>$22.00</strong></td>
+                      <td>14 Crates</td>
+                      <td><span class="badge" style="background:#fef3c7; color:#b45309; font-size:0.72rem;">Fresh Harvest</span></td>
+                      <td><span class="badge badge-warning">Low Stock</span></td>
+                      <td>
+                        <button class="btn btn-outline btn-sm" onclick="editCropListing('Heirloom Beefsteak Tomatoes', 22.00, 14);" style="padding:0.25rem 0.5rem;"><i class="fa-solid fa-pen"></i></button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div style="display:flex; align-items:center; gap:0.75rem;">
+                          <img src="assets/images/prod-organic-fertilizer.webp" alt="Compost" style="width:36px; height:36px; border-radius:6px; object-fit:cover; border:1px solid #e2e8f0;">
+                          <div>
+                            <strong style="color:#0f172a; font-size:0.88rem;">Bio-Active Vermicompost</strong>
+                            <div style="font-size:0.75rem; color:#64748b;">25 lb aerated sacks</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Fertilizers & Compost</td>
+                      <td><strong>$19.99</strong></td>
+                      <td>92 Bags</td>
+                      <td><span class="badge" style="background:#dcfce7; color:#15803d; font-size:0.72rem;">Eco Bio-Input</span></td>
+                      <td><span class="badge badge-success">In Stock</span></td>
+                      <td>
+                        <button class="btn btn-outline btn-sm" onclick="editCropListing('Bio-Active Vermicompost', 19.99, 92);" style="padding:0.25rem 0.5rem;"><i class="fa-solid fa-pen"></i></button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div style="display:flex; align-items:center; gap:0.75rem;">
+                          <img src="assets/images/cat-organic.webp" alt="Honey" style="width:36px; height:36px; border-radius:6px; object-fit:cover; border:1px solid #e2e8f0;">
+                          <div>
+                            <strong style="color:#0f172a; font-size:0.88rem;">Raw Wildflower Orchard Honey</strong>
+                            <div style="font-size:0.75rem; color:#64748b;">32 oz glass jar</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Organic Fruits & Honey</td>
+                      <td><strong>$18.50</strong></td>
+                      <td>64 Jars</td>
+                      <td><span class="badge" style="background:#e0f2fe; color:#0369a1; font-size:0.72rem;">100% Raw</span></td>
+                      <td><span class="badge badge-success">In Stock</span></td>
+                      <td>
+                        <button class="btn btn-outline btn-sm" onclick="editCropListing('Raw Wildflower Honey', 18.50, 64);" style="padding:0.25rem 0.5rem;"><i class="fa-solid fa-pen"></i></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div style="padding:0.75rem 1.25rem; background:#f8fafc; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-size:0.8rem; color:#64748b;">Showing 4 of 24 active crop listings in GreenValley catalog</span>
+                <a href="javascript:void(0)" onclick="switchDashboardTab('inventory');" style="font-size:0.82rem; font-weight:700; color:#0ea5e9; text-decoration:none;">Open Full Inventory Catalog &rarr;</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN (Donut Chart & Settlements) -->
+          <div class="dash-col-right">
+            
+            <!-- Card 1: Revenue Donut Chart -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <div>
+                  <h3 class="dash-card-title">Revenue by Crop Sector</h3>
+                  <div style="font-size:0.8rem; color:#64748b;">Current 30-day gross breakdown</div>
+                </div>
+                <i class="fa-solid fa-chart-pie" style="color:#0ea5e9;"></i>
+              </div>
+              <div class="dash-card-body">
+                <div class="donut-chart-container">
+                  <svg class="donut-chart-svg" viewBox="0 0 42 42">
+                    <!-- Grains 42% -->
+                    <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#10b981" stroke-width="5" stroke-dasharray="42 58" stroke-dashoffset="25"></circle>
+                    <!-- Vegetables 28% -->
+                    <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#0ea5e9" stroke-width="5" stroke-dasharray="28 72" stroke-dashoffset="83"></circle>
+                    <!-- Compost 18% -->
+                    <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#f59e0b" stroke-width="5" stroke-dasharray="18 82" stroke-dashoffset="55"></circle>
+                    <!-- Fruits & Honey 12% -->
+                    <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#8b5cf6" stroke-width="5" stroke-dasharray="12 88" stroke-dashoffset="37"></circle>
+                  </svg>
+                  <div class="donut-center-text">
+                    <div class="donut-center-value">$18.4K</div>
+                    <div class="donut-center-label">30d Revenue</div>
+                  </div>
+                </div>
+
+                <!-- Legend Items -->
+                <div class="donut-legend-grid">
+                  <div class="donut-legend-item">
+                    <span class="donut-dot" style="background:#10b981;"></span>
+                    <span class="donut-cat-name">Grains & Cereals</span>
+                    <span class="donut-cat-amount">$7,736 (42%)</span>
+                  </div>
+                  <div class="donut-legend-item">
+                    <span class="donut-dot" style="background:#0ea5e9;"></span>
+                    <span class="donut-cat-name">Fresh Vegetables</span>
+                    <span class="donut-cat-amount">$5,158 (28%)</span>
+                  </div>
+                  <div class="donut-legend-item">
+                    <span class="donut-dot" style="background:#f59e0b;"></span>
+                    <span class="donut-cat-name">Compost & Inputs</span>
+                    <span class="donut-cat-amount">$3,315 (18%)</span>
+                  </div>
+                  <div class="donut-legend-item">
+                    <span class="donut-dot" style="background:#8b5cf6;"></span>
+                    <span class="donut-cat-name">Organic Fruits & Honey</span>
+                    <span class="donut-cat-amount">$2,211 (12%)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Upcoming Payout Settlement -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <div>
+                  <h3 class="dash-card-title">Next Scheduled Payout</h3>
+                  <div style="font-size:0.8rem; color:#64748b;">Automated weekly ACH disbursement</div>
+                </div>
+                <span class="badge badge-success" style="font-size:0.75rem;">Verified</span>
+              </div>
+              <div class="dash-card-body">
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin-bottom:1rem;">
+                  <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <div>
+                      <div style="font-size:0.75rem; font-weight:700; color:#64748b; text-transform:uppercase;">Disbursement Amount</div>
+                      <div style="font-size:1.6rem; font-weight:800; color:#0f172a;">$4,210.00</div>
+                    </div>
+                    <div style="text-align:right;">
+                      <div style="font-size:0.75rem; color:#64748b;">Transfer Date</div>
+                      <div style="font-size:0.9rem; font-weight:700; color:#10b981;">Friday, Sep 19</div>
+                    </div>
+                  </div>
+                  <div style="margin-top:0.75rem; padding-top:0.75rem; border-top:1px dashed #cbd5e1; font-size:0.8rem; color:#475569; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-building-columns" style="color:#0ea5e9;"></i> Chase Commercial Checking •••• 4912
+                  </div>
+                </div>
+
+                <div style="font-size:0.82rem; font-weight:700; color:#0f172a; margin-bottom:0.5rem;">Recent Disbursements</div>
+                <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                  <div style="display:flex; justify-content:space-between; font-size:0.82rem; padding:0.4rem 0; border-bottom:1px solid #f1f5f9;">
+                    <span>Sep 12, 2026 • ACH #98412</span>
+                    <strong style="color:#10b981;">$3,890.50</strong>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; font-size:0.82rem; padding:0.4rem 0; border-bottom:1px solid #f1f5f9;">
+                    <span>Sep 05, 2026 • ACH #98205</span>
+                    <strong style="color:#10b981;">$4,120.00</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Accreditations & Badges -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title">Verified Badges & Badging</h3>
+                <i class="fa-solid fa-shield-halved" style="color:#10b981;"></i>
+              </div>
+              <div class="dash-card-body" style="display:flex; flex-direction:column; gap:0.75rem;">
+                <div style="display:flex; align-items:center; gap:0.75rem; padding:0.5rem; background:#f0fdf4; border-radius:6px; border:1px solid #bbf7d0;">
+                  <i class="fa-solid fa-seedling" style="color:#16a34a; font-size:1.2rem;"></i>
+                  <div style="flex:1;">
+                    <div style="font-weight:700; font-size:0.85rem; color:#14532d;">USDA Organic Certified</div>
+                    <div style="font-size:0.75rem; color:#15803d;">Accredited #NOP-982421 • Valid 2027</div>
+                  </div>
+                  <i class="fa-solid fa-circle-check" style="color:#16a34a;"></i>
+                </div>
+
+                <div style="display:flex; align-items:center; gap:0.75rem; padding:0.5rem; background:#f0fdf4; border-radius:6px; border:1px solid #bbf7d0;">
+                  <i class="fa-solid fa-snowflake" style="color:#0284c7; font-size:1.2rem;"></i>
+                  <div style="flex:1;">
+                    <div style="font-weight:700; font-size:0.85rem; color:#0c4a6e;">Cold-Chain Storage Verified</div>
+                    <div style="font-size:0.75rem; color:#0369a1;">Logistics audit passed (3.8°C avg)</div>
+                  </div>
+                  <i class="fa-solid fa-circle-check" style="color:#16a34a;"></i>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 2: HARVEST ORDERS -->
+      <div class="dashboard-tab-content" id="tab-orders">
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div>
+              <h3 class="dash-card-title">All Harvest & Fulfillment Orders</h3>
+              <div style="font-size:0.8rem; color:#64748b;">Manage customer packaging, cold labels, and dispatch status</div>
+            </div>
+            <div style="display:flex; gap:0.5rem;">
+              <button class="btn btn-sm btn-primary" onclick="window.AgriToast.show('Generating printable harvest picking sheets for all 5 orders...', 'info');"><i class="fa-solid fa-print"></i> Print Picking Slips</button>
+            </div>
+          </div>
+          <div class="dash-card-body" style="padding:0; overflow-x:auto;">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer Name</th>
+                  <th>Crops / Units</th>
+                  <th>Delivery Address</th>
+                  <th>Packing Status</th>
+                  <th>Order Value</th>
+                  <th>Fulfillment Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#AGRI-84920</strong></td>
+                  <td>Eleanor Vance</td>
+                  <td>Organic Golden Wheat Grain (50 lbs) &times; 2</td>
+                  <td>Eugene, OR 97401</td>
+                  <td><span class="badge badge-warning">Harvesting</span></td>
+                  <td><strong>$69.00</strong></td>
+                  <td><button class="btn btn-primary btn-sm" onclick="markOrderDispatched('84920', this);">Mark Dispatched</button></td>
+                </tr>
+                <tr>
+                  <td><strong>#AGRI-84918</strong></td>
+                  <td>Marcus Vance</td>
+                  <td>Heirloom Beefsteak Tomatoes (10 lbs) &times; 4</td>
+                  <td>Portland, OR 97201</td>
+                  <td><span class="badge badge-warning">Chilling</span></td>
+                  <td><strong>$88.00</strong></td>
+                  <td><button class="btn btn-primary btn-sm" onclick="markOrderDispatched('84918', this);">Mark Dispatched</button></td>
+                </tr>
+                <tr>
+                  <td><strong>#AGRI-84892</strong></td>
+                  <td>Clara Hoffmann</td>
+                  <td>Bio-Active Vermicompost (25 lbs) &times; 1</td>
+                  <td>Salem, OR 97301</td>
+                  <td><span class="badge badge-success">Packed</span></td>
+                  <td><strong>$19.99</strong></td>
+                  <td><button class="btn btn-outline btn-sm" style="color:#10b981; border-color:#10b981;"><i class="fa-solid fa-check"></i> Dispatched</button></td>
+                </tr>
+                <tr>
+                  <td><strong>#AGRI-84875</strong></td>
+                  <td>David Miller</td>
+                  <td>Crisp Honeycrisp Apples (20 lbs) &times; 3</td>
+                  <td>Bend, OR 97701</td>
+                  <td><span class="badge badge-warning">Harvesting</span></td>
+                  <td><strong>$85.50</strong></td>
+                  <td><button class="btn btn-primary btn-sm" onclick="markOrderDispatched('84875', this);">Mark Dispatched</button></td>
+                </tr>
+                <tr>
+                  <td><strong>#AGRI-84860</strong></td>
+                  <td>Sarah Jenkins</td>
+                  <td>Organic Baby Spinach & Arugula (12 lbs) &times; 2</td>
+                  <td>Corvallis, OR 97330</td>
+                  <td><span class="badge badge-success">Packed</span></td>
+                  <td><strong>$48.00</strong></td>
+                  <td><button class="btn btn-outline btn-sm" style="color:#10b981; border-color:#10b981;"><i class="fa-solid fa-check"></i> Dispatched</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: INVENTORY CATALOG -->
+      <div class="dashboard-tab-content" id="tab-inventory">
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div>
+              <h3 class="dash-card-title">Full Crop & Produce Catalog (24 Items)</h3>
+              <div style="font-size:0.8rem; color:#64748b;">Live pricing, remaining bags/crates, and quality tags</div>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="openAddProductModal();"><i class="fa-solid fa-plus"></i> Add New Crop Listing</button>
+          </div>
+          <div class="dash-card-body" style="padding:0; overflow-x:auto;">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Crop / Harvest Item</th>
+                  <th>Category</th>
+                  <th>Price ($)</th>
+                  <th>Stock Available</th>
+                  <th>Quality Badge</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div style="display:flex; align-items:center; gap:0.75rem;">
+                      <img src="assets/images/prod-wheat-seeds.webp" alt="Wheat" style="width:36px; height:36px; border-radius:6px; object-fit:cover; border:1px solid #e2e8f0;">
+                      <div>
+                        <strong>Organic Golden Wheat Grain</strong>
+                        <div style="font-size:0.75rem; color:#64748b;">50 lb bags</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Grains & Cereals</td>
+                  <td>$34.50</td>
+                  <td>185 Bags</td>
+                  <td><span class="badge" style="background:#e0f2fe; color:#0369a1;">100% Organic</span></td>
+                  <td><span class="badge badge-success">In Stock</span></td>
+                  <td>
+                    <button class="btn btn-outline btn-sm" onclick="editCropListing('Organic Golden Wheat Grain', 34.50, 185);"><i class="fa-solid fa-pen"></i> Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="display:flex; align-items:center; gap:0.75rem;">
+                      <img src="assets/images/prod-fresh-veggies.webp" alt="Tomato" style="width:36px; height:36px; border-radius:6px; object-fit:cover; border:1px solid #e2e8f0;">
+                      <div>
+                        <strong>Heirloom Beefsteak Tomatoes</strong>
+                        <div style="font-size:0.75rem; color:#64748b;">10 lb crates</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Fresh Vegetables</td>
+                  <td>$22.00</td>
+                  <td>14 Crates</td>
+                  <td><span class="badge" style="background:#fef3c7; color:#b45309;">Fresh Harvest</span></td>
+                  <td><span class="badge badge-warning">Low Stock</span></td>
+                  <td>
+                    <button class="btn btn-outline btn-sm" onclick="editCropListing('Heirloom Beefsteak Tomatoes', 22.00, 14);"><i class="fa-solid fa-pen"></i> Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="display:flex; align-items:center; gap:0.75rem;">
+                      <img src="assets/images/prod-organic-fertilizer.webp" alt="Vermicompost" style="width:36px; height:36px; border-radius:6px; object-fit:cover; border:1px solid #e2e8f0;">
+                      <div>
+                        <strong>Bio-Active Vermicompost</strong>
+                        <div style="font-size:0.75rem; color:#64748b;">25 lb sacks</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Fertilizers & Compost</td>
+                  <td>$19.99</td>
+                  <td>92 Bags</td>
+                  <td><span class="badge" style="background:#dcfce7; color:#15803d;">Eco Bio-Input</span></td>
+                  <td><span class="badge badge-success">In Stock</span></td>
+                  <td>
+                    <button class="btn btn-outline btn-sm" onclick="editCropListing('Bio-Active Vermicompost', 19.99, 92);"><i class="fa-solid fa-pen"></i> Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="display:flex; align-items:center; gap:0.75rem;">
+                      <img src="assets/images/cat-organic.webp" alt="Honey" style="width:36px; height:36px; border-radius:6px; object-fit:cover; border:1px solid #e2e8f0;">
+                      <div>
+                        <strong>Raw Wildflower Orchard Honey</strong>
+                        <div style="font-size:0.75rem; color:#64748b;">32 oz jars</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Organic Fruits & Honey</td>
+                  <td>$18.50</td>
+                  <td>64 Jars</td>
+                  <td><span class="badge" style="background:#e0f2fe; color:#0369a1;">100% Raw</span></td>
+                  <td><span class="badge badge-success">In Stock</span></td>
+                  <td>
+                    <button class="btn btn-outline btn-sm" onclick="editCropListing('Raw Wildflower Honey', 18.50, 64);"><i class="fa-solid fa-pen"></i> Edit</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: PAYOUT SETTLEMENTS -->
+      <div class="dashboard-tab-content" id="tab-payouts">
+        <div class="dash-kpi-grid mb-4">
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-title">LIFETIME GROSS SETTLED</span>
+              <i class="fa-solid fa-vault" style="color:#10b981;"></i>
+            </div>
+            <div class="dash-kpi-value">$142,850</div>
+            <div class="dash-kpi-footer green"><i class="fa-solid fa-check"></i> 100% On-Time Direct Deposits</div>
+          </div>
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-title">PENDING THIS FRIDAY</span>
+              <i class="fa-solid fa-calendar-check" style="color:#0ea5e9;"></i>
+            </div>
+            <div class="dash-kpi-value" style="color:#0ea5e9;">$4,210.00</div>
+            <div class="dash-kpi-footer" style="color:#0ea5e9;"><i class="fa-solid fa-truck-fast"></i> Processing Automated Transfer</div>
+          </div>
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-title">MARKETPLACE TAKE RATE</span>
+              <i class="fa-solid fa-percent" style="color:#6366f1;"></i>
+            </div>
+            <div class="dash-kpi-value">4.5%</div>
+            <div class="dash-kpi-footer green"><i class="fa-solid fa-star"></i> Master Producer Tier Discount</div>
+          </div>
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-title">CONNECTED ACCOUNT</span>
+              <i class="fa-solid fa-building-columns" style="color:#f59e0b;"></i>
+            </div>
+            <div class="dash-kpi-value" style="font-size:1.2rem; margin-top:0.4rem;">Chase Bank •••• 4912</div>
+            <div class="dash-kpi-footer green"><i class="fa-solid fa-circle-check"></i> Primary Checking (Active)</div>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Settlement Statement History</h3>
+            <button class="btn btn-outline btn-sm" onclick="window.AgriToast.show('Downloading Consolidated 2026 Payout Statements...', 'success');"><i class="fa-solid fa-file-arrow-down"></i> Export Tax PDF</button>
+          </div>
+          <div class="dash-card-body" style="padding:0; overflow-x:auto;">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Settlement Ref</th>
+                  <th>Disbursement Date</th>
+                  <th>Harvest Orders Included</th>
+                  <th>Gross Sales</th>
+                  <th>Platform Fee (4.5%)</th>
+                  <th>Net Payout Deposited</th>
+                  <th>Receipt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#SETTLE-2026-37</strong></td>
+                  <td>Sep 12, 2026</td>
+                  <td>18 Completed Orders</td>
+                  <td>$4,073.82</td>
+                  <td>-$183.32</td>
+                  <td><strong style="color:#10b981;">$3,890.50</strong></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.AgriToast.show('Receipt PDF generated.', 'info');"><i class="fa-solid fa-download"></i></button></td>
+                </tr>
+                <tr>
+                  <td><strong>#SETTLE-2026-36</strong></td>
+                  <td>Sep 05, 2026</td>
+                  <td>22 Completed Orders</td>
+                  <td>$4,314.13</td>
+                  <td>-$194.13</td>
+                  <td><strong style="color:#10b981;">$4,120.00</strong></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.AgriToast.show('Receipt PDF generated.', 'info');"><i class="fa-solid fa-download"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5: CERTIFICATIONS -->
+      <div class="dashboard-tab-content" id="tab-certifications">
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div>
+              <h3 class="dash-card-title">USDA Organic & Soil Assay Accreditations</h3>
+              <div style="font-size:0.8rem; color:#64748b;">All listings display verified trust badges across the marketplace</div>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="window.AgriToast.show('Upload document dialog ready.', 'info');"><i class="fa-solid fa-cloud-arrow-up"></i> Upload New Certificate</button>
+          </div>
+          <div class="dash-card-body">
+            <div class="grid grid-2" style="gap:1.5rem;">
+              <div style="border:1px solid #e2e8f0; border-radius:8px; padding:1.25rem; background:#ffffff;">
+                <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1rem;">
+                  <div style="width:48px; height:48px; border-radius:8px; background:#dcfce7; display:flex; align-items:center; justify-content:center; color:#16a34a; font-size:1.5rem;">
+                    <i class="fa-solid fa-seedling"></i>
+                  </div>
+                  <div>
+                    <h4 style="margin:0; color:#0f172a;">USDA National Organic Program</h4>
+                    <span style="font-size:0.8rem; color:#15803d; font-weight:700;">Certificate #NOP-982421 • Active & Verified</span>
+                  </div>
+                </div>
+                <p style="font-size:0.85rem; color:#475569; margin:0 0 1rem 0;">Annual physical soil core and biodiversity inspection passed on August 14, 2026. Certified non-synthetic fertilization and crop rotation compliance.</p>
+                <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; color:#64748b;">
+                  <span>Renewal Date: August 2027</span>
+                  <a href="javascript:void(0)" onclick="window.AgriToast.show('Viewing official USDA PDF...', 'info');" style="color:#0ea5e9; font-weight:700; text-decoration:none;">View PDF &rarr;</a>
+                </div>
+              </div>
+
+              <div style="border:1px solid #e2e8f0; border-radius:8px; padding:1.25rem; background:#ffffff;">
+                <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1rem;">
+                  <div style="width:48px; height:48px; border-radius:8px; background:#e0f2fe; display:flex; align-items:center; justify-content:center; color:#0284c7; font-size:1.5rem;">
+                    <i class="fa-solid fa-snowflake"></i>
+                  </div>
+                  <div>
+                    <h4 style="margin:0; color:#0f172a;">Oregon Tilth Cold-Chain Compliance</h4>
+                    <span style="font-size:0.8rem; color:#0369a1; font-weight:700;">Audit Grade A+ (3.8°C Controlled)</span>
+                  </div>
+                </div>
+                <p style="font-size:0.85rem; color:#475569; margin:0 0 1rem 0;">Continuous IoT thermal telemetry logs submitted for post-harvest chillers and regional delivery van loading bays.</p>
+                <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; color:#64748b;">
+                  <span>Telemetry: Live Connected</span>
+                  <a href="javascript:void(0)" onclick="window.AgriToast.show('Sensor telemetry logs verified.', 'info');" style="color:#0ea5e9; font-weight:700; text-decoration:none;">View Logs &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 6: PRODUCER SETTINGS -->
+      <div class="dashboard-tab-content" id="tab-settings">
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div>
+              <h3 class="dash-card-title">GreenValley Farm Configuration & Profile</h3>
+              <div style="font-size:0.8rem; color:#64748b;">Public storefront details, dispatch coordinates, and security</div>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="saveProducerSettings();"><i class="fa-solid fa-floppy-disk"></i> Save Profile</button>
+          </div>
+          <div class="dash-card-body">
+            <form id="producerSettingsForm" onsubmit="event.preventDefault(); saveProducerSettings();">
+              <div class="grid grid-2" style="gap:1rem; margin-bottom:1rem;">
+                <div class="form-group">
+                  <label class="form-label">Farm / Producer Name</label>
+                  <input type="text" class="form-control" value="GreenValley Organics" id="setFarmName" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Master Agronomist Contact</label>
+                  <input type="text" class="form-control" value="Robert MacIntyre" id="setFarmerName" required>
+                </div>
+              </div>
+
+              <div class="grid grid-2" style="gap:1rem; margin-bottom:1rem;">
+                <div class="form-group">
+                  <label class="form-label">Primary Notification Email</label>
+                  <input type="email" class="form-control" value="robert.macintyre@greenvalley.com" id="setFarmEmail" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Direct Farm Phone</label>
+                  <input type="tel" class="form-control" value="+1 (541) 555-8921" id="setFarmPhone" required>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label class="form-label">Farm Location & Shipping Hub</label>
+                <input type="text" class="form-control" value="14280 Orchard Lane, Willamette Valley, OR 97401" id="setFarmAddress" required>
+              </div>
+
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label class="form-label">Public Storefront Story & Agronomic Philosophy</label>
+                <textarea class="form-control" rows="3" id="setFarmBio">Specializing in organic heirloom grains, vine-ripened beefsteak produce, and regenerative vermicompost soil amendments nurtured through four generations of Pacific Northwest family stewardship.</textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check"></i> Save Changes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ADD / EDIT PRODUCT MODAL -->
+  <div class="modal-backdrop" id="addProductModal">
+    <div class="modal-dialog" style="max-width:540px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="prodModalTitle">List New Farm Harvest / Product</h3>
+        <button class="modal-close" onclick="closeAddProductModal();">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="newProductForm" onsubmit="handleProductSubmit(event);">
+          <div class="form-group">
+            <label class="form-label" for="newProdTitle">Product / Crop Title *</label>
+            <input type="text" id="newProdTitle" class="form-control" placeholder="e.g. Crisp Honeycrisp Apples (20 lbs)" required>
+          </div>
+
+          <div class="grid grid-2" style="gap:1rem;">
+            <div class="form-group">
+              <label class="form-label" for="newProdCategory">Category *</label>
+              <select id="newProdCategory" class="form-control" required>
+                <option value="">Select Category</option>
+                <option value="Grains & Cereals">Grains & Cereals</option>
+                <option value="Fresh Vegetables">Fresh Vegetables</option>
+                <option value="Organic Fruits & Honey">Organic Fruits & Honey</option>
+                <option value="Seeds & Planting">Seeds & Planting</option>
+                <option value="Fertilizers & Compost">Fertilizers & Compost</option>
+                <option value="Farm Tools & Equipment">Farm Tools & Equipment</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="newProdPrice">Price ($ USD) *</label>
+              <input type="number" id="newProdPrice" class="form-control" placeholder="29.99" step="0.01" required>
+            </div>
+          </div>
+
+          <div class="grid grid-2" style="gap:1rem;">
+            <div class="form-group">
+              <label class="form-label" for="newProdStock">Initial Available Quantity *</label>
+              <input type="number" id="newProdStock" class="form-control" placeholder="50" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="newProdBadge">Quality Tag</label>
+              <select id="newProdBadge" class="form-control">
+                <option value="100% Organic">100% Certified Organic</option>
+                <option value="Fresh Harvest">Fresh Morning Harvest</option>
+                <option value="Heirloom">Heirloom Non-GMO</option>
+                <option value="Eco Bio-Input">Eco Bio-Input</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="newProdDesc">Harvest Story & Agronomic Notes *</label>
+            <textarea id="newProdDesc" class="form-control" rows="3" placeholder="Describe variety, soil conditions, moisture, packing..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:0.5rem;">
+            <i class="fa-solid fa-cloud-arrow-up"></i> Publish to AgriDirect Market
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Tab switching functionality
+    function switchDashboardTab(tabId, el) {
+      document.querySelectorAll('.dash-nav-item').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.dashboard-tab-content').forEach(tab => tab.classList.remove('active'));
+
+      if (el) {
+        el.classList.add('active');
+      } else {
+        const matchingNav = document.querySelector(`.dash-nav-item[data-tab="${tabId}"]`);
+        if (matchingNav) matchingNav.classList.add('active');
+      }
+
+      const targetTab = document.getElementById('tab-' + tabId);
+      if (targetTab) {
+        targetTab.classList.add('active');
+      }
+
+      const mainContainer = document.getElementById('dash-main-container');
+      if (mainContainer) {
+        mainContainer.scrollTop = 0;
+      }
+      window.scrollTo(0, 0);
+
+      // Close mobile drawer on navigation
+      if (window.innerWidth <= 992) {
+        toggleDashSidebar(false);
+      }
+    }
+
+    // Toggle Mobile Sidebar Drawer
+    function toggleDashSidebar(force) {
+      const sidebar = document.getElementById('dashSidebar');
+      const backdrop = document.getElementById('dashBackdrop');
+      if (!sidebar) return;
+      const isOpen = sidebar.classList.contains('open');
+      const shouldOpen = force !== undefined ? force : !isOpen;
+      if (shouldOpen) {
+        sidebar.classList.add('open');
+        if (backdrop) backdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        sidebar.classList.remove('open');
+        if (backdrop) backdrop.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Load active user credentials dynamically
+    function loadUserCredentials() {
+      const email = localStorage.getItem('agri_user_email') || 'farmer.robert@greenvalley.com';
+      const name = localStorage.getItem('agri_user_name') || 'Robert MacIntyre';
+      const role = localStorage.getItem('agri_user_role') || 'Master Producer';
+
+      const firstName = name.split(' ')[0] || 'Robert';
+
+      const topbarName = document.getElementById('sellerTopbarName');
+      if (topbarName) topbarName.textContent = firstName;
+
+      const heroName = document.getElementById('sellerHeroName');
+      if (heroName) heroName.textContent = firstName;
+
+      const heroFullName = document.getElementById('sellerHeroFullName');
+      if (heroFullName) heroFullName.textContent = name;
+
+      const heroEmail = document.getElementById('sellerHeroEmail');
+      if (heroEmail) heroEmail.textContent = email;
+
+      const heroRole = document.getElementById('sellerHeroRole');
+      if (heroRole) heroRole.textContent = role;
+
+      const sidebarName = document.getElementById('sellerSidebarName');
+      if (sidebarName) sidebarName.textContent = name;
+
+      const sidebarRole = document.getElementById('sellerSidebarRole');
+      if (sidebarRole) sidebarRole.textContent = role;
+
+      const setFarmer = document.getElementById('setFarmerName');
+      if (setFarmer) setFarmer.value = name;
+
+      const setMail = document.getElementById('setFarmEmail');
+      if (setMail) setMail.value = email;
+    }
+
+    // Modal controls
+    const addModal = document.getElementById('addProductModal');
+
+    function openAddProductModal() {
+      if (addModal) {
+        document.getElementById('prodModalTitle').textContent = 'List New Farm Harvest / Product';
+        document.getElementById('newProductForm').reset();
+        addModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeAddProductModal() {
+      if (addModal) {
+        addModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function handleProductSubmit(e) {
+      e.preventDefault();
+      const title = document.getElementById('newProdTitle').value;
+      const price = parseFloat(document.getElementById('newProdPrice').value).toFixed(2);
+      const stock = document.getElementById('newProdStock').value;
+      const category = document.getElementById('newProdCategory').value;
+      const badge = document.getElementById('newProdBadge').value;
+
+      // Add to catalog table live
+      const table = document.getElementById('cropCatalogTable');
+      if (table) {
+        const tbody = table.querySelector('tbody');
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <img src="assets/images/prod-wheat-seeds.webp" alt="Harvest" style="width:36px; height:36px; border-radius:6px; object-fit:cover; border:1px solid #e2e8f0;">
+              <div>
+                <strong style="color:#0f172a; font-size:0.88rem;">${title}</strong>
+                <div style="font-size:0.75rem; color:#64748b;">Fresh Harvest batch</div>
+              </div>
+            </div>
+          </td>
+          <td>${category}</td>
+          <td><strong>$${price}</strong></td>
+          <td>${stock} Units</td>
+          <td><span class="badge" style="background:#e0f2fe; color:#0369a1; font-size:0.72rem;">${badge}</span></td>
+          <td><span class="badge badge-success">In Stock</span></td>
+          <td>
+            <button class="btn btn-outline btn-sm" onclick="editCropListing('${title}', ${price}, ${stock});" style="padding:0.25rem 0.5rem;"><i class="fa-solid fa-pen"></i></button>
+          </td>
+        `;
+        tbody.insertBefore(tr, tbody.firstChild);
+      }
+
+      window.AgriToast.show(`"${title}" published live to marketplace!`, 'success');
+      closeAddProductModal();
+    }
+
+    function markOrderDispatched(orderId, btn) {
+      btn.outerHTML = `<button class="btn btn-outline btn-sm" style="color:#10b981; border-color:#10b981;"><i class="fa-solid fa-check"></i> Dispatched</button>`;
+      const badge = document.getElementById('badge-' + orderId);
+      if (badge) {
+        badge.className = 'badge badge-success';
+        badge.textContent = 'Dispatched';
+      }
+      window.AgriToast.show(`Order #AGRI-${orderId} dispatched to courier cold-chain!`, 'success');
+    }
+
+    function editCropListing(title, price, stock) {
+      openAddProductModal();
+      document.getElementById('prodModalTitle').textContent = 'Edit Crop Listing: ' + title;
+      document.getElementById('newProdTitle').value = title;
+      document.getElementById('newProdPrice').value = price;
+      document.getElementById('newProdStock').value = stock;
+      document.getElementById('newProdCategory').value = 'Grains & Cereals';
+    }
+
+    function filterCropCatalog() {
+      const input = document.getElementById('cropSearchInput').value.toLowerCase();
+      const rows = document.querySelectorAll('#cropCatalogTable tbody tr');
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(input) ? '' : 'none';
+      });
+    }
+
+    function saveProducerSettings() {
+      const farmerInput = document.getElementById('setFarmerName');
+      const emailInput = document.getElementById('setFarmEmail');
+      if (farmerInput && farmerInput.value.trim()) {
+        localStorage.setItem('agri_user_name', farmerInput.value.trim());
+      }
+      if (emailInput && emailInput.value.trim()) {
+        localStorage.setItem('agri_user_email', emailInput.value.trim());
+      }
+      loadUserCredentials();
+      window.AgriToast.show('GreenValley Farm profile & credentials saved successfully!', 'success');
+    }
+
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      loadUserCredentials();
+      const mainContainer = document.getElementById('dash-main-container');
+      if (mainContainer) mainContainer.scrollTop = 0;
+
+      const currentName = localStorage.getItem('agri_user_name') || 'Robert MacIntyre';
+      const currentEmail = localStorage.getItem('agri_user_email') || 'farmer.robert@greenvalley.com';
+      const currentRole = localStorage.getItem('agri_user_role') || 'Master Producer';
+      window.AgriToast.show(`Welcome back, ${currentName}! Logged in as: ${currentEmail} (${currentRole})`, 'info');
+    });
+  </script>
+</body>
+</html>
+
+
