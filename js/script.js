@@ -628,14 +628,16 @@ function openQuickView(productId) {
     </div>
   `;
   modal.classList.add('active');
-  document.body.classList.add('drawer-open');
+  document.body.classList.add('modal-open');
+  document.documentElement.classList.add('modal-open');
 }
 
 function closeModal(modalId) {
   const modal = document.getElementById(modalId);
   if (modal) {
     modal.classList.remove('active');
-    document.body.classList.remove('drawer-open');
+    document.body.classList.remove('modal-open');
+    document.documentElement.classList.remove('modal-open');
   }
 }
 
@@ -662,6 +664,7 @@ document.addEventListener('DOMContentLoaded', () => {
     drawerBackdrop?.classList.add('active');
     hamburgerBtn?.classList.add('active');
     document.body.classList.add('drawer-open');
+    document.documentElement.classList.add('drawer-open');
   }
 
   function closeMobileNav() {
@@ -669,6 +672,7 @@ document.addEventListener('DOMContentLoaded', () => {
     drawerBackdrop?.classList.remove('active');
     hamburgerBtn?.classList.remove('active');
     document.body.classList.remove('drawer-open');
+    document.documentElement.classList.remove('drawer-open');
   }
 
   hamburgerBtn?.addEventListener('click', (e) => {
@@ -704,6 +708,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dbSidebar?.classList.add('active');
     drawerBackdrop?.classList.add('active');
     document.body.classList.add('drawer-open');
+    document.documentElement.classList.add('drawer-open');
   }
   
   function closeDashboardDrawer() {
@@ -711,6 +716,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!mobileDrawer?.classList.contains('active')) {
       drawerBackdrop?.classList.remove('active');
       document.body.classList.remove('drawer-open');
+      document.documentElement.classList.remove('drawer-open');
     }
   }
 
