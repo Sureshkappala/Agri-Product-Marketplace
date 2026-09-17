@@ -747,6 +747,25 @@ document.addEventListener('DOMContentLoaded', () => {
     statNumbers.forEach(stat => counterObserver.observe(stat));
   }
 
+  // Smooth Scroll Reveal Animation for Cards & Content Modules
+  const revealTargets = document.querySelectorAll('.product-card, .category-card, .farmer-card, .quality-pillar-card, .bundle-card-luxury, .step-card, .stat-box, .testimonial-card, .reveal-on-scroll');
+  if (revealTargets.length > 0 && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+
+    revealTargets.forEach((el, index) => {
+      el.classList.add('reveal-on-scroll');
+      el.style.transitionDelay = `${(index % 4) * 0.08}s`;
+      revealObserver.observe(el);
+    });
+  }
+
   // Testimonial Slider
   const track = document.querySelector('.testimonial-track');
   const prevBtn = document.querySelector('.slider-prev');
