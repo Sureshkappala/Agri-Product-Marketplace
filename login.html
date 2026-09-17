@@ -233,6 +233,21 @@
       });
     }
 
+    // Auto-fill and welcome if redirected from successful registration
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('registered') === 'true') {
+        const savedEmail = localStorage.getItem('agri_user_email');
+        const savedRole = localStorage.getItem('agri_logged_in');
+        const emailInput = document.getElementById('loginEmail');
+        const passInput = document.getElementById('loginPassword');
+        if (emailInput && savedEmail) emailInput.value = savedEmail;
+        if (roleSelect && savedRole) roleSelect.value = savedRole;
+        if (passInput) passInput.focus();
+        window.AgriToast.show('Account created successfully! Please enter your password to sign in.', 'success');
+      }
+    });
+
     // Form submit & redirect
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {

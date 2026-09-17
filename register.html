@@ -377,14 +377,10 @@
           localStorage.setItem('agri_user_role', roleTitle);
           localStorage.setItem('agri_login_time', new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
 
-          window.AgriToast.show(`Account created for ${nameVal}! Redirecting to dashboard...`, 'success');
+          window.AgriToast.show(`Account created for ${nameVal}! Please sign in to continue.`, 'success');
           setTimeout(() => {
-            if (currentRole === 'farmer') {
-              window.location.href = 'seller-dashboard.html';
-            } else {
-              window.location.href = 'user-dashboard.html';
-            }
-          }, 800);
+            window.location.href = 'login.html?registered=true';
+          }, 900);
         }
       });
     }
