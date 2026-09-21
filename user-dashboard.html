@@ -91,10 +91,10 @@
           <a href="shop.html" class="btn-quick-expense">
             <i class="fa-solid fa-plus"></i> Quick Order
           </a>
-          <div class="dash-icon-btn" title="Notifications">
+          <a href="404.html" class="dash-icon-btn" title="Notifications" style="text-decoration:none; color:inherit;">
             <i class="fa-solid fa-bell"></i>
             <span style="position:absolute; top:6px; right:6px; width:8px; height:8px; background:#ef4444; border-radius:50%;"></span>
-          </div>
+          </a>
           <img src="assets/images/user-1.webp" alt="Suresh" class="dash-topbar-avatar">
         </div>
       </div>
@@ -394,7 +394,7 @@
               </div>
               <div>
                 <span class="badge-delivered" style="margin-right:1rem;">DELIVERED</span>
-                <button class="btn btn-sm btn-outline" onclick="alert('Receipt for #AGRI-74108 downloaded successfully.');"><i class="fa-solid fa-file-invoice"></i> Receipt</button>
+                <button class="btn btn-sm btn-outline" onclick="window.location.href='404.html';"><i class="fa-solid fa-file-invoice"></i> Receipt</button>
               </div>
             </div>
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
@@ -421,7 +421,7 @@
               </div>
               <div>
                 <span class="badge-delivered" style="margin-right:1rem;">DELIVERED</span>
-                <button class="btn btn-sm btn-outline" onclick="alert('Receipt for #AGRI-73950 downloaded.');"><i class="fa-solid fa-file-invoice"></i> Receipt</button>
+                <button class="btn btn-sm btn-outline" onclick="window.location.href='404.html';"><i class="fa-solid fa-file-invoice"></i> Receipt</button>
               </div>
             </div>
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
@@ -565,7 +565,7 @@
               <h3 class="dash-card-heading">Saved Addresses</h3>
               <div class="dash-card-heading-sub">Primary delivery coordinates for certified cold-chain couriers</div>
             </div>
-            <button class="btn btn-sm btn-primary" onclick="alert('Add Address Dialog: Enter street, apartment, postal code.');">+ Add New Address</button>
+            <button class="btn btn-sm btn-primary" onclick="window.location.href='404.html';">+ Add New Address</button>
           </div>
 
           <div class="address-grid">
@@ -580,7 +580,7 @@
                 <span style="font-size:0.8rem; color:#64748b;">Phone: +1 (555) 382-9910</span>
               </div>
               <div style="margin-top:1.25rem; display:flex; gap:0.75rem;">
-                <button class="btn btn-sm btn-outline" onclick="alert('Edit address dialog opened');"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+                <button class="btn btn-sm btn-outline" onclick="window.location.href='404.html';"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
               </div>
             </div>
 
@@ -595,8 +595,8 @@
                 <span style="font-size:0.8rem; color:#64748b;">Phone: +1 (555) 382-9910</span>
               </div>
               <div style="margin-top:1.25rem; display:flex; gap:0.75rem;">
-                <button class="btn btn-sm btn-outline" onclick="alert('Set as default primary address');">Set Default</button>
-                <button class="btn btn-sm btn-outline" onclick="alert('Edit address dialog opened');"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+                <button class="btn btn-sm btn-outline" onclick="window.location.href='404.html';">Set Default</button>
+                <button class="btn btn-sm btn-outline" onclick="window.location.href='404.html';"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
               </div>
             </div>
           </div>
@@ -647,7 +647,7 @@
 
             <div style="display:flex; gap:1rem; margin-top:0.5rem;">
               <button type="submit" class="btn btn-primary" style="background:#0ea5e9; border-color:#0ea5e9;">Save Changes</button>
-              <button type="reset" class="btn btn-outline">Discard</button>
+              <button type="button" class="btn btn-outline" onclick="window.location.href='404.html';">Discard</button>
             </div>
           </form>
         </div>

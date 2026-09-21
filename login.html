@@ -17,24 +17,24 @@
 <body style="background:var(--cream); min-height:100vh; display:flex; flex-direction:column;">
 
   <!-- Minimal Auth Header -->
-  <header style="background: var(--white); border-bottom: 1.5px solid var(--border); padding: 0.85rem 0; box-shadow: var(--shadow-sm);">
-    <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
-      <a href="index.html" class="brand-logo" style="display: inline-flex; align-items: center; text-decoration: none;">
-        <img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img" style="height: 32px; width: auto;">
+  <header class="auth-header">
+    <div class="container auth-header-container">
+      <a href="index.html" class="brand-logo auth-brand-logo">
+        <img src="assets/images/logo.webp" alt="AgriDirect" class="brand-logo-img">
       </a>
-      <div style="display: flex; align-items: center; gap: 1.25rem;">
-        <a href="index.html" style="display: inline-flex; align-items: center; gap: 0.45rem; font-weight: 600; font-size: 0.88rem; color: var(--primary); text-decoration: none;">
-          <i class="fa-solid fa-arrow-left"></i> Return to Store
+      <div class="auth-header-actions">
+        <a href="index.html" class="auth-return-link">
+          <i class="fa-solid fa-arrow-left"></i> <span>Return to Store</span>
         </a>
-        <span style="font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.35rem; border-left: 1px solid var(--border); padding-left: 1rem;">
-          <i class="fa-solid fa-lock" style="color:var(--primary);"></i> Secure 256-Bit Authentication
+        <span class="auth-security-badge">
+          <i class="fa-solid fa-lock"></i> <span>Secure 256-Bit Authentication</span>
         </span>
       </div>
     </div>
   </header>
 
-<section style="flex:1; display:flex; align-items:center; justify-content:center; padding:3rem 1rem;">
-    <div class="card p-4" style="width:100%; max-width:460px; background:var(--white); box-shadow:var(--shadow-xl); border-radius:var(--radius-xl); border-top: 4px solid var(--primary); border: 1.5px solid var(--border); border-top: 4px solid var(--primary);">
+  <section class="auth-main-section">
+    <div class="auth-card-container">
       
       <div class="text-center mb-4">
         <div class="logo-icon" style="margin:0 auto 0.75rem; width:48px; height:48px; font-size:1.5rem;"><i class="fa-solid fa-seedling"></i></div>
@@ -90,7 +90,7 @@
             <input type="checkbox" id="rememberMe" style="accent-color:var(--primary);">
             Remember me
           </label>
-          <a href="#" id="forgotPasswordLink" style="color:var(--primary); font-weight:600;">Forgot password?</a>
+          <a href="404.html" id="forgotPasswordLink" style="color:var(--primary); font-weight:600;">Forgot password?</a>
         </div>
 
         <button type="submit" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;">
@@ -105,88 +105,10 @@
     </div>
   </section>
 
-  <!-- FORGOT PASSWORD MODAL -->
-  <div class="modal-backdrop" id="forgotPasswordModal">
-    <div class="modal-dialog" style="max-width:420px;">
-      <div class="modal-header">
-        <h3 class="modal-title">Reset Password</h3>
-        <button class="modal-close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Enter your registered email address and we'll send you a password reset verification link.</p>
-        <form id="forgotForm">
-          <div class="form-group">
-            <label class="form-label" for="resetEmail">Email Address</label>
-            <input type="email" id="resetEmail" class="form-control" placeholder="user@example.com" required>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;">Send Reset Link</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
+  <!-- Minimal Auth Footer -->
+  <footer class="auth-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="brand-logo">
-            <a href="index.html">
-              <img src="assets/images/logo-light.webp" alt="Stackly" class="footer-logo">
-            </a>
-          </div>
-          <p class="footer-desc">Mobilizing intelligent agricultural curation, bespoke organic supplies, sustainable farming equipment, and direct farm-to-door delivery for modern life.</p>
-          <div class="footer-social-icons">
-            <a href="404.html" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="404.html" class="footer-social-btn" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4 class="footer-col-title">Quick Links</h4>
-          <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Stackly</a>
-            <a href="shop.html">Shop Catalog</a>
-            <a href="categories.html">Categories</a>
-            <a href="farmers.html">Farmers Directory</a>
-            <a href="farmer-store.html">Featured Harvests</a>
-            <a href="contact.html">Contact</a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4 class="footer-col-title">Support</h4>
-          <div class="footer-links">
-            <a href="contact.html">Contact Coordinates</a>
-            <a href="404.html">Terms & Agreements</a>
-            <a href="404.html">Security Audits</a>
-            <a href="404.html">Size & Fit Guide</a>
-            <a href="user-dashboard.html">Order Status</a>
-            <a href="user-dashboard.html">User Dashboard</a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4 class="footer-col-title">Newsletter</h4>
-          <p class="footer-newsletter-text">Get quarterly updates, smart style alerts, and platform feature reports.</p>
-          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Stackly updates!'); this.reset();">
-            <input type="email" placeholder="Your Email" required class="footer-newsletter-input" aria-label="Your Email">
-            <button type="submit" class="footer-newsletter-btn">Join</button>
-          </form>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div class="footer-bottom-copy">© 2026 Stackly. All rights reserved. Designed for financial clarity and wealth tracking.</div>
-        <div class="footer-bottom-nav">
-          <a href="404.html">Privacy Policy</a>
-          <a href="404.html">Terms of Service</a>
-          <a href="404.html">Security Audits</a>
-        </div>
-      </div>
+      &copy; 2026 AgriDirect Marketplace &bull; All rights reserved.
     </div>
   </footer>
 

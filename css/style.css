@@ -1217,11 +1217,103 @@ html.modal-open {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
-/* 6. AUTH CARDS & 404 ANIMATIONS */
 .auth-card,
+.auth-card-container,
 .modal-dialog,
 main > .card {
   animation: cardPopIn 0.7s 0.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.auth-header {
+  background: var(--white);
+  border-bottom: 1.5px solid var(--border);
+  padding: 0.85rem 0;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.auth-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.auth-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.auth-brand-logo .brand-logo-img {
+  height: 32px;
+  width: auto;
+  max-height: 36px;
+  object-fit: contain;
+}
+
+.auth-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.auth-return-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--primary);
+  text-decoration: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(30, 86, 49, 0.08);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.auth-return-link:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.auth-security-badge {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-left: 1px solid var(--border);
+  padding-left: 1rem;
+  white-space: nowrap;
+}
+
+.auth-security-badge i {
+  color: var(--primary);
+}
+
+.auth-card-container {
+  width: 100%;
+  max-width: 480px;
+  background: var(--white);
+  box-shadow: var(--shadow-xl);
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--border);
+  border-top: 4px solid var(--primary);
+  padding: 2.25rem 2rem;
+}
+
+.auth-footer {
+  padding: 1.25rem 0;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  background: var(--white);
 }
 
 /* 7. SCROLL REVEAL UTILITY CLASSES */
@@ -4549,7 +4641,21 @@ main > .card {
   }
 
   /* --- Auth Pages Mobile (Login / Register) --- */
-  .auth-card, .login-card, .register-card {
+  .auth-header {
+    padding: 0.65rem 0 !important;
+  }
+
+  .auth-security-badge {
+    display: none !important;
+  }
+
+  .auth-return-link {
+    font-size: 0.8rem !important;
+    padding: 0.35rem 0.65rem !important;
+    gap: 0.35rem !important;
+  }
+
+  .auth-card, .login-card, .register-card, .auth-card-container {
     padding: 1.5rem 1.25rem !important;
     max-width: 100% !important;
     border-radius: var(--radius-lg) !important;
