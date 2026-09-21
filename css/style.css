@@ -110,6 +110,7 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
 }
 
 body {
@@ -117,7 +118,7 @@ body {
   color: var(--text-dark);
   background-color: var(--cream-bg);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -4187,6 +4188,10 @@ main > .card {
 
 /* --- TABLET & LAPTOP ADJUSTMENTS (<= 1024px) --- */
 @media (max-width: 1024px) {
+  .topbar {
+    display: none !important;
+  }
+
   .nav-links, .desktop-nav {
     display: none !important;
   }
@@ -4238,7 +4243,7 @@ main > .card {
 @media (max-width: 768px) {
   html, body {
     font-size: 14.5px;
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
     width: 100%;
     position: relative;
   }
