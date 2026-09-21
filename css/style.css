@@ -4192,6 +4192,35 @@ main > .card {
     display: none !important;
   }
 
+  body {
+    padding-top: 60px !important;
+  }
+
+  body.auth-page,
+  body[style*="background:#f4f7f6"],
+  body[style*="background: #f4f7f6"],
+  body.dash-body {
+    padding-top: 0 !important;
+  }
+
+  .site-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 60px !important;
+    z-index: 1000 !important;
+    background: #ffffff !important;
+    border-bottom: 1.5px solid var(--border) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+
   .nav-links, .desktop-nav {
     display: none !important;
   }
@@ -4260,18 +4289,19 @@ main > .card {
     padding-bottom: 2.5rem !important;
   }
 
-  /* --- Topbar Mobile (Hidden to ensure rock-solid navbar stability at top: 0) --- */
+  /* --- Topbar Mobile --- */
   .topbar {
     display: none !important;
   }
 
   /* --- Navbar & Header Mobile --- */
   .site-header {
-    position: sticky !important;
+    position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
+    height: 60px !important;
     z-index: 1000 !important;
     background: var(--white) !important;
     border-bottom: 1.5px solid var(--border) !important;
